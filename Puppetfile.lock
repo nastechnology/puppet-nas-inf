@@ -1,0 +1,105 @@
+FORGE
+  remote: http://forge.puppetlabs.com
+  specs:
+    adenning/winfacts (0.0.3)
+    ajjahn/dhcp (0.1.0)
+    badgerious/windows_env (2.0.2)
+    cprice404/inifile (0.10.4)
+    glarizza/property_list_key (0.1.0)
+    grahamgilbert/mac_facts (0.3.0)
+    joshcooper/powershell (0.0.5)
+    mosen/cups (1.2.1)
+    puppetlabs/apache (0.9.0)
+      puppetlabs/concat (>= 1.0.0)
+      puppetlabs/stdlib (>= 2.4.0)
+    puppetlabs/apt (1.2.0)
+      puppetlabs/stdlib (>= 2.2.1)
+    puppetlabs/concat (1.0.0-rc1)
+    puppetlabs/firewall (0.4.2)
+    puppetlabs/inifile (1.0.0)
+    puppetlabs/ntp (2.0.1)
+      puppetlabs/stdlib (>= 0.1.6)
+    puppetlabs/postgresql (2.5.0)
+      puppetlabs/apt (< 2.0.0, >= 1.1.0)
+      puppetlabs/firewall (>= 0.0.4)
+      puppetlabs/stdlib (< 5.0.0, >= 3.2.0)
+      ripienaar/concat (>= 0.2.0)
+    puppetlabs/puppetdb (1.6.0)
+      cprice404/inifile (>= 0.10.3)
+      puppetlabs/firewall (>= 0.0.4)
+      puppetlabs/postgresql (~> 2)
+      puppetlabs/stdlib (>= 2.2.0)
+    puppetlabs/stdlib (4.1.0)
+    puppetlabs/vcsrepo (0.1.2)
+    rcoleman/mac_profiles_handler (0.2.0)
+    ripienaar/concat (0.2.0)
+
+GIT
+  remote: https://github.com/chocolatey/puppet-chocolatey.git
+  ref: master
+  sha: d60ad490c0d49973c20585087d1deb32ffb85af9
+  specs:
+    chocolatey (0.0.1)
+
+GIT
+  remote: https://github.com/nastechnology/git.git
+  ref: master
+  sha: 6ebd4132c4174ba79ec9ca6cf057e34e3c4f24cc
+  specs:
+    git (0.1.0)
+      puppetlabs/vcsrepo (>= 0.1.2)
+
+GIT
+  remote: https://github.com/nastechnology/munkiclient.git
+  ref: master
+  sha: e3b2639c1007352a457bac84ca02b7b860c2291c
+  specs:
+    munkiclient (0.0.1)
+
+GIT
+  remote: https://github.com/nastechnology/nacs_management.git
+  ref: master
+  sha: 7bfb9c50e85179d436ebc19360a55be2a1e618ab
+  specs:
+    nacs_management (0.0.1)
+
+GIT
+  remote: https://github.com/nastechnology/puppetlabs-registry.git
+  ref: master
+  sha: bd3c5334f8e7fed6a57b830e303ff5d706c7abae
+  specs:
+    registry (0.1.1)
+      puppetlabs/stdlib (>= 2.3.0)
+
+GIT
+  remote: https://github.com/nastechnology/setacl.git
+  ref: master
+  sha: 42421697de2f30a1094b78b09a3fed99e801d559
+  specs:
+    setacl (0.0.1)
+
+DEPENDENCIES
+  adenning/winfacts (>= 0)
+  ajjahn/dhcp (>= 0)
+  badgerious/windows_env (>= 0)
+  chocolatey (>= 0)
+  git (>= 0)
+  glarizza/property_list_key (>= 0)
+  grahamgilbert/mac_facts (>= 0)
+  joshcooper/powershell (>= 0)
+  mosen/cups (>= 0)
+  munkiclient (>= 0)
+  nacs_management (>= 0)
+  puppetlabs/apache (>= 0)
+  puppetlabs/apt (>= 0)
+  puppetlabs/concat (>= 0)
+  puppetlabs/inifile (= 1.0.0)
+  puppetlabs/ntp (>= 0)
+  puppetlabs/postgresql (>= 0)
+  puppetlabs/puppetdb (>= 0)
+  puppetlabs/stdlib (>= 0)
+  puppetlabs/vcsrepo (>= 0)
+  rcoleman/mac_profiles_handler (>= 0)
+  registry (>= 0)
+  setacl (>= 0)
+
