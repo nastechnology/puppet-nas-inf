@@ -4,5 +4,5 @@
 
 ## Requirements
 
-* librarian-puppet (gem install librarian-puppet)
+* [librarian-puppet](http://librarian-puppet.com/ "librarian-puppet") (gem install librarian-puppet)
 * puppet-master  
