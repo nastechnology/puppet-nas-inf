@@ -6,6 +6,14 @@ node /^nms\-\d+\-\d+/ inherits 'winbasenode' {
 node 'nms-108-0.nas.local' inherits 'winbasenode' {
 }
 
+node 'nms-aircart-1.nas.local' inherits 'macbasenode' {
+
+}
+
+node 'nms-aircart-2.nas.local' inherits 'macbasenode' {
+
+}
+
 node 'nms-111-0.nas.local' inherits 'winbasenode' {
   package { 'office2007nooutlook':
     ensure => installed,
@@ -112,6 +120,10 @@ node 'nms-c203-0.nas.local' inherits 'winbasenode' {
 
 node 'nms-c202-0.nas.local' inherits 'winbasenode' {
   package { 'examview.readingstreetGr6':
+    ensure => installed,
+  }
+
+  package { 'examview.mathCCGr6':
     ensure => installed,
   }
 

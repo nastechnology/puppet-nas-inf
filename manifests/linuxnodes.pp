@@ -163,6 +163,18 @@ node 'nasapp.nas.local' {
     path   => '/media/data2/web/www',
     before => Apache::Vhost['caps.napoleonareaschools.org'],
   }
+
+  file { '/media/data2/web/www/caps/mvVideos.sh':
+    ensure  => 'file',
+    owner   => 'nas',
+    group   => 'nas',
+    mode    => '0755',
+    require => Class['git::clone'],
+  }
+
+  #exec { '/media/data2/web/www/caps/mvVideos.sh':
+  #  require => File['/media/data2/web/www/caps/mvVideos.sh'],
+  #}
 }
 
 node 'nas-helpdesk.nas.local' {

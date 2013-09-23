@@ -18,37 +18,27 @@ node 'nhs-adm-jc.nasadm.local' inherits 'winbasenode' {
 }
 
 node 'nas-tc.nas.local' inherits 'macbasenode' {
-  # Only make this resources available if on schools network
-  if($network_en0 == '10.20.8.0') or
-    ($network_en0 == '10.20.16.0') or
-    ($netowrk_en0 == '10.20.24.0') or
-    ($network_en0 == '10.20.32.0'){
-    include nacs_management::install_printers::nhs_copier
+  include nacs_management::install_printers::nhs_copier
 
-    class { 'nacs_management::mapdrive::alldistrict' :
-      user => 'markmyers',
-    }
-
-    class { 'nacs_management::mapdrive::admk' :
-      user => 'markmyers',
-    }
-
-    class { 'nacs_management::user_homedir':
-      user   => 'markmyers',
-      server => 'adm-fs.nasadm.local',
-    }
-
-#  class { 'nacs_management::startup_app':
-#    user => 'markmyers',
-#    app  => 'Spark',
-#  }
-
-#  class { 'nacs_management::startup_app':
-#    user => 'markmyers',
-#    app  => 'Synergy',
-#  }
-
+  class { 'nacs_management::mapdrive::alldistrict' :
+    user => 'markmyers',
   }
+
+  class { 'nacs_management::mapdrive::admk' :
+    user => 'markmyers',
+  }
+
+  class { 'nacs_management::user_homedir':
+    user   => 'markmyers',
+    server => 'adm-fs.nasadm.local',
+  }
+
+  if ($::network_en2 == '10.20.8.0') {
+    exec { 'startup-app' :
+      command => '/usr/bin/open /Applications/Synergy.app',
+    }
+  }
+
 }
 
 node 'nhs-adm-rw.nasadm.local' inherits 'macbasenode' {

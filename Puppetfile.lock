@@ -7,12 +7,12 @@ FORGE
     cprice404/inifile (0.10.4)
     glarizza/property_list_key (0.1.0)
     grahamgilbert/mac_facts (0.3.0)
-    joshcooper/powershell (0.0.5)
+    joshcooper/powershell (0.0.6)
     mosen/cups (1.2.1)
     puppetlabs/apache (0.9.0)
       puppetlabs/concat (>= 1.0.0)
       puppetlabs/stdlib (>= 2.4.0)
-    puppetlabs/apt (1.2.0)
+    puppetlabs/apt (1.3.0)
       puppetlabs/stdlib (>= 2.2.1)
     puppetlabs/concat (1.0.0-rc1)
     puppetlabs/firewall (0.4.2)
@@ -29,6 +29,8 @@ FORGE
       puppetlabs/firewall (>= 0.0.4)
       puppetlabs/postgresql (~> 2)
       puppetlabs/stdlib (>= 2.2.0)
+    puppetlabs/registry (0.1.1)
+      puppetlabs/stdlib (>= 2.3.0)
     puppetlabs/stdlib (4.1.0)
     puppetlabs/vcsrepo (0.1.2)
     rcoleman/mac_profiles_handler (0.2.0)
@@ -52,16 +54,18 @@ GIT
 GIT
   remote: https://github.com/nastechnology/munkiclient.git
   ref: master
-  sha: e3b2639c1007352a457bac84ca02b7b860c2291c
+  sha: 9c21ad67d5a4b7e532131822bab9730165e3d71d
   specs:
     munkiclient (0.0.1)
 
 GIT
   remote: https://github.com/nastechnology/nacs_management.git
   ref: master
-  sha: 7bfb9c50e85179d436ebc19360a55be2a1e618ab
+  sha: 305823378dc65138ce35077cb010a0b8f81dce38
   specs:
-    nacs_management (0.0.1)
+    nacs_management (0.2.1)
+      glarizza/property_list_key (>= 0.1.0)
+      puppetlabs/registry (>= 0.1.1)
 
 GIT
   remote: https://github.com/nastechnology/puppetlabs-registry.git
