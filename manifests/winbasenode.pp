@@ -6,6 +6,13 @@ node winbasenode {
   include nacs_management::delprof
   include nacs_management::oaascreen
 
+  windows_eventlog { 'Application':
+    log_path       => '%SystemRoot%\system32\config\AppEvent.Evt',
+    log_size       => '2048',
+    max_log_policy => 'overwrite',
+  }
+
+
   registry_key {'hkcr\.jnlp':
     ensure => present,
   }
@@ -68,6 +75,11 @@ node winbasenode {
 
   package { 'firefox':
     ensure   => installed,
+  }
+
+  package { 'puppet':
+    ensure          => '3.3.1',
+    install_options => '-force',
   }
 
   package { 'javaruntime':

@@ -10,6 +10,24 @@ node 'nas-lib-laptop.nas.local' inherits 'winbasenode' {
   }
 }
 
+node 'nhs-235-1' inherits 'winbasenode' {
+  package { 'photoshop7' :
+    ensure => installed,
+  }
+}
+
+node 'nhs-235-2' inherits 'winbasenode' {
+  package { 'photoshop7' :
+    ensure => installed,
+  }
+}
+
+node 'nhs-235-3' inherits 'winbasenode' {
+  package { 'photoshop7' :
+    ensure => installed,
+  }
+}
+
 node 'nhs-239-0.nas.local' inherits 'winbasenode' {
   package { 'office2007nooutlook':
     ensure => installed,
@@ -79,7 +97,7 @@ node 'nhs-spedlap-8.nas.local' inherits 'winbasenode' {
 }
 
 node 'nhs-jg.nas.local' inherits 'macbasenode' {
-  include nacs_mac_management::install_printers::nhs_copier
+  include nacs_management::install_printers::nhs_copier
 }
 
 # NHS Teacher machines
@@ -212,3 +230,70 @@ node 'nhs-228-0.nas.local' inherits 'winbasenode' {
 #
 # End of Math Teachers
 #
+
+
+#
+# MAD Cart
+#
+
+node 'mad-cart-1.nas.local' inherits 'macbasenode' {
+}
+
+node 'mad-cart-2.nas.local' inherits 'macbasenode' {
+}
+
+node 'mad-cart-3.nas.local' inherits 'macbasenode' {
+}
+
+node 'mad-cart-4.nas.local' inherits 'macbasenode' {
+}
+
+node 'mad-cart-5.nas.local' inherits 'macbasenode' {
+}
+
+node 'mad-cart-6.nas.local' inherits 'macbasenode' {
+}
+
+node 'mad-cart-7.nas.local' inherits 'macbasenode' {
+}
+
+node 'mad-cart-8.nas.local' inherits 'macbasenode' {
+}
+
+node 'mad-cart-9.nas.local' inherits 'macbasenode' {
+}
+
+node 'mad-cart-10.nas.local' inherits 'macbasenode' {
+}
+
+node 'mad-cart-11.nas.local' inherits 'macbasenode' {
+}
+
+node 'mad-cart-12.nas.local' inherits 'macbasenode' {
+}
+
+node 'mad-cart-13.nas.local' inherits 'macbasenode' {
+}
+
+node 'mad-cart-14.nas.local' inherits 'macbasenode' {
+}
+
+node 'mad-cart-15.nas.local' inherits 'macbasenode' {
+}
+
+node 'mad-cart-16.nas.local' inherits 'macbasenode' {
+}
+
+node 'mad-cart-17.nas.local' inherits 'macbasenode' {
+}
+
+node 'mad-cart-18.nas.local' inherits 'macbasenode' {
+}
+
+node 'mad-cart-19.nas.local' inherits 'macbasenode' {
+}
+
+node 'mad-cart-20.nas.local' inherits 'macbasenode' {
+}
+
+

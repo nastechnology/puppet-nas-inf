@@ -1,5 +1,13 @@
-node 'dhcp.nacs.local' {
+node 'dhcp.nas.local' {
   include dhcp::server
+
+  class { 'apache':
+    mpm_module => 'prefork'
+  }
+
+  class { 'apache::mod::php': }
+  apache::mod { 'rewrite': }
+
 
   #BOE Conf TS Client
   dhcp::server::host {'board-ts':
@@ -89,7 +97,7 @@ node 'dhcp.nacs.local' {
     broadcast   => '10.20.13.255',
     range_begin => '10.20.13.100',
     range_end   => '10.20.13.200',
-    filename    => 'pxelinux.0',
+    #filename    => 'pxelinux.0',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -102,10 +110,11 @@ node 'dhcp.nacs.local' {
     broadcast   => '10.20.14.255',
     range_begin => '10.20.14.11',
     range_end   => '10.20.14.250',
-    filename    => 'pxelinux.0',
+    #filename    => 'pxelinux.0',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
+    other_opts  => ['default-lease-time 86400', 'max-lease-time 604800'],
   }
 
   #
@@ -116,7 +125,7 @@ node 'dhcp.nacs.local' {
   dhcp::server::host {'nhs-auxts-1':
     address     => '10.20.14.70',
     hwaddress   => '70:71:bc:43:e5:19',
-    filename    => 'pro/4.6.1/pxelinux.0',
+    #filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.14.61',
   }
 
@@ -124,7 +133,7 @@ node 'dhcp.nacs.local' {
   dhcp::server::host {'nhs-auxts-3':
     address     => '10.20.14.72',
     hwaddress   => '00:27:0e:0f:12:57',
-    filename    => 'pro/4.6.1/pxelinux.0',
+    #filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.14.61',
   }
 
@@ -506,8 +515,8 @@ node 'dhcp.nacs.local' {
     netmask     => '255.255.255.0',
     routers     => '10.20.34.1',
     broadcast   => '10.20.34.255',
-    range_begin => '10.20.34.90',
-    range_end   => '10.20.34.250',
+    range_begin => '10.20.34.84',
+    range_end   => '10.20.34.254',
     filename    => 'pxelinux.0',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',

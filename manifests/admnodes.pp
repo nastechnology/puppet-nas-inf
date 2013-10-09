@@ -1,6 +1,9 @@
 node 'adm-cw.nasadm.local' inherits 'winbasenode' {
 }
 
+node 'adm-wn-laptop.nasadm.local' inherits 'winbasenode' {
+}
+
 node 'adm-sb.nasadm.local' inherits 'winbasenode' {
 }
 

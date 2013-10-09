@@ -4,9 +4,10 @@ node macbasenode {
   include nacs_management::techspecs
   include nacs_management::maccheckmngsft
 
-
-  mac_profiles_handler::manage { 'org.nacs.profile':
-    ensure => present,
-    file_source => 'puppet:///modules/nacs_management/org.nacs.profile.mobileconfig',
+  if ($::mac_laptop == "mac_laptop"){
+    mac_profiles_handler::manage { 'org.nacs.profile':
+      ensure => present,
+      file_source => 'puppet:///modules/nacs_management/org.nacs.profile.mobileconfig',
+    }
   }
 }

@@ -12,10 +12,25 @@ node 'puppet.nas.local' {
     recurse => true,
     rmdirs  => true,
     type    => 'ctime',
- }
+  }
 
- #notify { "debug: tidy command should run now": }
+  #notify { "debug: tidy command should run now": }
+ 
+  file { "/etc/sudoers":
+    owner   => "root",
+    group   => "root",
+    mode    => "440",
+  }
 
+  augeas { "addnasadmintosudoers":
+    context => "/files/etc/sudoers",
+    changes => [
+      "set spec[user = 'nasadmin']/user nasadmin",
+      "set spec[user = 'nasadmin']/host_group/host ALL",
+      "set spec[user = 'nasadmin']/host_group/command ALL",
+      "set spec[user = 'nasadmin']/host_group/command/runas_user ALL",
+    ],
+  }
 }
 
 # PuppetDB File
@@ -46,6 +61,22 @@ node 'nmspcoip-1.nacs.local' {
 node 'java.nas.local' {
   package { 'openjdk-7-jdk':
     ensure => installed
+  }
+
+  file { "/etc/sudoers":
+    owner   => "root",
+    group   => "root",
+    mode    => "440",
+  }
+
+  augeas { "addnasadmintosudoers":
+    context => "/files/etc/sudoers",
+    changes => [
+      "set spec[user = 'nasadmin']/user nasadmin",
+      "set spec[user = 'nasadmin']/host_group/host ALL",
+      "set spec[user = 'nasadmin']/host_group/command ALL",
+      "set spec[user = 'nasadmin']/host_group/command/runas_user ALL",
+    ],
   }
 }
 
@@ -220,5 +251,28 @@ node 'staff.nas.local' {
 
   host { 'nap-adm-dc.nasadm.local':
     ip => '10.20.15.25'
+  }
+}
+
+
+# Construction Blog
+node 'const.nas.local' {
+  class { 'apache':
+    mpm_module => 'prefork'
+  }
+
+  class { 'apache::mod::php': }
+  apache::mod { 'rewrite': }
+
+  package { 'mysql-server':
+    ensure => installed,
+  }
+
+  package { 'php5-mysql':
+    ensure => installed,
+  }
+
+  class { 'wordpress': 
+    install_dir => '/var/www',
   }
 }

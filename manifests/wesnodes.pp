@@ -23,8 +23,22 @@ node 'wescafe1.nas.local' inherits 'winbasenode' {
 node 'wes-108-0.nas.local' inherits 'winbasenode' {
 }
 
+node 'wes-107-0.nas.local' inherits 'winbasenode' {
+  package { 'accelscan':
+    ensure => installed,
+  }
+}
+
+node 'wes-102-0.nas.local' inherits 'winbasenode' {
+  package { 'accelscan':
+    ensure => installed,
+  }
+}
 
 node 'wes-101-0.nas.local' inherits 'winbasenode' {
+  package { 'accelscan':
+    ensure => installed,
+  }
 }
 
 node /^wes\-lab\-\d+\.nas\.local/ inherits 'winbasenode' {

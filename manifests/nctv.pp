@@ -10,11 +10,11 @@ node 'nctv-mini1.nas.local' inherits 'macbasenode' {
   include nacs_management::install_printers::nhs_copier
 }
 
-node 'nhs-nctv-pro1.nas.local' inherits 'macbasenode' {
+node 'nctv-pro1.nas.local' inherits 'macbasenode' {
   include nacs_management::install_printers::nhs_copier
 }
 
-node 'nhs-nctv-pro2.nas.local' inherits 'macbasenode' {
+node 'nctv-pro2.nas.local' inherits 'macbasenode' {
   include nacs_management::install_printers::nhs_copier
 }
 

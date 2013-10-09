@@ -10,7 +10,6 @@ forge "http://forge.puppetlabs.com"
  mod 'puppetlabs/postgresql'
  mod 'puppetlabs/puppetdb'
 
- mod 'ajjahn/dhcp'
  mod 'mosen/cups'
  mod 'joshcooper/powershell'
  mod 'adenning/winfacts'  
@@ -18,9 +17,13 @@ forge "http://forge.puppetlabs.com"
  mod 'rcoleman/mac_profiles_handler'
  mod 'glarizza/property_list_key'
  mod 'badgerious/windows_env'
+ mod 'hunner/wordpress'
 
  mod 'chocolatey',
    :git => 'https://github.com/chocolatey/puppet-chocolatey.git'
+
+ mod 'dhcp',
+   :git => 'https://github.com/nastechnology/puppet-dhcp'
  
  mod 'registry',
    :git => 'https://github.com/nastechnology/puppetlabs-registry.git'
@@ -36,6 +39,9 @@ forge "http://forge.puppetlabs.com"
  
  mod 'setacl',
    :git => 'https://github.com/nastechnology/setacl.git'
+
+ mod 'windows_eventlog',
+   :git => 'https://github.com/liamjbennett/puppet-windows_eventlog.git'
 
 # mod 'ntp',
 #   :git => 'git://github.com/puppetlabs/puppetlabs-ntp.git'
