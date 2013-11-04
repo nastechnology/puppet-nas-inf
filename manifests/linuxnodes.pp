@@ -118,6 +118,47 @@ node 'munkiwa.nas.local' {
   }
 }
 
+node 'ipadsignout.nas.local' {
+  package { 'openssh-server':
+    ensure => installed,
+  }
+
+  class { 'apache':
+    mpm_module => 'prefork',
+  }
+
+  class { 'apache::mod::php': }
+  apache::mod { 'rewrite': }
+
+  package { 'php5-mysql': 
+    ensure => installed,
+  }
+
+  package { 'mysql-client':
+    ensure => installed,
+  }
+
+  package { 'php5-mcrypt':
+    ensure => installed,
+  }
+
+  apache::vhost { 'ipadsignout.nacswildcats.org':
+    serveraliases => 'ipadsingout.napoleonareaschools.org',
+    docroot     => '/var/ipadsignout/public',
+    port        => '80',
+    directories => [ {
+      path           => '/var/ipadsignout/public',
+      allow_override => 'All'
+    } ],
+  }
+
+  class { 'git::clone':
+    repo   => 'ipadsignout',
+    path   => '/var',
+    before => Apache::Vhost['ipadsignout.nacswildcats.org'],
+  }
+}
+
 node 'nasapp.nas.local' {
 
   class { 'apache':
@@ -127,11 +168,27 @@ node 'nasapp.nas.local' {
   class { 'apache::mod::php': }
   apache::mod { 'rewrite': }
 
+  package { 'php5-mcrypt':
+    ensure => installed,
+  }
+
+  apache::vhost { 'bully.nacswildcats.org':
+    serveraliases => 'bully.napoleonareaschools.org',
+    docroot     => '/media/data2/web/www/bullyapp/public',
+    port        => '80',
+    directories => [ {
+      path           => '/media/data2/web/www/bullyapp/public',
+      allow_override => 'All'
+    } ],
+  }
+
   apache::vhost { 'apps.napoleonareaschools.org':
+    serveraliases   => 'apps.nacswildcats.org',
     docroot => '/media/data2/web/www/app',
     port    => '80'
   }
   apache::vhost { 'pdforms.napoleonareaschools.org':
+    serveraliases => 'pdfforms.nacswildcats.org',
     docroot     => '/media/data2/web/www/pdforms/public',
     port        => '80',
     directories => [ {
@@ -172,6 +229,7 @@ node 'nasapp.nas.local' {
   }
 
   apache::vhost { 'training.napoleonareaschools.org':
+    serveraliases => 'training.nacswildcats.org',
     docroot     => '/media/data2/web/www/training/public',
     port        => '80',
     directories => [ {
@@ -181,6 +239,7 @@ node 'nasapp.nas.local' {
   }
 
   apache::vhost { 'caps.napoleonareaschools.org':
+    serveraliases => 'caps.nacswildcats.org',
     docroot     => '/media/data2/web/www/caps/public',
     port        => '80',
     directories => [ {
@@ -254,25 +313,42 @@ node 'staff.nas.local' {
   }
 }
 
+node 'nagios.nas.local' {
+  package { 'nagios3':
+    ensure => installed,
+  }
+
+  package { 'nagios-nrpe-plugin':
+    ensure => installed,
+  }
+ 
+  package { 'nagios-nrpe-server':
+    ensure => installed,
+  }
+
+  package { 'nagios-plugins':
+    ensure => installed,
+  }
+
+  package { 'openssh-server':
+    ensure => installed,
+  }
+}
 
 # Construction Blog
-node 'const.nas.local' {
-  class { 'apache':
-    mpm_module => 'prefork'
-  }
-
-  class { 'apache::mod::php': }
-  apache::mod { 'rewrite': }
-
-  package { 'mysql-server':
+node 'build.nas.local' {
+  package { 'openssh-server':
     ensure => installed,
   }
 
-  package { 'php5-mysql':
+  package { 'build-essential':
     ensure => installed,
   }
 
-  class { 'wordpress': 
-    install_dir => '/var/www',
+  package { 'curl':
+    ensure  => installed,
+    require => Package['build-essential'],
   }
+
+ 
 }

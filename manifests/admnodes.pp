@@ -16,8 +16,13 @@ node 'adm-super.nasadm.local' inherits 'winbasenode' {
 node 'nhs-adm-sec-1.nasadm.local' inherits 'winbasenode' {
 }
 
-
 node 'nhs-adm-jc.nasadm.local' inherits 'winbasenode' {
+}
+
+node 'nms-adm-sec.nasadm.local' inherits 'winbasenode' {
+  package { 'office2007outlook':
+    ensure => installed,
+  }
 }
 
 node 'nas-tc.nas.local' inherits 'macbasenode' {

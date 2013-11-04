@@ -227,6 +227,7 @@ node 'dhcp.nas.local' {
     range_end   => '10.20.19.250',
     filename    => 'pxelinux.0',
     next_server => '10.20.2.35',
+    other_opts  => 'option ubnt.unifi-address 10.20.2.50',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
   }
@@ -338,6 +339,7 @@ node 'dhcp.nas.local' {
     filename    => 'pxelinux.0',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
+    other_opts  => 'option ubnt.unifi-address 10.20.2.50',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
   }
 
@@ -424,7 +426,7 @@ node 'dhcp.nas.local' {
     routers     => '10.20.33.1',
     broadcast   => '10.20.33.255',
     range_begin => '10.20.33.80',
-    range_end   => '10.20.33.240',
+    range_end   => '10.20.33.250',
     filename    => 'pxelinux.0',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
@@ -863,6 +865,7 @@ node 'dhcp.nas.local' {
     range_begin => '10.20.36.100',
     range_end   => '10.20.36.200',
     filename    => 'pxelinux.0',
+    other_opts  => 'option ubnt.unifi-address 10.20.2.50',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],

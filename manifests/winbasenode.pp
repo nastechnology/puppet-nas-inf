@@ -8,7 +8,13 @@ node winbasenode {
 
   windows_eventlog { 'Application':
     log_path       => '%SystemRoot%\system32\config\AppEvent.Evt',
-    log_size       => '2048',
+    log_size       => '524288',
+    max_log_policy => 'overwrite',
+  }
+
+  windows_eventlog { 'Security':
+    log_path       => '%SystemRoot%\system32\config\SecEvent.Evt',
+    log_size       => '524288',
     max_log_policy => 'overwrite',
   }
 
@@ -77,13 +83,8 @@ node winbasenode {
     ensure   => installed,
   }
 
-  package { 'puppet':
-    ensure          => '3.3.1',
-    install_options => '-force',
-  }
-
   package { 'javaruntime':
-    ensure  => installed,
+    ensure  => '7.0.40',
     require => Package['firefox'],
   }
 
@@ -93,12 +94,12 @@ node winbasenode {
   }
 
   package { 'flashplayeractivex':
-    ensure  => installed,
+    ensure  => latest,
     require => Package['googlechrome'],
   }
 
   package { 'flashplayerplugin':
-    ensure  => installed,
+    ensure  => latest,
     require => Package['firefox'],
   }
 

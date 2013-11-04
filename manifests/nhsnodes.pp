@@ -1,3 +1,9 @@
+node 'hscafe2.nas.local' inherits 'winbasenode' {
+}
+
+node 'hscafe1.nas.local' inherits 'winbasenode' {
+}
+
 node 'nas-snackbar.nas.local' inherits 'winbasenode' {
 }
 
@@ -141,6 +147,32 @@ node 'nhs-223-0.nas.local' inherits 'winbasenode' {
   package { 'GeometryInstPresi':
     ensure => installed,
   }
+
+  package { 'trackmm3':
+    ensure => installed,
+  }
+
+  file { "C:/Hy-Sport/TFMM3/tfmeet3.mem":
+    ensure  => file,
+    source  => 'puppet:///modules/nacs_management/tfmeet3.mem',
+    require => Package['trackmm3'],
+  }
+
+  package { 'tracktm2':
+    ensure  => installed,
+    require => Package['trackmm3'],
+  }
+
+  file { "C:/Hy-Sport/TFTM2/TFTM2.LIC":
+    ensure  => file,
+    source  => 'puppet:///modules/nacs_management/TFTM2.LIC',
+    require => Package['tracktm2'],
+  }
+
+  exec { 'ChangeHySportPerms':
+    command => 'C:\SetACL.exe -on "C:\Hy-Sport" -ot file -actn ace -ace "n:Everyone;p:full"',
+    require => Package['tracktm2'],
+  }
 }
 
 node 'nhs-221-0.nas.local' inherits 'winbasenode' {
@@ -193,7 +225,7 @@ node 'nhs-141-0.nas.local' inherits 'winbasenode' {
 }
 
 node 'nhs-130-0.nas.local' inherits 'winbasenode' {
-  include nacs_managment::saxon
+  include nacs_management::saxon
 
   package { 'TIResources':
     ensure => installed,
