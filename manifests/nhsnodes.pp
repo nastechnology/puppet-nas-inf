@@ -144,7 +144,8 @@ node 'nhs-spedlap-8.nas.local' inherits 'winbasenode' {
 
 node 'nhs-jg.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
-  nacs_management::printers{ 'nhs_art': }
+  nacs_management::printers{ 'nhs_140_c': }
+  nacs_management::printers{ 'nhs_color': }
 }
 
 # NHS Teacher machines

@@ -12,6 +12,7 @@ node 'cdb-m128-0.nas.local' inherits 'winbasenode' {
 
 # Dana Ward's mac
 node 'cdb-mac-06172.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
   exec { 'DanaWard':
     command => "/bin/echo 'UsersName=DanaWard' >> /opt/NACSManage/facts.txt",
   }
@@ -19,17 +20,25 @@ node 'cdb-mac-06172.nas.local' inherits 'macbasenode' {
   nacs_management::map::idrive { '1011438':
     server => 'adm-fs.nasadm.local',
   }
+
+  nacs_management::printers{ 'cdb_wkrm_copier': }
 }
 
 
 # Jodi Myers' mac
 node 'cdb-mac-06190.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1010346': }
+  nacs_management::printers{ 'ces_kg_colorlaser': }
+  nacs_management::printers{ 'nms_ces_ricoh_7500': }
 }
 
 # Jen Croninger mac
 node 'cdb-mac-06191.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1002534': }
+  nacs_management::printers{ 'cdb_wkrm_copier': }
+  nacs_management::printers{ 'cdb_wkrm_colorlaser': }
 }
 
 node /^cdb\-m\d+\-\d/ inherits 'winbasenode' {

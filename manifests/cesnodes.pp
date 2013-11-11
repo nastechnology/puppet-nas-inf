@@ -5,14 +5,21 @@ node /^ces\-\d+\-\d+/ inherits 'winbasenode' {
 
 # Adams Machine
 node 'ces-mac-06174.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1005838':
     server => 'adm-fs.nasadm.local',
   }
+  nacs_management::printers{ 'ces_office_copier': }
+  nacs_management::printers{ 'ces_wkrm': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
 }
 
 # Brett Cordy mac
 node 'ces-mac-06188.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1010584' : }
+  nacs_management::printers { 'ces_upstairs_wkrm': }
+  nacs_mnaagement::printers { 'ces_wkrm': }
 }
 
 # CES Lab

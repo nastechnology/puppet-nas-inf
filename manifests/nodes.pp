@@ -130,6 +130,7 @@ node 'tech-dev-mini.local' {
   class { 'nacs_management::allprinters': }   
 
   nacs_management::printers{'nhs_copier': }
+  nacs_management::printers{ 'ces_office_copier': }
 }
 
 node 'nhs-ios-server.nas.local' inherits 'macbasenode' {
