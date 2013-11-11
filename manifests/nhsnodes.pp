@@ -10,6 +10,46 @@ node 'nas-snackbar.nas.local' inherits 'winbasenode' {
 node 'nhs-train-0.nas.local' inherits 'winbasenode' {
 }
 
+# Dan Curtis Mac
+node 'nhs-mac-06184.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::printers { 'nhs_copier': }
+  nacs_management::printers { 'nhs_color': }
+  nacs_management::map::idrive { '1011459':
+    server => 'adm-fs.nasadm.local',
+  }
+}
+
+# Jenna Storrer Mac
+node 'nhs-mac-06187.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1011072': }
+  nacs_management::printers{ 'nhs_wkrm_copier': }
+  nacs_management::printers{ 'nhs_wkrm_copier_2': }
+  nacs_management::printers{ 'nhs_wkrm_231': }
+  nacs_management::printers{ 'nhs_library': }
+  nacs_management::printers{ 'nhs_207': }
+}
+
+# Kelly Cooper Mac
+node 'nhs-mac-06176.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1011956': }
+  nacs_management::printers { 'nhs_140_c': }
+  nacs_management::printers { 'nhs_copier': }
+}
+
+# Lindy Seagrave
+node 'nhs-mac-06182.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1010009': }
+  nacs_management::printers{ 'nhs_wkrm_copier': }
+  nacs_management::printers{ 'nhs_wkrm_copier_2': }
+  nacs_management::printers{ 'nhs_wkrm_231': }
+  nacs_management::printers{ 'nhs_library': }
+  nacs_management::printers{ 'nhs_207': }
+}
+
 node 'nas-lib-laptop.nas.local' inherits 'winbasenode' {
   package { 'SirsiWorkflows' :
     ensure => installed,
@@ -103,7 +143,8 @@ node 'nhs-spedlap-8.nas.local' inherits 'winbasenode' {
 }
 
 node 'nhs-jg.nas.local' inherits 'macbasenode' {
-  include nacs_management::install_printers::nhs_copier
+  class { 'nacs_management::allprinters': }
+  nacs_management::printers{ 'nhs_art': }
 }
 
 # NHS Teacher machines

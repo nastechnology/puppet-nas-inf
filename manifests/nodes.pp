@@ -126,7 +126,10 @@ node 'ces-214-guid.nas.local' inherits 'winbasenode' {
 node 'tech-dev-mini.local' {
   include nacs_management
   include nacs_management::techspecs
-  include nacs_management::install_printers::nhs_copier
+
+  class { 'nacs_management::allprinters': }   
+
+  nacs_management::printers{'nhs_copier': }
 }
 
 node 'nhs-ios-server.nas.local' inherits 'macbasenode' {

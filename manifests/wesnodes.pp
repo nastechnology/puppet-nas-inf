@@ -20,6 +20,23 @@ node 'wescafe1.nas.local' inherits 'winbasenode' {
     }
 }
 
+# Wendy Nashu Mac laptop
+node 'wes-mac-06186.nas.local' inherits 'macbasenode' {
+  nacs_management::map::idrive { '1011044':
+    server => 'adm-fs.nasadm.local',
+  }
+}
+
+# Doug Edwards mac laptop
+node 'wes-mac-06175.nas.local' inherits 'macbasenode' {
+  nacs_management::map::idrive { '1003088': }
+}
+
+# Jen Gerken mac laptop
+node 'wes-mac-06189.nas.local' inherits 'macbasenode' {
+  nacs_management::map::idrive { '1003500': }
+}
+
 node 'wes-108-0.nas.local' inherits 'winbasenode' {
 }
 

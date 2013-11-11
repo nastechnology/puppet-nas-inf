@@ -14,6 +14,33 @@ node 'nms-aircart-2.nas.local' inherits 'macbasenode' {
 
 }
 
+# Matt Dietrich Mac laptop
+node 'nms-mac-06173.nas.local' inherits 'macbasenode' {
+  nacs_management::map::idrive { '1002786':
+    server => 'adm-fs.nasadm.local',
+  }
+}
+
+# Angies Myers mac laptop
+node 'nms-mac-06179.nas.local' inherits 'macbasenode' {
+  nacs_management::map::idrive { '1005705': }
+}
+
+# Tracey Cohrs mac laptop
+node 'nms-mac-06180.nas.local' inherits 'macbasenode' {
+  nacs_management::map::idrive { '1005999': }
+}
+
+# Linda Hummer mac laptop
+node 'nms-mac-06177.nas.local' inherits 'macbasenode' {
+  nacs_management::map::idrive { '1004354': }
+}
+
+## Sherry Hogan mac laptop
+node 'nms-mac-06178.nas.local' inherits 'macbasenode' {
+  nacs_management::map::idrive { '1004200': }
+}
+
 node 'nms-111-0.nas.local' inherits 'winbasenode' {
   package { 'office2007nooutlook':
     ensure => installed,

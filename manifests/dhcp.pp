@@ -232,6 +232,12 @@ node 'dhcp.nas.local' {
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
   }
 
+  #Chris Work Mac
+  dhcp::server::host {'chris-work-mac.nas.local':
+    address => '10.20.18.12',
+    hwaddress => 'b8:e8:56:36:ed:04',
+  }
+
   #MS Staff
   dhcp::server::subnet { '10.20.20.0':
     netmask     => '255.255.255.0',

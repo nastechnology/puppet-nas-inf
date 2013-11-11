@@ -4,12 +4,33 @@ node /^cdb\-\d+\-\d+/ inherits 'winbasenode' {
 }
 
 node 'cdb-118-spe.nas.local' inherits 'winbasenode' {
+
 }
 
 node 'cdb-m128-0.nas.local' inherits 'winbasenode' {
 }
 
+# Dana Ward's mac
+node 'cdb-mac-06172.nas.local' inherits 'macbasenode' {
+  exec { 'DanaWard':
+    command => "/bin/echo 'UsersName=DanaWard' >> /opt/NACSManage/facts.txt",
+  }
+  
+  nacs_management::map::idrive { '1011438':
+    server => 'adm-fs.nasadm.local',
+  }
+}
 
+
+# Jodi Myers' mac
+node 'cdb-mac-06190.nas.local' inherits 'macbasenode' {
+  nacs_management::map::idrive { '1010346': }
+}
+
+# Jen Croninger mac
+node 'cdb-mac-06191.nas.local' inherits 'macbasenode' {
+  nacs_management::map::idrive { '1002534': }
+}
 
 node /^cdb\-m\d+\-\d/ inherits 'winbasenode' {
 }

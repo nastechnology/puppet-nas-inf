@@ -3,6 +3,18 @@
 node /^ces\-\d+\-\d+/ inherits 'winbasenode' {
 }
 
+# Adams Machine
+node 'ces-mac-06174.nas.local' inherits 'macbasenode' {
+  nacs_management::map::idrive { '1005838':
+    server => 'adm-fs.nasadm.local',
+  }
+}
+
+# Brett Cordy mac
+node 'ces-mac-06188.nas.local' inherits 'macbasenode' {
+  nacs_management::map::idrive { '1010584' : }
+}
+
 # CES Lab
 node /^ces\-lab\-\d+\.nas\.local/ inherits 'winbasenode' {
 #  include wpkg::nms-labs
