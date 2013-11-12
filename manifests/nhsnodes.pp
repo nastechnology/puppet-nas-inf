@@ -10,6 +10,24 @@ node 'nas-snackbar.nas.local' inherits 'winbasenode' {
 node 'nhs-train-0.nas.local' inherits 'winbasenode' {
 }
 
+# Ann Bosenbark Mac
+node 'nhs-mac-06171.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1001764': }
+  nacs_management::printers{ 'nhs_copier': }
+}
+
+# Cori Niese Mac
+node 'nhs-mac-06183.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1005845': }
+  nacs_management::printers{ 'nhs_wkrm_copier': }
+  nacs_management::printers{ 'nhs_wkrm_copier_2': }
+  nacs_management::printers{ 'nhs_wkrm_231': }
+  nacs_management::printers{ 'nhs_library': }
+  nacs_management::printers{ 'nhs_207': }
+}
+
 # Dan Curtis Mac
 node 'nhs-mac-06184.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
@@ -43,6 +61,17 @@ node 'nhs-mac-06176.nas.local' inherits 'macbasenode' {
 node 'nhs-mac-06182.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1010009': }
+  nacs_management::printers{ 'nhs_wkrm_copier': }
+  nacs_management::printers{ 'nhs_wkrm_copier_2': }
+  nacs_management::printers{ 'nhs_wkrm_231': }
+  nacs_management::printers{ 'nhs_library': }
+  nacs_management::printers{ 'nhs_207': }
+}
+
+# Seth Izor Mac
+node 'nhs-mac-06169.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1011424': }
   nacs_management::printers{ 'nhs_wkrm_copier': }
   nacs_management::printers{ 'nhs_wkrm_copier_2': }
   nacs_management::printers{ 'nhs_wkrm_231': }

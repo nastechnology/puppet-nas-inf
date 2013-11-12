@@ -22,7 +22,7 @@ node 'wescafe1.nas.local' inherits 'winbasenode' {
 
 # Wendy Nashu Mac laptop
 node 'wes-mac-06186.nas.local' inherits 'macbasenode' {
-  class { 'nacs_managament::allprinters': }
+  class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1011044':
     server => 'adm-fs.nasadm.local',
   }
@@ -32,7 +32,7 @@ node 'wes-mac-06186.nas.local' inherits 'macbasenode' {
 
 # Doug Edwards mac laptop
 node 'wes-mac-06175.nas.local' inherits 'macbasenode' {
-  class { 'nacs_managament::allprinters': }
+  class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1003088': }
   nacs_management::printers { 'wes_wkrm_copier': }
   nacs_management::printers { 'wes_office': }
@@ -40,8 +40,16 @@ node 'wes-mac-06175.nas.local' inherits 'macbasenode' {
 
 # Jen Gerken mac laptop
 node 'wes-mac-06189.nas.local' inherits 'macbasenode' {
-  class { 'nacs_managament::allprinters': }
+  class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1003500': }
+  nacs_management::printers { 'wes_wkrm_copier': }
+  nacs_management::printers { 'wes_office': }
+}
+
+# Megan Sherman mac laptop
+node 'wes-mac-06170.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1011942': }
   nacs_management::printers { 'wes_wkrm_copier': }
   nacs_management::printers { 'wes_office': }
 }
