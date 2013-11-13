@@ -33,7 +33,7 @@ node 'nms-adm-sec.nasadm.local' inherits 'winbasenode' {
 }
 
 node 'nas-tc.nas.local' inherits 'macbasenode' {
-  include nacs_management::install_printers::nhs_copier
+  #include nacs_management::install_printers::nhs_copier
 
   #class { 'nacs_management::mapdrive::alldistrict' :
   #  user => 'markmyers',
@@ -58,7 +58,7 @@ node 'nas-tc.nas.local' inherits 'macbasenode' {
 
 node 'nhs-adm-rw.nasadm.local' inherits 'macbasenode' {
   include nacs_management::checkin
-
+  class { 'nacs_management::allprinters': }
   nacs_management::printers { 'nhs_color': }
   nacs_management::printers { 'nhs_copier': }
 

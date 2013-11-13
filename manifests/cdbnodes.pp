@@ -31,6 +31,8 @@ node 'cdb-mac-06190.nas.local' inherits 'macbasenode' {
   nacs_management::map::idrive { '1010346': }
   nacs_management::printers{ 'ces_kg_colorlaser': }
   nacs_management::printers{ 'nms_ces_ricoh_7500': }
+
+  class { 'nacs_management::checkin': }
 }
 
 # Jen Croninger mac
