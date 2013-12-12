@@ -20,9 +20,17 @@ node 'nms-mac-06173.nas.local' inherits 'macbasenode' {
   nacs_management::map::idrive { '1002786':
     server => 'adm-fs.nasadm.local',
   }
+
+  nacs_management::map::admk { '1002786AdmK':
+    user => '1002786',
+  }
+
   nacs_management::printers { 'nms_office_copier': }
   nacs_management::printers { 'nms_colorlaser': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::map::nmsshared { '1002786nmsshared':
+    user => '1002786',
+  }
 }
 
 # Angies Myers mac laptop
@@ -47,6 +55,8 @@ node 'nms-mac-06180.nas.local' inherits 'macbasenode' {
   nacs_management::map::idrive { '1005999': }
   nacs_management::printers { 'nms_office_copier': }
   nacs_management::printers { 'nms_ces_ricoh_7500': }
+  nacs_management::printers { 'nms_8lab': }
+  nacs_management::printers { 'nms_upstairs_copier': }
 }
 
 # Linda Hummer mac laptop
@@ -55,6 +65,8 @@ node 'nms-mac-06177.nas.local' inherits 'macbasenode' {
   nacs_management::map::idrive { '1004354': }
   nacs_management::printers { 'nms_office_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_8lab': }
+  nacs_management::printers { 'nms_upstairs_copier': }
 }
 
 # Mallory Weaver mac laptop
@@ -65,13 +77,223 @@ node 'nms-mac-06168.nas.local' inherits 'macbasenode' {
   nacs_management::printers { 'nms_office': }
 }
 
-## Sherry Hogan mac laptop
+# Sherry Hogan mac laptop
 node 'nms-mac-06178.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1004200': }
   nacs_management::printers { 'nms_office_copier': }
   nacs_management::printers { 'nms_office': }
   nacs_management::printers { 'nms_ces_ricoh_7500': }
+}
+
+# --------------- Added After Test Group --------------- 
+
+# Kathy Beck Mac
+node 'nms-mac-06079.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1001519': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Kelley Borton Mac
+node 'nms-mac-06078.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1001736': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Lynne Debbe Mac
+node 'nms-mac-06084.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1002660': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Sara Dilbone Mac
+node 'nms-mac-06162.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1002800': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Christina Fedderke Mac
+node 'nms-mac-06083.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1011121': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Celeste Fryman Mac
+node 'nms-mac-06165.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1001540': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Kenny Bostelman Mac
+node 'nms-mac-06077.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1001792': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Jay Brown Mac
+node 'nms-mac-06076.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1010556': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Christa Burken Mac
+node 'nms-mac-06075.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1002121': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# LuAnn Gorsuch Mac
+node 'nms-mac-06082.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1003696': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Andrea Hoffman Mac
+node 'nms-mac-06164.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1004186': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Jodi Irving Mac
+node 'nms-mac-06089.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1004410': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Isiah Keefer Mac
+node 'nms-mac-06088.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1011977': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Holli Horn Mac
+node 'nms-mac-06081.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1010199': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Mike Hummer Mac
+node 'nms-mac-06041.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1004361': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Jim Murcko Mac
+node 'nms-mac-06080.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1005677': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Jeff Peters Mac
+node 'nms-mac-06039.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1010037': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Brittany Labie Mac
+node 'nms-mac-06087.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1010072': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Ashley Miller Mac
+node 'nms-mac-06085.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1009333': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Peggy Mossing Mac
+node 'nms-mac-06086.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1005642': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Cara Ressler Mac
+node 'nms-mac-06094.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1006237': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Jen Rausch Mac
+node 'nms-mac-06038.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1009505': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Jason Seiler Mac
+node 'nms-mac-06093.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1006895': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Tyler Swary Mac
+node 'nms-mac-06092.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1011949': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Heather Villagomez Mac
+node 'nms-mac-06091.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1011928': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Brenda Zuch Mac
+node 'nms-mac-06090.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1008435': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
 }
 
 node 'nms-111-0.nas.local' inherits 'winbasenode' {
@@ -587,6 +809,10 @@ node 'nms-7lab-0.nas.local' inherits 'winbasenode' {
   include nacs_management::atrts
   include nacs_management::atrtt
   package { 'cdburnerxp':
+    ensure => installed,
+  }
+
+  package { 'googledrive':
     ensure => installed,
   }
 }

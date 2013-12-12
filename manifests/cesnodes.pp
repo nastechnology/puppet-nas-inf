@@ -18,8 +18,147 @@ node 'ces-mac-06174.nas.local' inherits 'macbasenode' {
 node 'ces-mac-06188.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1010584' : }
-  nacs_management::printers { 'ces_upstairs_wkrm': }
-  nacs_mnaagement::printers { 'ces_wkrm': }
+  nacs_management::printers{ 'ces_wkrm': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
+}
+
+# ------------ After Image ------------ #
+
+# Ken Boland Mac
+node 'ces-mac-06237.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1001694' : }
+  nacs_management::printers{ 'ces_wkrm': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
+}
+
+# Tara Boyer Mac
+node 'ces-mac-06236.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1010633' : }
+  nacs_management::printers{ 'ces_wkrm': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
+}
+
+# Chelsea Dietrich Mac
+node 'ces-mac-06235.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1011963' : }
+  nacs_management::printers{ 'nms_office_copier': }
+  nacs_management::printers{ 'nms_ces_ricoh_7500': }
+}
+
+# Jenna Gray Mac
+node 'ces-mac-06055.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1009382' : }
+  nacs_management::printers{ 'ces_wkrm': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
+}
+
+# Cami Haas Mac
+node 'ces-mac-06070.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1011914' : }
+  nacs_management::printers{ 'ces_wkrm': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
+}
+
+# Pam Hersha Mac
+node 'ces-mac-06054.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1004123' : }
+  nacs_management::printers{ 'ces_wkrm': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
+  nacs_management::printers{ 'nms_ces_ricoh_7500': }
+}
+
+# Kelly Haseman Mac
+node 'ces-mac-06069.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1008647' : }
+  nacs_management::printers{ 'ces_wkrm': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
+}
+
+# Mackenzie Plassman Mac
+node 'ces-mac-06053.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1010792' : }
+  nacs_management::printers{ 'ces_wkrm': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
+}
+
+# Jessica Ramirez Mac
+node 'ces-mac-06068.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1011445' : }
+  nacs_management::printers{ 'ces_wkrm': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
+}
+
+# Erin Failor Mac
+node 'ces-mac-06233.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1009011' : }
+  nacs_management::printers{ 'ces_wkrm': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
+}
+
+# Sarah Rosebrock Mac
+node 'ces-mac-06071.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1008491' : }
+  nacs_management::printers{ 'ces_wkrm': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
+}
+
+# Shawna Schroeder Mac
+node 'ces-mac-06064.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1006825' : }
+  nacs_management::printers{ 'ces_wkrm': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
+}
+
+# Kristin Shepard Mac
+node 'ces-mac-06063.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1001036' : }
+  nacs_management::printers{ 'ces_wkrm': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
+}
+
+# Cyndia Tilley Mac
+node 'ces-mac-06065.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1007497' : }
+  nacs_management::printers{ 'ces_wkrm': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
+}
+
+# Aaron Walston Mac
+node 'ces-mac-06052.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1011921' : }
+  nacs_management::printers{ 'ces_wkrm': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
+}
+
+# Greg Wisniewski Mac
+node 'ces-mac-06067.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1008204' : }
+  nacs_management::printers{ 'ces_wkrm': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
+}
+
+# Karl Yunker Mac
+node 'ces-mac-06056.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1008365' : }
+  nacs_management::printers{ 'ces_wkrm': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
 }
 
 # CES Lab
@@ -90,6 +229,10 @@ node /^ces\-\w+\-\d/ inherits 'winbasenode' {
 
 node 'ces-108-0.nas.local' inherits 'winbasenode' {
   package { 'Gr4Math' :
+    ensure => installed,
+  }
+
+  package { 'dropbox':
     ensure => installed,
   }
 }

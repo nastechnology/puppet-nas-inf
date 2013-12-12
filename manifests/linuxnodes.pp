@@ -14,7 +14,7 @@ node 'puppet.nas.local' {
     type    => 'ctime',
   }
 
-  #notify { "debug: tidy command should run now": }
+  notify { "debug: tidy command should run now": }
  
   file { "/etc/sudoers":
     owner   => "root",

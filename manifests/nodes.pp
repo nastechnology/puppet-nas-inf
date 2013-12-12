@@ -1,7 +1,6 @@
 node 'tech-choco-test.nas.local' inherits 'winbasenode' {
   include nacs_management
   include nacs_management::techspecs
-  include nacs_management::saxon
   include nacs_management::elementaryfonts
 #  include nacs_management::examview
 #  include nacs_management::examview::historyto1877
@@ -9,8 +8,6 @@ node 'tech-choco-test.nas.local' inherits 'winbasenode' {
   include nacs_management::atrts
 
 
-  include nacs_management::examview::algebra1
-  include nacs_management::examview
 
   package { 'virtualbusiness.retail' :
     ensure => installed,
@@ -75,6 +72,16 @@ node 'nas-dsign.nas.local' {
 node 'nas-sped-trn-13.nasadm.local' inherits 'winbasenode' {
 }
 
+node 'nas-nurse.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1001015': }
+  nacs_management::printers { 'nhs_copier': }
+  nacs_management::printers { 'ces_office_copier': }
+  nacs_management::printers { 'nms_office_copier': }
+  nacs_management::printers { 'wes_office': }
+  nacs_management::printers { 'cdb_wkrm_copier': }
+}
+
 node 'nas-test-0.nas.local' {
   registry_key {'hkcr\.jnlp':
     ensure => present,
@@ -126,11 +133,15 @@ node 'ces-214-guid.nas.local' inherits 'winbasenode' {
 node 'tech-dev-mini.local' {
   include nacs_management
   include nacs_management::techspecs
+  #include munkiclient
+  #include munkiclient::config
+  #include nacs_management::maccheckmngsft
 
   class { 'nacs_management::allprinters': }   
 
   nacs_management::printers{'nhs_copier': }
   nacs_management::printers{ 'ces_office_copier': }
+ 
 }
 
 node 'nhs-ios-server.nas.local' inherits 'macbasenode' {

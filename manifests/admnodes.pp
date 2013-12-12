@@ -18,6 +18,19 @@ node 'boe-mac-06185.nas.local' inherits 'macbasenode' {
   nacs_management::map::idrive { '1003297':
     server => 'adm-fs.nasadm.local',
   }
+
+  nacs_management::map::admk { '1003297KDrive':
+    user => '1003297',
+  }
+
+  class { 'nacs_management::allprinters': }
+  nacs_management::printers { 'boe_copier': }
+}
+
+# Marks MacBook Pro
+node 'nas-tech-tc.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::printers { 'boe_copier': }
 }
 
 node 'nhs-adm-sec-1.nasadm.local' inherits 'winbasenode' {
@@ -56,7 +69,7 @@ node 'nas-tc.nas.local' inherits 'macbasenode' {
 
 }
 
-node 'nhs-adm-rw.nasadm.local' inherits 'macbasenode' {
+node 'nhs-adm-rw.nas.local' inherits 'macbasenode' {
   include nacs_management::checkin
   class { 'nacs_management::allprinters': }
   nacs_management::printers { 'nhs_color': }
@@ -67,22 +80,6 @@ node 'nhs-adm-rw.nasadm.local' inherits 'macbasenode' {
     server => 'adm-fs.nasadm.local',
   }
 
-  class { 'nacs_management::mapdrive::alldistrict' :
-    user => '1008127',
-  }
-
-  class { 'nacs_management::mapdrive::admk' :
-    user => '1008127',
-  }
-
-  class { 'nacs_management::mapdrive::nhsshared':
-    user => '1008127',
-  }
-
-  class { 'nacs_management::mapdrive::nmsshared':
-    user     => '1008127',
-    building => 'nhs',
-  }
 }
 
 
