@@ -23,6 +23,10 @@ node 'boe-mac-06185.nas.local' inherits 'macbasenode' {
     user => '1003297',
   }
 
+  nacs_management::map::admj { '1003297JDrive':
+    user => '1003297',
+  }
+
   class { 'nacs_management::allprinters': }
   nacs_management::printers { 'boe_copier': }
 }

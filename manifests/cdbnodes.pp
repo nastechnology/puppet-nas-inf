@@ -217,6 +217,26 @@ node 'cdb-mac-06223.nas.local' inherits 'macbasenode' {
   nacs_management::printers{ 'cdb_wkrm_copier': }
   nacs_management::printers{ 'cdb_wkrm_colorlaser': }
 }
+
+# Suzanne Badenhop Mac
+node 'cdb-mac-06207.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1001337': }
+  nacs_management::printers{ 'cdb_wkrm_copier': }
+  nacs_management::printers{ 'cdb_wkrm_colorlaser': }
+  nacs_management::printers{ 'cdb_108_copier': }
+}
+
+# Megan Flanagan Mac
+node 'cdb-mac-06234.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1011970': }
+  nacs_management::printers{ 'cdb_wkrm_copier': }
+  nacs_management::printers{ 'cdb_wkrm_colorlaser': }
+  nacs_management::printers{ 'cdb_108_copier': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
+}
+
 node /^cdb\-m\d+\-\d/ inherits 'winbasenode' {
 }
 

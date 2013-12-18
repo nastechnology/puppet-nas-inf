@@ -44,13 +44,27 @@ node 'dhcp.nas.local' {
     hwaddress => '00:50:56:a0:00:15',
   }
 
+  # Wifi Management
+  dhcp::server::subnet { '10.20.9.0':
+    netmask     => '255.255.255.0',
+    routers     => '10.20.9.1',
+    broadcast   => '10.20.9.255',
+    range_begin => '10.20.9.100',
+    range_end   => '10.20.9.200',
+    filename    => 'pxelinux.0',
+    next_server => '10.20.2.35',
+    other_opts  => 'option ubnt.unifi-address 10.20.2.50',
+    domain_name => 'nas.local',
+    dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
+  }
+
   #HS Staff
   dhcp::server::subnet { '10.20.10.0':
     netmask     => '255.255.255.0',
     routers     => '10.20.10.1',
     broadcast   => '10.20.10.255',
-    range_begin => '10.20.10.100',
-    range_end   => '10.20.10.200',
+    range_begin => '10.20.10.20',
+    range_end   => '10.20.10.250',
     filename    => 'pxelinux.0',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
@@ -250,13 +264,47 @@ node 'dhcp.nas.local' {
     hwaddress => 'b8:e8:56:36:ed:04',
   }
 
+# NHS Skype Users
+
+  # Lori Drewes Mac
+  dhcp::server::host {'nhs-mac-06003.nas.local':
+    address   => '10.20.18.28',
+    hwaddress => 'a8:bb:cf:18:3a:00',
+  }
+
+  # Brian Wolfe Mac
+  dhcp::server::host {'nhs-mac-06073.nas.local':
+    address   => '10.20.18.18',
+    hwaddress => 'a8:bb:cf:18:6a:4a',
+  }
+
+  # Brock Dishop Mac
+  dhcp::server::host {'nhs-mac-06006.nas.local':
+    address   => '10.20.18.53',
+    hwaddress => 'a8:bb:cf:18:61:82',
+  }
+
+  # Rebecca Seigneur Mac 
+  dhcp::server::host {'nhs-mac-06010.nas.local':
+    address   => '10.20.17.171',
+    hwaddress => 'a8:bb:cf:1d:bc:0a',
+  }
+
+  # Jenna Storrer Mac 
+  dhcp::server::host {'nhs-mac-06187.nas.local':
+    address   => '10.20.19.11',
+    hwaddress => 'a8:bb:cf:18:56:96',
+  }
+
+# End NHS skype users
+
   #MS Staff
   dhcp::server::subnet { '10.20.20.0':
     netmask     => '255.255.255.0',
     routers     => '10.20.20.1',
     broadcast   => '10.20.20.255',
-    range_begin => '10.20.20.100',
-    range_end   => '10.20.20.200',
+    range_begin => '10.20.20.20',
+    range_end   => '10.20.20.250',
     filename    => 'pxelinux.0',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',

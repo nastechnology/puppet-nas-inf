@@ -116,8 +116,7 @@ node 'nms-mac-06084.nas.local' inherits 'macbasenode' {
 node 'nms-mac-06162.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1002800': }
-  nacs_management::printers { 'nms_upstairs_copier': }
-  nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'ces_wkrm': }
 }
 
 # Christina Fedderke Mac
@@ -292,6 +291,14 @@ node 'nms-mac-06091.nas.local' inherits 'macbasenode' {
 node 'nms-mac-06090.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1008435': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'nms_office': }
+}
+
+# Amanda Gilles Mac
+node 'nms-mac-06062.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1011990': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
 }

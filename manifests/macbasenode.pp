@@ -6,10 +6,10 @@ node macbasenode {
 #  include nacs_management::maccheckmngsft
 
   if ($::mac_laptop == "mac_laptop"){
-    mac_profiles_handler::manage { 'org.nacs.profile':
-      ensure => present,
-      file_source => 'puppet:///modules/nacs_management/org.nacs.profile.mobileconfig',
-    }
+    #mac_profiles_handler::manage { 'org.nacs.profile':
+    #  ensure      => present,
+    #  file_source => 'puppet:///modules/nacs_management/org.nacs.profile.mobileconfig',
+    #}
   }
 
   package { 'YouTubeDownloader-1.7.dmg':
@@ -20,7 +20,7 @@ node macbasenode {
 
   package { 'Firefox-26.0.dmg':
     provider => pkgdmg,
-    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2013/12/Firefox26.0.dmg',
+    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2013/12/Firefox-26.0.dmg',
     ensure   => installed,
   }
 }

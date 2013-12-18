@@ -131,4 +131,9 @@ node winbasenode {
   package { 'Quicktime':
     ensure => installed,
   }
+
+  service { 'wuauserv':
+    ensure => 'stopped',
+    enable => false,
+  }
 }

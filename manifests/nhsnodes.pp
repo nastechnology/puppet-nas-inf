@@ -439,6 +439,21 @@ node 'nhs-mac-06043.nas.local' inherits 'macbasenode' {
   nacs_management::printers{ 'nhs_131_copier': }
 }
 
+# Dan Baer Mac
+node 'nhs-mac-06057.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1001358': }
+  nacs_management::printers{ 'nhs_copier': }
+  nacs_management::printers{ 'nhs_131_copier': }
+}
+
+# 21st Cent Grant Mac
+node 'nhs-mac-06247.nas.local' inherits 'macbasenode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::printers{ 'nhs_copier': }
+  nacs_management::printers{ 'nhs_131_copier': }
+}
+
 node 'nas-lib-laptop.nas.local' inherits 'winbasenode' {
   package { 'SirsiWorkflows' :
     ensure => installed,
