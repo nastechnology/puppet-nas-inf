@@ -29,12 +29,14 @@ node 'boe-mac-06185.nas.local' inherits 'macbasenode' {
 
   class { 'nacs_management::allprinters': }
   nacs_management::printers { 'boe_copier': }
+  nacs_management::wireless { 'staff': }
 }
 
 # Marks MacBook Pro
 node 'nas-tech-tc.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::printers { 'boe_copier': }
+  nacs_management::wireless { 'staff': }
 }
 
 node 'nhs-adm-sec-1.nasadm.local' inherits 'winbasenode' {
@@ -84,6 +86,7 @@ node 'nhs-adm-rw.nas.local' inherits 'macbasenode' {
     server => 'adm-fs.nasadm.local',
   }
 
+  nacs_management::wireless { 'staff': }
 }
 
 

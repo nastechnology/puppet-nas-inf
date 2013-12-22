@@ -9,6 +9,7 @@ node 'ces-mac-06174.nas.local' inherits 'macbasenode' {
   nacs_management::map::idrive { '1005838':
     server => 'adm-fs.nasadm.local',
   }
+  nacs_management::map::cesshared { '1005838': }
   nacs_management::printers{ 'ces_office_copier': }
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
@@ -18,6 +19,7 @@ node 'ces-mac-06174.nas.local' inherits 'macbasenode' {
 node 'ces-mac-06188.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1010584' : }
+  nacs_management::map::cesshared { '1010584': }
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
 }
@@ -28,6 +30,7 @@ node 'ces-mac-06188.nas.local' inherits 'macbasenode' {
 node 'ces-mac-06237.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1001694' : }
+  nacs_management::map::cesshared { '1001694': }
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
 }
@@ -36,6 +39,7 @@ node 'ces-mac-06237.nas.local' inherits 'macbasenode' {
 node 'ces-mac-06236.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1010633' : }
+  nacs_management::map::cesshared { '1010633': }
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
 }
@@ -44,6 +48,7 @@ node 'ces-mac-06236.nas.local' inherits 'macbasenode' {
 node 'ces-mac-06235.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1011963' : }
+  nacs_management::map::cesshared { '1011963': }
   nacs_management::printers{ 'nms_office_copier': }
   nacs_management::printers{ 'nms_ces_ricoh_7500': }
 }
@@ -52,6 +57,7 @@ node 'ces-mac-06235.nas.local' inherits 'macbasenode' {
 node 'ces-mac-06055.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1009382' : }
+  nacs_management::map::cesshared { '1009382': }
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
 }
@@ -60,6 +66,7 @@ node 'ces-mac-06055.nas.local' inherits 'macbasenode' {
 node 'ces-mac-06070.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1011914' : }
+  nacs_management::map::cesshared { '1011914': }
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
 }
@@ -68,6 +75,7 @@ node 'ces-mac-06070.nas.local' inherits 'macbasenode' {
 node 'ces-mac-06054.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1004123' : }
+  nacs_management::map::cesshared { '1004123': }
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
   nacs_management::printers{ 'nms_ces_ricoh_7500': }
@@ -77,6 +85,7 @@ node 'ces-mac-06054.nas.local' inherits 'macbasenode' {
 node 'ces-mac-06069.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1008647' : }
+  nacs_management::map::cesshared { '1008647': }
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
 }
@@ -85,6 +94,7 @@ node 'ces-mac-06069.nas.local' inherits 'macbasenode' {
 node 'ces-mac-06053.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1010792' : }
+  nacs_management::map::cesshared { '1010792': }
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
 }
@@ -93,6 +103,7 @@ node 'ces-mac-06053.nas.local' inherits 'macbasenode' {
 node 'ces-mac-06068.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1011445' : }
+  nacs_management::map::cesshared { '1011445': }
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
 }
@@ -101,6 +112,7 @@ node 'ces-mac-06068.nas.local' inherits 'macbasenode' {
 node 'ces-mac-06233.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1009011' : }
+  nacs_management::map::cesshared { '1009011': }  
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
 }
@@ -109,6 +121,7 @@ node 'ces-mac-06233.nas.local' inherits 'macbasenode' {
 node 'ces-mac-06071.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1008491' : }
+  nacs_management::map::cesshared { '1008491': }
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
 }
@@ -117,6 +130,7 @@ node 'ces-mac-06071.nas.local' inherits 'macbasenode' {
 node 'ces-mac-06064.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1006825' : }
+  nacs_management::map::cesshared { '1006825': }
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
 }
@@ -125,6 +139,7 @@ node 'ces-mac-06064.nas.local' inherits 'macbasenode' {
 node 'ces-mac-06063.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1001036' : }
+  nacs_management::map::cesshared { '1001036': }
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
 }
@@ -133,6 +148,7 @@ node 'ces-mac-06063.nas.local' inherits 'macbasenode' {
 node 'ces-mac-06065.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1007497' : }
+  nacs_management::map::cesshared { '1007497': }
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
 }
@@ -141,6 +157,7 @@ node 'ces-mac-06065.nas.local' inherits 'macbasenode' {
 node 'ces-mac-06052.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1011921' : }
+  nacs_management::map::cesshared { '1011921': }
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
 }
@@ -149,6 +166,7 @@ node 'ces-mac-06052.nas.local' inherits 'macbasenode' {
 node 'ces-mac-06067.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1008204' : }
+  nacs_management::map::cesshared { '1008204': }
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
 }
@@ -157,6 +175,7 @@ node 'ces-mac-06067.nas.local' inherits 'macbasenode' {
 node 'ces-mac-06056.nas.local' inherits 'macbasenode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1008365' : }
+  nacs_management::map::cesshared { '1008365': }
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
 }

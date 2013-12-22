@@ -51,7 +51,7 @@ node 'tech-choco-test.nas.local' inherits 'winbasenode' {
 
   exec { 'addFontsToRegistry':
     command => 'C:\\WINDOWS\\regedit.exe /s C:\\NACSManage\\fonts.reg',
-    require => Exec['ChangeFontREGPerms'],
+#    require => Exec['ChangeFontREGPerms'],
   }
 
 #  class { 'nacs_management::defaultprinter':

@@ -48,6 +48,8 @@ node 'nhs-mac-06184.nas.local' inherits 'macbasenode' {
   nacs_management::map::nhsshared { '1011459NHSShared': 
     user => '1011459',
   }
+  nacs_management::wireless { 'staff': }
+
 }
 
 # Jenna Storrer Mac
