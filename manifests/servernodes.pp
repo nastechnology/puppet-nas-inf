@@ -12,6 +12,7 @@ node 'nas-mysql.nas.local' {
   }
 }
 
+# Veeam Backup Server
 node 'nas-vstore.nas.local' {
   include winfacts
   include nacs_management
@@ -28,6 +29,35 @@ node 'nas-vstore.nas.local' {
     max_log_policy => 'overwrite',
   }
 
+  # Veeam Backup Catalog Data Service
+  service { 'Veeam Backup Catalog Data Service':
+    ensure  => 'running',
+    enable => true,
+  }
+
+  # Veeam Backup Proxy Service
+  service { 'VeeamTransportSvc':
+    ensure  => 'running',
+    enable => true,
+  }  
+
+  # Veeam Backup Service
+  service { 'Veeam Backup and Replication Service':
+    ensure  => 'running',
+    enable => true,
+  }
+
+  # Veeam Installer Service
+  service { 'VeeamDeploymentService':
+    ensure  => 'running',
+    enable => true,
+  }
+
+  # Veeam vPower NFS Service
+  service { 'VeeamNFSSvc':
+    ensure  => 'running',
+    enable => true,
+  }
 }
 
 node 'nas-exchange-2.nas.local' {
@@ -59,7 +89,7 @@ node 'nas-exchange-2.nas.local' {
   }
 }
 
-
+# SDS Server
 node 'nas-sds.nas.local' {
   include winfacts
   include nacs_management

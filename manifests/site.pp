@@ -16,7 +16,9 @@ import 'nodes.pp'
 import 'yrbknodes.pp'
 import 'buslabnodes.pp'
 import 'deca.pp'
-$puppetserver = 'puppet.nas.local'
+import 'teachersmacnode.pp'
+import 'staffmacnode.pp'
+$puppetserver = 'puppet.nacswildcats.org'
 
 if $operatingsystem == 'windows' {
   $sid = 'NACS'

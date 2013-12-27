@@ -14,7 +14,7 @@ node 'adm-super.nasadm.local' inherits 'winbasenode' {
 }
 
 # Steve's Mac
-node 'boe-mac-06185.nas.local' inherits 'macbasenode' {
+node 'boe-mac-06185.nas.local' inherits 'staffmacnode' {
   nacs_management::map::idrive { '1003297':
     server => 'adm-fs.nasadm.local',
   }
@@ -29,14 +29,12 @@ node 'boe-mac-06185.nas.local' inherits 'macbasenode' {
 
   class { 'nacs_management::allprinters': }
   nacs_management::printers { 'boe_copier': }
-  nacs_management::wireless { 'staff': }
 }
 
 # Marks MacBook Pro
-node 'nas-tech-tc.nas.local' inherits 'macbasenode' {
+node 'nas-tech-tc.nas.local' inherits 'staffmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::printers { 'boe_copier': }
-  nacs_management::wireless { 'staff': }
 }
 
 node 'nhs-adm-sec-1.nasadm.local' inherits 'winbasenode' {
@@ -75,7 +73,7 @@ node 'nas-tc.nas.local' inherits 'macbasenode' {
 
 }
 
-node 'nhs-adm-rw.nas.local' inherits 'macbasenode' {
+node 'nhs-adm-rw.nas.local' inherits 'staffmacnode' {
   include nacs_management::checkin
   class { 'nacs_management::allprinters': }
   nacs_management::printers { 'nhs_color': }

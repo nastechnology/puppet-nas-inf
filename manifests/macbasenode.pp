@@ -1,4 +1,4 @@
-node macbasenode {
+node 'macbasenode' {
 #  include munkiclient
 #  include munkiclient::config
   include nacs_management
