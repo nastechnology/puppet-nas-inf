@@ -4,6 +4,7 @@ node 'macbasenode' {
   include nacs_management
   include nacs_management::techspecs
 #  include nacs_management::maccheckmngsft
+  include nacs_management::scriptrunner
 
   if ($::mac_laptop == "mac_laptop"){
     #mac_profiles_handler::manage { 'org.nacs.profile':
