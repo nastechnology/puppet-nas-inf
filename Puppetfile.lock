@@ -3,12 +3,12 @@ FORGE
   specs:
     adenning/winfacts (0.0.3)
     badgerious/windows_env (2.0.2)
-    glarizza/property_list_key (0.1.0)
+    glarizza/property_list_key (0.2.0)
     grahamgilbert/mac_facts (0.4.0)
-    hunner/wordpress (0.4.2)
-      puppetlabs/mysql (>= 0.5.0)
+    hunner/wordpress (0.5.1)
+      puppetlabs/concat (>= 1.0.0)
+      puppetlabs/mysql (>= 2.1.0)
       puppetlabs/stdlib (>= 2.3.1)
-      ripienaar/concat (>= 0.2.0)
     joshcooper/powershell (0.0.6)
     mosen/cups (1.2.1)
     puppetlabs/apache (0.9.0)
@@ -19,9 +19,9 @@ FORGE
     puppetlabs/concat (1.0.0-rc1)
     puppetlabs/firewall (0.4.2)
     puppetlabs/inifile (1.0.0)
-    puppetlabs/mysql (2.0.1)
+    puppetlabs/mysql (2.1.0)
       puppetlabs/stdlib (>= 2.2.1)
-    puppetlabs/ntp (3.0.0-rc1)
+    puppetlabs/ntp (3.0.1)
       puppetlabs/stdlib (>= 0.1.6)
     puppetlabs/postgresql (3.2.0)
       puppetlabs/apt (< 2.0.0, >= 1.1.0)
@@ -36,16 +36,15 @@ FORGE
     puppetlabs/registry (0.1.2)
       puppetlabs/stdlib (>= 2.3.0)
     puppetlabs/stdlib (4.1.0)
-    puppetlabs/vcsrepo (0.1.2)
+    puppetlabs/vcsrepo (0.2.0)
     rcoleman/mac_profiles_handler (0.2.0)
-    ripienaar/concat (0.2.0)
 
 GIT
   remote: https://github.com/chocolatey/puppet-chocolatey.git
   ref: master
-  sha: d60ad490c0d49973c20585087d1deb32ffb85af9
+  sha: 686b1aa1577aeb295f50cbc39ca695510c16c69b
   specs:
-    chocolatey (0.0.1)
+    chocolatey (0.0.2)
 
 GIT
   remote: https://github.com/liamjbennett/puppet-windows_eventlog.git
@@ -65,14 +64,14 @@ GIT
 GIT
   remote: https://github.com/nastechnology/munkiclient.git
   ref: master
-  sha: 9c21ad67d5a4b7e532131822bab9730165e3d71d
+  sha: 0728f0ee7d7c8f56832ff997a10405e66ae7cf55
   specs:
     munkiclient (0.0.1)
 
 GIT
   remote: https://github.com/nastechnology/nacs_management.git
   ref: master
-  sha: 25db7dbf8d7c45c397083b0f324d55164841a924
+  sha: de4d129322a1668c3648b524a39569c44d4a90c2
   specs:
     nacs_management (0.2.1)
       puppetlabs/registry (>= 0.1.1)

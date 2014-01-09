@@ -1,5 +1,6 @@
 node 'dhcp.nas.local' {
   include dhcp::server
+  include nagios::target::ubuntu
 
   class { 'apache':
     mpm_module => 'prefork'

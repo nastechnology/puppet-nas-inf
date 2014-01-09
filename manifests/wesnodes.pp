@@ -22,6 +22,9 @@ node 'wes-mac-06186.nas.local' inherits 'staffmacnode' {
   nacs_management::map::idrive { '1011044':
     server => 'adm-fs.nasadm.local',
   }
+
+  nacs_management::map::wesshared { '1011044': }
+
   nacs_management::printers { 'wes_office': }
   nacs_management::printers { 'wes_wkrm_color': }
 }

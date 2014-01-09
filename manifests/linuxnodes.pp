@@ -35,6 +35,8 @@ node 'puppet.nas.local' {
 
 # PuppetDB File
 node 'pdb.nas.local' {
+  include nagios::target::ubuntu
+
   class { 'puppetdb::database::postgresql':
     listen_addresses => 'pdb.nas.local',
   }
@@ -47,6 +49,12 @@ node 'pdb.nas.local' {
 
 # Puppet Dashboard
 node 'puppetdb.nas.local' {
+  include nagios::target::ubuntu
+}
+
+# NAS API
+node 'api.nas.local' {
+  include nagios::target::ubuntu
 }
 
 node 'nmspcoip-1.nacs.local' {
@@ -59,6 +67,8 @@ node 'nmspcoip-1.nacs.local' {
 
 
 node 'java.nas.local' {
+  include nagios::target::ubuntu
+
   package { 'openjdk-7-jdk':
     ensure => installed
   }
@@ -280,6 +290,8 @@ node 'nas-helpdesk.nas.local' {
 
 
 node 'tech.nas.local' {
+  include nagios::target::ubuntu
+
   package { 'openssh-server':
     ensure => present,
   }
@@ -314,23 +326,13 @@ node 'staff.nas.local' {
 }
 
 node 'nagios.nas.local' {
-  package { 'nagios3':
-    ensure => installed,
-  }
-
-  package { 'nagios-nrpe-plugin':
-    ensure => installed,
-  }
- 
-  package { 'nagios-nrpe-server':
-    ensure => installed,
-  }
-
-  package { 'nagios-plugins':
-    ensure => installed,
-  }
+  include nagios::monitor
 
   package { 'openssh-server':
+    ensure => installed,
+  }
+
+  package { 'build-essential':
     ensure => installed,
   }
 }
