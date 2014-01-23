@@ -282,9 +282,7 @@ node 'cdb-mac-06223.nas.local' inherits 'teachersmacnode' {
 
 
   nacs_management::map::cdbshared { '1003633': }
-  nacs_management::map::kdrive { '1003633KDrive': 
-    user => '1003633',
-  }
+  nacs_management::map::kdrive { '1003633': }
 }
 
 # Suzanne Badenhop Mac
