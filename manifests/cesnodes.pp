@@ -13,6 +13,8 @@ node 'ces-mac-06174.nas.local' inherits 'staffmacnode' {
   nacs_management::printers{ 'ces_office_copier': }
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
+
+  nacs_management::tmutil { '1005838': }
 }
 
 # Brett Cordy mac
@@ -51,6 +53,10 @@ node 'ces-mac-06235.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::cesshared { '1011963': }
   nacs_management::printers{ 'nms_office_copier': }
   nacs_management::printers{ 'nms_ces_ricoh_7500': }
+
+  nacs_management::map::nmsshared { '1011963nmsshared':
+    user => '1011963',
+  }
 }
 
 # Jenna Gray Mac

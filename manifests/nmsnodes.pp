@@ -31,6 +31,8 @@ node 'nms-mac-06173.nas.local' inherits 'staffmacnode' {
   nacs_management::map::nmsshared { '1002786nmsshared':
     user => '1002786',
   }
+
+  nacs_management::tmutil { '1002786': }
 }
 
 # Angies Myers mac laptop
@@ -39,6 +41,10 @@ node 'nms-mac-06179.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1005705': }
   nacs_management::printers { 'nms_8lab': }
   nacs_management::printers { 'nms_upstairs_copier': }
+
+  nacs_management::map::nmsshared { '1005705nmsshared':
+    user => '1005705',
+  }
 }
 
 # Chad Brubaker mac laptop
@@ -47,6 +53,10 @@ node 'nms-mac-06167.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1001988': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+
+  nacs_management::map::nmsshared { '1001988nmsshared':
+    user => '1001988',
+  }
 }
 
 # Tracey Cohrs mac laptop
@@ -57,6 +67,10 @@ node 'nms-mac-06180.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers { 'nms_ces_ricoh_7500': }
   nacs_management::printers { 'nms_8lab': }
   nacs_management::printers { 'nms_upstairs_copier': }
+
+  nacs_management::map::nmsshared { '1005999nmsshared':
+    user => '1005999',
+  }
 }
 
 # Linda Hummer mac laptop
@@ -67,7 +81,11 @@ node 'nms-mac-06177.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers { 'nms_office': }
   nacs_management::printers { 'nms_8lab': }
   nacs_management::printers { 'nms_upstairs_copier': }
-  nacs_management::wireless { 'teachers': }
+
+  nacs_management::map::nmsshared { '1004354nmsshared':
+    user => '1004354',
+  }
+
 }
 
 # Mallory Weaver mac laptop
@@ -76,15 +94,27 @@ node 'nms-mac-06168.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1011983': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+
+  nacs_management::map::nmsshared { '1011983nmsshared': 
+    user => '1011983',
+  }
 }
 
 # Sherry Hogan mac laptop
 node 'nms-mac-06178.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1004200': }
+  
   nacs_management::printers { 'nms_office_copier': }
   nacs_management::printers { 'nms_office': }
   nacs_management::printers { 'nms_ces_ricoh_7500': }
+  nacs_management::printers { 'nms_upstairs_copier': }
+  nacs_management::printers { 'ces_upstairs_wkrm': }
+  
+
+  nacs_management::map::nmsshared { '1004200nmsshared':
+    user => '1004200',
+  }
 }
 
 # --------------- Added After Test Group --------------- 
@@ -95,6 +125,11 @@ node 'nms-mac-06079.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1001519': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+
+  nacs_management::map::nmsshared { '1001519nmsshared':
+    user => '1001519'
+  }
 }
 
 # Kelley Borton Mac
@@ -103,6 +138,11 @@ node 'nms-mac-06078.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1001736': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+
+  nacs_management::map::nmsshared { '1001736nmsshared':
+    user => '1001736nmsshared',
+  }
 }
 
 # Lynne Debbe Mac
@@ -111,6 +151,11 @@ node 'nms-mac-06084.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1002660': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+
+  nacs_management::map::nmsshared { '1002660nmsshared':
+    user => '1002660',
+  }
 }
 
 # Sara Dilbone Mac
@@ -126,6 +171,10 @@ node 'nms-mac-06083.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1011121': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+
+  nacs_management::map::nmsshared { '1011121nmsshared':
+    user => '1011121',
+  }
 }
 
 # Celeste Fryman Mac
@@ -134,6 +183,10 @@ node 'nms-mac-06165.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1001540': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+
+  nacs_management::map::nmsshared { '1001540nmsshared':
+    user => '1001540',
+  }
 }
 
 # Kenny Bostelman Mac
@@ -142,6 +195,11 @@ node 'nms-mac-06077.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1001792': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+ 
+  nacs_management::map::nmsshared { '1001792nmsshared': 
+    user => '1001792',
+  }
 }
 
 # Jay Brown Mac
@@ -150,6 +208,11 @@ node 'nms-mac-06076.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1010556': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+
+  nacs_management::map::nmsshared { '1010556nmsshared':
+    user => '1010556',
+  }
 }
 
 # Christa Burken Mac
@@ -158,6 +221,11 @@ node 'nms-mac-06075.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1002121': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+
+  nacs_management::map::nmsshared { '1002121nmsshared':
+    user => '1002121',
+  }
 }
 
 # LuAnn Gorsuch Mac
@@ -166,6 +234,11 @@ node 'nms-mac-06082.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1003696': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+
+  nacs_management::map::nmsshared { '1003696nmsshared':
+    user => '1003696',
+  }
 }
 
 # Andrea Hoffman Mac
@@ -174,6 +247,11 @@ node 'nms-mac-06164.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1004186': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+
+  nacs_management::map::nmsshared { '1004186nmsshared':
+    user => '1004186',
+  }
 }
 
 # Jodi Irving Mac
@@ -182,6 +260,11 @@ node 'nms-mac-06089.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1004410': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+
+  nacs_management::map::nmsshared { '1004410nmsshared':
+    user => '1004410',
+  }
 }
 
 # Isiah Keefer Mac
@@ -190,6 +273,11 @@ node 'nms-mac-06088.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1011977': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+
+  nacs_management::map::nmsshared { '1011977nmsshared':
+    user => '1011977',
+  }
 }
 
 # Holli Horn Mac
@@ -198,6 +286,11 @@ node 'nms-mac-06081.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1010199': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+
+  nacs_management::map::nmsshared { '1010199nmsshared':
+    user => '1010199',
+  }
 }
 
 # Mike Hummer Mac
@@ -206,6 +299,11 @@ node 'nms-mac-06041.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1004361': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+
+  nacs_management::map::nmsshared { '1004361nmsshared':
+    user => '1004361',
+  }
 }
 
 # Jim Murcko Mac
@@ -214,6 +312,11 @@ node 'nms-mac-06080.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1005677': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+
+  nacs_management::map::nmsshared { '1005677nmsshared':
+    user => '1005677',
+  }
 }
 
 # Jeff Peters Mac
@@ -222,6 +325,7 @@ node 'nms-mac-06039.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1010037': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
 }
 
 # Brittany Labie Mac
@@ -230,6 +334,12 @@ node 'nms-mac-06087.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1010072': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+
+  nacs_management::map::nmsshared { '1010072nmsshared':
+    user => '1010072',
+  }
+
 }
 
 # Ashley Miller Mac
@@ -238,6 +348,12 @@ node 'nms-mac-06085.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1009333': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+
+  nacs_management::map::nmsshared { '1009333nmsshared':
+    user => '1009333',
+  }
+
 }
 
 # Peggy Mossing Mac
@@ -246,6 +362,12 @@ node 'nms-mac-06086.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1005642': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
+
+  nacs_management::map::nmsshared { '1005642nmsshared':
+    user => '1005642',
+  }
 }
 
 # Cara Ressler Mac
@@ -254,6 +376,11 @@ node 'nms-mac-06094.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1006237': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+
+  nacs_management::map::nmsshared { '1006237nmsshared':
+    user => '1006237',
+  }
 }
 
 # Jen Rausch Mac
@@ -262,6 +389,11 @@ node 'nms-mac-06038.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1009505': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+
+  nacs_management::map::nmsshared { '1009505nmsshared':
+    user => '1009505',
+  }
 }
 
 # Jason Seiler Mac
@@ -270,6 +402,11 @@ node 'nms-mac-06093.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1006895': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+
+  nacs_management::map::nmsshared { '1006895nmsshared':
+    user => '1006895',
+  }
 }
 
 # Tyler Swary Mac
@@ -278,6 +415,13 @@ node 'nms-mac-06092.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1011949': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
+
+  nacs_management::map::nmsshared { '1011949nmsshared':
+    user => '1011949',
+  }
+
 }
 
 # Heather Villagomez Mac
@@ -286,6 +430,11 @@ node 'nms-mac-06091.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1011928': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+
+  nacs_management::map::nmsshared { '1011928nmsshared':
+    user => '1011928',
+  }
 }
 
 # Brenda Zuch Mac
@@ -294,6 +443,12 @@ node 'nms-mac-06090.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1008435': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
+
+  nacs_management::map::nmsshared { '1008435nmsshared':
+    user => '1008435',
+  }
 }
 
 # Amanda Gilles Mac
@@ -302,6 +457,7 @@ node 'nms-mac-06062.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1011990': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
 }
 
 node 'nms-111-0.nas.local' inherits 'winbasenode' {

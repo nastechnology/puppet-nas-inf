@@ -18,6 +18,7 @@ forge "http://forge.puppetlabs.com"
  mod 'glarizza/property_list_key'
  mod 'badgerious/windows_env'
  mod 'hunner/wordpress'
+ mod 'puppetlabs/reboot'
 
  mod 'chocolatey',
    :git => 'https://github.com/chocolatey/puppet-chocolatey.git'

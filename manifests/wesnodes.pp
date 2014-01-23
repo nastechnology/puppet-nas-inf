@@ -24,9 +24,13 @@ node 'wes-mac-06186.nas.local' inherits 'staffmacnode' {
   }
 
   nacs_management::map::wesshared { '1011044': }
+  nacs_management::map::admk { '1011044': }
+  nacs_management::map::alldistrict { '1011044': } 
 
   nacs_management::printers { 'wes_office': }
   nacs_management::printers { 'wes_wkrm_color': }
+
+  nacs_management::tmutil { '1011044': }
 }
 
 # Doug Edwards mac laptop
@@ -51,6 +55,7 @@ node 'wes-mac-06170.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1011942': }
   nacs_management::printers { 'wes_wkrm_copier': }
   nacs_management::printers { 'wes_office': }
+  nacs_management::printers { 'wes_wkrm_color': }
 }
 
 #
@@ -135,6 +140,7 @@ node 'wes-mac-06217.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1005852': }
   nacs_management::printers { 'wes_wkrm_copier': }
   nacs_management::printers { 'wes_office': }
+  nacs_management::printers { 'wes_wkrm_color': }
 }
 
 # Jason Ohlemacher Mac

@@ -95,11 +95,11 @@ node 'nas-fs.nas.local' {
   include nacs_management
   include nagios::target::windows
 
-  @@nagios_service { "check_d_drive_space_${hostname}":
+  @@nagios_service { "check_e_drive_space_${hostname}":
     use                 => "generic-service",
     host_name           => "$fqdn",
     check_command       => 'check_nt!USEDDISKSPACE!-l e -w 80 -c 90',
-    service_description => "check_d_drive_space_${hostname}",
+    service_description => "check_e_drive_space_${hostname}",
   }
 
   windows_eventlog { 'Application':

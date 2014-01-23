@@ -430,7 +430,7 @@ node 'dhcp.nas.local' {
 
   #MS 6th Grade Camera on CES Network
   dhcp::server::host {'nms-camera4':
-    address   => '10.20.36.5',
+    address   => '10.20.26.8',
     hwaddress => '00:27:22:60:50:fe',
   }
 

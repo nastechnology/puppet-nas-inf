@@ -7,8 +7,6 @@ node 'tech-choco-test.nas.local' inherits 'winbasenode' {
   include nacs_management::screen::1024x768
   include nacs_management::atrts
 
-
-
   package { 'virtualbusiness.retail' :
     ensure => installed,
   }

@@ -29,12 +29,27 @@ node 'boe-mac-06185.nas.local' inherits 'staffmacnode' {
 
   class { 'nacs_management::allprinters': }
   nacs_management::printers { 'boe_copier': }
+
+  nacs_management::tmutil { '1003297': }
 }
 
 # Marks MacBook Pro
 node 'nas-tech-tc.nas.local' inherits 'staffmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::printers { 'boe_copier': }
+
+  nacs_management::printers { 'nhs_wkrm_copier': }
+  nacs_management::printers { 'nhs_wkrm_copier_2': }
+
+}
+
+# Chris MacBook Professional
+node 'nas-tech-st.nas.local' inherits 'staffmacnode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::printers { 'boe_copier': }
+
+  nacs_management::printers { 'nhs_wkrm_copier': }
+  nacs_management::printers { 'nhs_wkrm_copier_2': }
 }
 
 node 'nhs-adm-sec-1.nasadm.local' inherits 'winbasenode' {

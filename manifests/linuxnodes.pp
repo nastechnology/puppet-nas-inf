@@ -57,6 +57,11 @@ node 'api.nas.local' {
   include nagios::target::ubuntu
 }
 
+# Heidi Songs Website
+node 'nas-hsongs.nas.local' {
+  include nagios::target::ubuntu
+}
+
 node 'nmspcoip-1.nacs.local' {
   $screensaver = 'org.gnome.desktop.screensaver'
   $idle        = 'idle-activation-enabled'
@@ -88,6 +93,17 @@ node 'java.nas.local' {
       "set spec[user = 'nasadmin']/host_group/command/runas_user ALL",
     ],
   }
+
+  class { 'apache':
+    mpm_module => 'prefork',
+  }
+
+  class { 'apache::mod::php': }
+  apache::mod { 'rewrite': }
+
+  package { 'php5-mcrypt':
+    ensure => installed,
+  } 
 }
 
 node 'munkiwa.nas.local' {

@@ -48,7 +48,6 @@ node 'nhs-mac-06184.nas.local' inherits 'staffmacnode' {
   nacs_management::map::nhsshared { '1011459NHSShared': 
     user => '1011459',
   }
-  nacs_management::wireless { 'staff': }
 
 }
 
@@ -64,7 +63,6 @@ node 'nhs-mac-06187.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
-  nacs_management::wireless { 'teachers': }
 }
 
 # Kelly Cooper Mac
@@ -73,7 +71,6 @@ node 'nhs-mac-06176.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1011956': }
   nacs_management::printers { 'nhs_140_c': }
   nacs_management::printers { 'nhs_copier': }
-  nacs_management::wireless { 'teachers': }
 }
 
 # Lindy Seagrave
@@ -85,7 +82,6 @@ node 'nhs-mac-06182.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
-  nacs_management::wireless { 'teachers': }
 }
 
 # Seth Izor Mac
@@ -97,7 +93,6 @@ node 'nhs-mac-06169.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
-  nacs_management::wireless { 'teachers': }
 }
 
 # All laptops after initial release below this line please 
@@ -132,7 +127,6 @@ node 'nhs-mac-06006.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_copier_2': }
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
-  nacs_management::wireless { 'teachers': }
 }
 
 # Andrew Lesick Mac
@@ -588,7 +582,6 @@ node 'nhs-jg.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::printers{ 'nhs_140_c': }
   nacs_management::printers{ 'nhs_color': }  
-  nacs_management::wireless { 'teachers': }
 }
 
 # NHS Teacher machines
@@ -753,64 +746,142 @@ node 'nhs-228-0.nas.local' inherits 'winbasenode' {
 # MAD Cart
 #
 
-node 'mad-cart-1.nas.local' inherits 'macbasenode' {
+node 'nhs-mad-1.nas.local' inherits 'macbasenode' {
+  package { 'JavaOSX2013-05':
+    ensure   => installed,
+    provider => pkgdmg,
+    source   => 'http://support.apple.com/downloads/DL1572/en_US/JavaForOSX2013-05.dmg',
+  }
+
 }
 
-node 'mad-cart-2.nas.local' inherits 'macbasenode' {
+node 'nhs-mad-2.nas.local' inherits 'macbasenode' {
+  package { 'JavaOSX2013-05':
+    ensure   => installed,
+    provider => pkgdmg,
+    source   => 'http://support.apple.com/downloads/DL1572/en_US/JavaForOSX2013-05.dmg',
+  }
+
 }
 
-node 'mad-cart-3.nas.local' inherits 'macbasenode' {
+node 'nhs-mad-3.nas.local' inherits 'macbasenode' {
+  package { 'JavaOSX2013-05':
+    ensure   => installed,
+    provider => pkgdmg,
+    source   => 'http://support.apple.com/downloads/DL1572/en_US/JavaForOSX2013-05.dmg',
+  }
+
 }
 
-node 'mad-cart-4.nas.local' inherits 'macbasenode' {
+node 'nhs-mad-4.nas.local' inherits 'macbasenode' {
+
+  package { 'JavaOSX2013-05':
+    ensure   => installed,
+    provider => pkgdmg,
+    source   => 'http://support.apple.com/downloads/DL1572/en_US/JavaForOSX2013-05.dmg',
+  }
+
 }
 
-node 'mad-cart-5.nas.local' inherits 'macbasenode' {
+node 'nhs-mad-5.nas.local' inherits 'macbasenode' {
+
+  package { 'JavaOSX2013-05':
+    ensure   => installed,
+    provider => pkgdmg,
+    source   => 'http://support.apple.com/downloads/DL1572/en_US/JavaForOSX2013-05.dmg',
+  }
+
 }
 
-node 'mad-cart-6.nas.local' inherits 'macbasenode' {
+node 'nhs-mad-6.nas.local' inherits 'macbasenode' {
+  package { 'JavaOSX2013-05':
+    ensure   => installed,
+    provider => pkgdmg,
+    source   => 'http://support.apple.com/downloads/DL1572/en_US/JavaForOSX2013-05.dmg',
+  }
+
 }
 
-node 'mad-cart-7.nas.local' inherits 'macbasenode' {
+node 'nhs-mad-7.nas.local' inherits 'macbasenode' {
+  package { 'JavaOSX2013-05':
+    ensure   => installed,
+    provider => pkgdmg,
+    source   => 'http://support.apple.com/downloads/DL1572/en_US/JavaForOSX2013-05.dmg',
+  }
+
 }
 
-node 'mad-cart-8.nas.local' inherits 'macbasenode' {
+node 'nhs-mad-8.nas.local' inherits 'macbasenode' {
+  package { 'JavaOSX2013-05':
+    ensure   => installed,
+    provider => pkgdmg,
+    source   => 'http://support.apple.com/downloads/DL1572/en_US/JavaForOSX2013-05.dmg',
+  }
 }
 
-node 'mad-cart-9.nas.local' inherits 'macbasenode' {
+node 'nhs-mad-9.nas.local' inherits 'macbasenode' {
+
+  package { 'JavaOSX2013-05':
+    ensure   => installed,
+    provider => pkgdmg,
+    source   => 'http://support.apple.com/downloads/DL1572/en_US/JavaForOSX2013-05.dmg',
+  }
+
 }
 
-node 'mad-cart-10.nas.local' inherits 'macbasenode' {
+node 'nhs-mad-10.nas.local' inherits 'macbasenode' {
+
+  package { 'JavaOSX2013-05':
+    ensure   => installed,
+    provider => pkgdmg,
+    source   => 'http://support.apple.com/downloads/DL1572/en_US/JavaForOSX2013-05.dmg',
+  }
+
+#  file { '/etc/paths.d/android-sdk':
+#    content => "/opt/NACSManage/android-sdk/tools",
+#    require => Package['AndroidSdk-1.0'],
+#  }
+
+#  file { '/opt/NACSManage/android-sdk':
+#    ensure => directory,
+#    owner  => 'root',
+#    group  => 'wheel',
+#    mode   => '0777',
+#  }
+
+#  exec { 'ChangeMadAndroidSdkRecurse':
+#    command => '/bin/chmod -R 777 /opt/NACSManage/android-sdk',
+#  }
 }
 
-node 'mad-cart-11.nas.local' inherits 'macbasenode' {
+node 'nhs-mad-11.nas.local' inherits 'macbasenode' {
 }
 
-node 'mad-cart-12.nas.local' inherits 'macbasenode' {
+node 'nhs-mad-12.nas.local' inherits 'macbasenode' {
 }
 
-node 'mad-cart-13.nas.local' inherits 'macbasenode' {
+node 'nhs-mad-13.nas.local' inherits 'macbasenode' {
 }
 
-node 'mad-cart-14.nas.local' inherits 'macbasenode' {
+node 'nhs-mad-14.nas.local' inherits 'macbasenode' {
 }
 
-node 'mad-cart-15.nas.local' inherits 'macbasenode' {
+node 'nhs-mad-15.nas.local' inherits 'macbasenode' {
 }
 
-node 'mad-cart-16.nas.local' inherits 'macbasenode' {
+node 'nhs-mad-16.nas.local' inherits 'macbasenode' {
 }
 
-node 'mad-cart-17.nas.local' inherits 'macbasenode' {
+node 'nhs-mad-17.nas.local' inherits 'macbasenode' {
 }
 
-node 'mad-cart-18.nas.local' inherits 'macbasenode' {
+node 'nhs-mad-18.nas.local' inherits 'macbasenode' {
 }
 
-node 'mad-cart-19.nas.local' inherits 'macbasenode' {
+node 'nhs-mad-19.nas.local' inherits 'macbasenode' {
 }
 
-node 'mad-cart-20.nas.local' inherits 'macbasenode' {
+node 'nhs-mad-20.nas.local' inherits 'macbasenode' {
 }
 
 
