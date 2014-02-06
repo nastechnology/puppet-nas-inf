@@ -24,4 +24,16 @@ node 'macbasenode' {
     source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2013/12/Firefox-26.0.dmg',
     ensure   => installed,
   }
+
+  package { 'AdobeFlashPlayer12.0.0.43':
+    provider => pkgdmg,
+    source   => 'http://fpdownload.macromedia.com/get/flashplayer/current/licensing/mac/install_flash_player_12_osx_pkg.dmg',
+    ensure   => installed,
+  }
+
+  package { 'JavaForOSX2013-05':
+    provider => pkgdmg,
+    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/02/JavaForOSX2013-05.dmg',
+    ensure   => installed,
+  }
 }

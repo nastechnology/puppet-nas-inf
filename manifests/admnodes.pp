@@ -19,13 +19,9 @@ node 'boe-mac-06185.nas.local' inherits 'staffmacnode' {
     server => 'adm-fs.nasadm.local',
   }
 
-  nacs_management::map::admk { '1003297KDrive':
-    user => '1003297',
-  }
+  nacs_management::map::admk { '1003297': }
 
-  nacs_management::map::admj { '1003297JDrive':
-    user => '1003297',
-  }
+  nacs_management::map::admj { '1003297': }
 
   class { 'nacs_management::allprinters': }
   nacs_management::printers { 'boe_copier': }
@@ -37,6 +33,8 @@ node 'boe-mac-06185.nas.local' inherits 'staffmacnode' {
 node 'nas-tech-tc.nas.local' inherits 'staffmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::printers { 'boe_copier': }
+  nacs_management::printers { 'ces_wkrm': }
+  nacs_management::printers { 'ces_upstairs_wkrm': }
 
   nacs_management::printers { 'nhs_wkrm_copier': }
   nacs_management::printers { 'nhs_wkrm_copier_2': }
@@ -115,12 +113,6 @@ node 'adm-js.nasadm.local' inherits 'winbasenode' {
 node 'adm-mf.nasadm.local' inherits 'winbasenode' {
 }
 
-node 'cdb-adm-prin.nasadm.local' inherits 'winbasenode' {
-  package { 'office2007nooutlook':
-    ensure => installed,
-  }
-}
-
 node 'cdb-adm-sec.nasadm.local' inherits 'winbasenode' {
 }
 
@@ -142,8 +134,6 @@ node 'nms-cust-0.nas.local' inherits 'winbasenode' {
 node 'wes-adm-sec.nasadm.local' inherits 'winbasenode' {
 }
 
-node 'wes-adm-prin.nasadm.local' inherits 'winbasenode' {
-}
 
 node 'wes-cust-0.nasadm.local' inherits 'winbasenode' {
 }

@@ -6,6 +6,10 @@ node winbasenode {
   include nacs_management::delprof
   include nacs_management::oaascreen
 
+  class { 'windows_puppet':
+    $version => '3.4.2',
+  }
+
   windows_eventlog { 'Application':
     log_path       => '%SystemRoot%\system32\config\AppEvent.Evt',
     log_size       => '524288',

@@ -71,6 +71,7 @@ node 'nhs-mac-06176.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1011956': }
   nacs_management::printers { 'nhs_140_c': }
   nacs_management::printers { 'nhs_copier': }
+  nacs_management::map::nhsshared { '1011956': }
 }
 
 # Lindy Seagrave
@@ -180,8 +181,9 @@ node 'nhs-mac-06021.nas.local' inherits 'teachersmacnode' {
 
 # Sarah Aschemeier Mac
 node 'nhs-mac-06022.nas.local' inherits 'teachersmacnode' {
+  $user = '1011900'
   class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1011900': }
+  nacs_management::map::idrive { "${user}": }
   nacs_management::printers{ 'nhs_wkrm_copier': }
   nacs_management::printers{ 'nhs_wkrm_copier_2': }
   nacs_management::printers{ 'nhs_wkrm_231': }

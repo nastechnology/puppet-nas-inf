@@ -19,6 +19,7 @@ forge "http://forge.puppetlabs.com"
  mod 'badgerious/windows_env'
  mod 'hunner/wordpress'
  mod 'puppetlabs/reboot'
+ mod 'cyberious/windows_puppet'
 
  mod 'chocolatey',
    :git => 'https://github.com/chocolatey/puppet-chocolatey.git'

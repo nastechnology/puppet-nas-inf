@@ -5,16 +5,23 @@ node /^ces\-\d+\-\d+/ inherits 'winbasenode' {
 
 # Adams Machine
 node 'ces-mac-06174.nas.local' inherits 'staffmacnode' {
+  $user = '1005838'
+
   class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1005838':
+  nacs_management::map::idrive { "${user}":
     server => 'adm-fs.nasadm.local',
   }
-  nacs_management::map::cesshared { '1005838': }
+  nacs_management::map::cesshared { "${user}": }
+  nacs_management::map::admk { "${user}": }
+  nacs_management::map::alldistrict { "${user}": }
+  nacs_management::map::cesoffice { "${user}": }
+
   nacs_management::printers{ 'ces_office_copier': }
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
 
-  nacs_management::tmutil { '1005838': }
+  nacs_management::tmutil { "${user}": }
+
 }
 
 # Brett Cordy mac
@@ -54,9 +61,7 @@ node 'ces-mac-06235.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nms_office_copier': }
   nacs_management::printers{ 'nms_ces_ricoh_7500': }
 
-  nacs_management::map::nmsshared { '1011963nmsshared':
-    user => '1011963',
-  }
+  nacs_management::map::nmsshared { '1011963': }
 }
 
 # Jenna Gray Mac
