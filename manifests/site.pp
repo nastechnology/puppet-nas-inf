@@ -1,5 +1,6 @@
 import 'macbasenode.pp'
 import 'winbasenode.pp'
+import 'studentmacnode.pp'
 import 'admnodes.pp'
 import 'linuxnodes.pp'
 import 'nhsnodes.pp'
@@ -18,6 +19,14 @@ import 'buslabnodes.pp'
 import 'deca.pp'
 import 'teachersmacnode.pp'
 import 'staffmacnode.pp'
+import 'nmscart3.pp'
+import 'nmscart2.pp'
+import 'nmscart1.pp'
+import 'cescart1.pp'
+import 'cescart2.pp'
+import 'wescart1.pp'
+import 'wescart2.pp'
+
 $puppetserver = 'puppet.nacswildcats.org'
 
 if $operatingsystem == 'windows' {

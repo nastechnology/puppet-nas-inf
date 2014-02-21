@@ -16,6 +16,9 @@ node 'nhs-mac-06160.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1005320': }
   nacs_management::printers{ 'nhs_copier': }
   nacs_management::printers{ 'nhs_131_copier': }
+
+  nacs_management::map::alldistrict { '1005320': }
+  nacs_management::map::nhsshared { '1005320': }
 }
 
 # Ann Bosenbark Mac
@@ -23,6 +26,9 @@ node 'nhs-mac-06171.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1001764': }
   nacs_management::printers{ 'nhs_copier': }
+
+  nacs_management::map::alldistrict { '1001764': }
+  nacs_management::map::nhsshared { '1001764': }
 }
 
 # Cori Niese Mac
@@ -34,6 +40,9 @@ node 'nhs-mac-06183.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
+
+  nacs_management::map::alldistrict { '1005845': }
+  nacs_management::map::nhsshared { '1005845': }
 }
 
 # Dan Curtis Mac
@@ -45,19 +54,17 @@ node 'nhs-mac-06184.nas.local' inherits 'staffmacnode' {
     server => 'adm-fs.nasadm.local',
   }
   
-  nacs_management::map::nhsshared { '1011459NHSShared': 
-    user => '1011459',
-  }
-
+  nacs_management::map::nhsshared { '1011459':  }
+  nacs_management::map::alldistrict { '1011459': }
 }
 
 # Jenna Storrer Mac
 node 'nhs-mac-06187.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1011072': }
-  nacs_management::map::nhsshared { '1011072NHSShared':
-    user => '1011072',
-  }
+  nacs_management::map::nhsshared { '1011072': }
+
+  nacs_management::map::alldistrict { '1011072': }
   nacs_management::printers{ 'nhs_wkrm_copier': }
   nacs_management::printers{ 'nhs_wkrm_copier_2': }
   nacs_management::printers{ 'nhs_wkrm_231': }
@@ -72,6 +79,8 @@ node 'nhs-mac-06176.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers { 'nhs_140_c': }
   nacs_management::printers { 'nhs_copier': }
   nacs_management::map::nhsshared { '1011956': }
+
+  nacs_management::map::alldistrict { '1011956': }
 }
 
 # Lindy Seagrave
@@ -83,6 +92,9 @@ node 'nhs-mac-06182.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
+
+  nacs_management::map::alldistrict { '1010009': }
+  nacs_management::map::nhsshared { '1010009': }
 }
 
 # Seth Izor Mac
@@ -94,6 +106,9 @@ node 'nhs-mac-06169.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
+
+  nacs_management::map::alldistrict { '1011424': }
+  nacs_management::map::nhsshared { '1011424': }
 }
 
 # All laptops after initial release below this line please 
@@ -118,6 +133,9 @@ node 'nhs-mac-06046.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
+
+  nacs_management::map::nhsshared { '1009519': }
+  nacs_management::map::alldistrict { '1009519': }
 }
 
 # Brock Dishop Mac
@@ -128,6 +146,9 @@ node 'nhs-mac-06006.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_copier_2': }
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
+
+  nacs_management::map::nhsshared { '1002807': }
+  nacs_management::map::alldistrict { '1002807': }
 }
 
 # Andrew Lesick Mac
@@ -135,8 +156,14 @@ node 'nhs-mac-06009.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1004928': }
   nacs_management::printers { 'hs_stafflounge': }
-  nacs_management::printers { 'nms_band': }
   nacs_management::printers { 'nhs_copier': }
+
+  nacs_management::printers { 'nms_office_copier': }
+  nacs_management::printers { 'nms_colorlaser': }
+  nacs_management::printers { 'nms_office': }
+
+  nacs_management::map::nhsshared { '1004928': }
+  nacs_management::map::alldistrict { '1004928': }
 }
 
 # Megan Badenhop Mac
@@ -148,6 +175,9 @@ node 'nhs-mac-06007.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
+
+  nacs_management::map::alldistrict { '1010234': }
+  nacs_management::map::nhsshared { '1010234': }
 }
 
 # Joe Brownson Mac
@@ -159,6 +189,9 @@ node 'nhs-mac-06050.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
+
+  nacs_management::map::nhsshared { '1001981': }
+  nacs_management::map::alldistrict { '1001981': }
 }
 
 # Randy Burke Mac
@@ -166,6 +199,9 @@ node 'nhs-mac-06049.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1002100': }
   nacs_management::printers{ 'nhs_copier': }
+
+  nacs_management::map::nhsshared { '1002100': }
+  nacs_management::map::alldistrict { '1002100': }
 }
 
 # Chris Dilbone Mac
@@ -177,6 +213,9 @@ node 'nhs-mac-06021.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
+
+  nacs_management::map::nhsshared { '1002793': }
+  nacs_management::map::alldistrict { '1002793': }
 }
 
 # Sarah Aschemeier Mac
@@ -188,6 +227,9 @@ node 'nhs-mac-06022.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_copier_2': }
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
+
+  nacs_management::map::nhsshared { "${user}": }
+  nacs_management::map::alldistrict { "${user}": }
 }
 
 # Lori Drewes Mac
@@ -199,6 +241,9 @@ node 'nhs-mac-06003.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_218': }
+
+  nacs_management::map::nhsshared { '1002877': }
+  nacs_management::map::alldistrict { '1002877': }
 }
 
 # Virgil Bohls Mac
@@ -209,6 +254,13 @@ node 'nhs-mac-06023.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_copier_2': }
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
+  nacs_management::printers{ 'nhs_copier': }
+  nacs_management::printers{ 'nhs_140_c': }
+  nacs_management::printers{ 'hs_stafflounge': }
+  nacs_management::printers{ 'nhs_207': }
+
+  nacs_management::map::nhsshared { '1001687': }
+  nacs_management::map::alldistrict { '1001687': }
 }
 
 # Krysann Dunbar 
@@ -219,6 +271,9 @@ node 'nhs-mac-06004.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_copier_2': }
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
+
+  nacs_management::map::nhsshared { '1002919': }
+  nacs_management::map::alldistrict { '1002919': }
 }
 
 # Bill Inselman Mac
@@ -230,6 +285,9 @@ node 'nhs-mac-06020.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
+
+  nacs_management::map::nhsshared { '1004396': }
+  nacs_management::map::alldistrict { '1004396': }
 }
 
 # Elizabeth French Mac
@@ -241,6 +299,9 @@ node 'nhs-mac-06002.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
+
+  nacs_management::map::nhsshared { '1003402': }
+  nacs_management::map::alldistrict { '1003402': }
 }
 
 # Kaitlin Helberg
@@ -250,6 +311,9 @@ node 'nhs-mac-06001.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_copier': }
   nacs_management::printers{ 'nhs_art': }
   nacs_management::printers{ 'hs_stafflounge': }
+
+  nacs_management::map::nhsshared { '1004109': }
+  nacs_management::map::alldistrict { '1004109': }
 }
 
 # Paul Hudson Mac
@@ -261,6 +325,9 @@ node 'nhs-mac-06000.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
+
+  nacs_management::map::nhsshared { '1004333': }
+  nacs_management::map::alldistrict { '1004333': }
 }
 
 # Jill Petee Mac
@@ -272,6 +339,9 @@ node 'nhs-mac-06051.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
+
+  nacs_management::map::nhsshared { '1006041': }
+  nacs_management::map::alldistrict { '1006041': }
 }
 
 # Denise Lalonde Mac
@@ -281,6 +351,9 @@ node 'nhs-mac-06032.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_copier': }
   nacs_management::printers{ 'nhs_140_c': }
   nacs_management::printers{ 'hs_stafflounge': }
+
+  nacs_management::map::nhsshared { '1004767': }
+  nacs_management::map::alldistrict { '1004767': }
 }
 
 #Yolanda Monnin Mac
@@ -289,6 +362,9 @@ node 'nhs-mac-06060.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1005579': }
   nacs_management::printers{ 'nhs_copier': }
   nacs_management::printers{ 'nhs_art': }
+
+  nacs_management::map::nhsshared { '1005579': }
+  nacs_management::map::alldistrict { '1005579': }
 }
 
 #Kevin Milius Mac
@@ -300,6 +376,9 @@ node 'nhs-mac-06061.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
+
+  nacs_management::map::nhsshared { '1005453': }
+  nacs_management::map::alldistrict { '1005453': }
 }
 
 # Sara Schiffer Mac
@@ -309,6 +388,9 @@ node 'nhs-mac-06012.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_copier': }
   nacs_management::printers{ 'nhs_140_c': }
   nacs_management::printers{ 'hs_stafflounge': }
+
+  nacs_management::map::nhsshared { '1006685': }
+  nacs_management::map::alldistrict { '1006685': }
 }
 
 # Anita Schlatter Mac
@@ -320,6 +402,9 @@ node 'nhs-mac-06011.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
+
+  nacs_management::map::nhsshared { '1011396': }
+  nacs_management::map::alldistrict { '1011396': }
 }
 
 # Teresa Morgan Mac
@@ -328,6 +413,9 @@ node 'nhs-mac-06059.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1005859': }
   nacs_management::printers { 'hs_stafflounge': }
   nacs_management::printers { 'nhs_copier': }
+
+  nacs_management::map::nhsshared { '1005859': }
+  nacs_management::map::alldistrict { '1005859': }
 }
 
 # Bev Nelson Mac
@@ -339,6 +427,9 @@ node 'nhs-mac-06058.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
+
+  nacs_management::map::nhsshared { '1005754': }
+  nacs_management::map::alldistrict { '1005754': }
 }
 
 
@@ -351,6 +442,9 @@ node 'nhs-mac-06010.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
+
+  nacs_management::map::nhsshared { '1010549': }
+  nacs_management::map::alldistrict { '1010549': }
 }
 
 # Mary Shook Mac
@@ -361,6 +455,9 @@ node 'nhs-mac-06019.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_copier_2': }
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
+
+  nacs_management::map::nhsshared { '1007000': }
+  nacs_management::map::alldistrict { '1007000': }
 }
 
 # Mark Stacey Mac
@@ -371,6 +468,9 @@ node 'nhs-mac-06018.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_copier_2': }
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
+
+  nacs_management::map::nhsshared { '1007294': }
+  nacs_management::map::alldistrict { '1007294': }
 }
 
 # Kathy Suzo Mac
@@ -381,6 +481,9 @@ node 'nhs-mac-06016.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_copier_2': }
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
+
+  nacs_management::map::nhsshared { '1008505': }
+  nacs_management::map::alldistrict { '1008505': }
 }
 
 # Tracy Weber Mac
@@ -391,6 +494,9 @@ node 'nhs-mac-06015.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_copier_2': }
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
+
+  nacs_management::map::nhsshared { '1001351': }
+  nacs_management::map::alldistrict { '1001351': }
 }
 
 # Lori Vorwerk Mac
@@ -402,6 +508,9 @@ node 'nhs-mac-06074.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
+
+  nacs_management::map::nhsshared { '1008456': }
+  nacs_management::map::alldistrict { '1008456': }
 }
 
 # Brian Wolfe Mac
@@ -413,6 +522,10 @@ node 'nhs-mac-06073.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
+
+  nacs_management::map::nhsshared { '1008260': }
+  nacs_management::map::alldistrict { '1008260': }
+
 }
 
 # Diana Vocke Mac
@@ -421,6 +534,9 @@ node 'nhs-mac-06044.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1007623': }
   nacs_management::printers{ 'nhs_copier': }
   nacs_management::printers{ 'nhs_131_copier': }
+
+  nacs_management::map::nhsshared { '1007623': }
+  nacs_management::map::alldistrict { '1007623': }
 }
 
 # Jason Zera Mac
@@ -431,6 +547,9 @@ node 'nhs-mac-06072.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_140_c': }
   nacs_management::printers{ 'nhs_copier': }
   nacs_management::printers{ 'nhs_131_copier': }
+
+  nacs_management::map::nhsshared { '1008414': }
+  nacs_management::map::alldistrict { '1008414': }
 }
 
 # Megan Frankart Mac
@@ -439,6 +558,9 @@ node 'nhs-mac-06043.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1008463': }
   nacs_management::printers{ 'nhs_copier': }
   nacs_management::printers{ 'nhs_131_copier': }
+
+  nacs_management::map::nhsshared { '1008414': }
+  nacs_management::map::alldistrict { '1008414': }
 }
 
 # Dan Baer Mac
@@ -447,6 +569,9 @@ node 'nhs-mac-06057.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1001358': }
   nacs_management::printers{ 'nhs_copier': }
   nacs_management::printers{ 'nhs_131_copier': }
+
+  nacs_management::map::nhsshared { '1001358': }
+  nacs_management::map::alldistrict { '1001358': }
 }
 
 # 21st Cent Grant Mac

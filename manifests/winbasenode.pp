@@ -7,7 +7,7 @@ node winbasenode {
   include nacs_management::oaascreen
 
   class { 'windows_puppet':
-    $version => '3.4.2',
+    version => '3.4.2',
   }
 
   windows_eventlog { 'Application':

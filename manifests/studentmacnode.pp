@@ -1,4 +1,4 @@
-node 'macbasenode' {
+node 'studentmacnode' {
 #  include munkiclient
 #  include munkiclient::config
   include nacs_management
@@ -12,12 +12,6 @@ node 'macbasenode' {
     #  file_source => 'puppet:///modules/nacs_management/org.nacs.profile.mobileconfig',
     #}
   }
-
-  package { 'YouTubeDownloader-1.7.dmg':
-    provider => pkgdmg,
-    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2013/12/YouTubeDownloader-1.7.dmg',
-    ensure   => installed,
-  }  
 
   package { 'Firefox-27.0.1.dmg':
     provider => pkgdmg,
