@@ -93,14 +93,6 @@ node 'nas-exchange-2.nas.local' {
 node 'nas-fs.nas.local' {
   include winfacts
   include nacs_management
-  include nagios::target::windows
-
-  @@nagios_service { "check_e_drive_space_${hostname}":
-    use                 => "generic-service",
-    host_name           => "$fqdn",
-    check_command       => 'check_nt!USEDDISKSPACE!-l e -w 80 -c 90',
-    service_description => "check_e_drive_space_${hostname}",
-  }
 
   windows_eventlog { 'Application':
     log_path       => '%SystemRoot%\system32\config\AppEvent.Evt',
@@ -115,11 +107,29 @@ node 'nas-fs.nas.local' {
   }
 }
 
+# File Server
+node 'adm-fs.nasadm.local' {
+  include winfacts
+  include nacs_management
+
+  windows_eventlog { 'Application':
+    log_path       => '%SystemRoot%\system32\winevt\Logs\Application.evtx',
+    log_size       => '2097152',
+    max_log_policy => 'overwrite',
+  }
+
+  windows_eventlog { 'Security':
+    log_path       => '%SystemRoot%\system32\winevt\Logs\Security.evtx',
+    log_size       => '2097152',
+    max_log_policy => 'overwrite',
+  }
+
+}
+
 # SDS Server
 node 'nas-sds.nas.local' {
   include winfacts
   include nacs_management
-  include nagios::target::windows
 
   windows_eventlog { 'Application':
     log_path       => '%SystemRoot%\system32\config\AppEvent.Evt',

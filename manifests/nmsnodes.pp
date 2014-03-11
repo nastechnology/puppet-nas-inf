@@ -162,7 +162,8 @@ node 'nms-mac-06083.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1011121': }
   nacs_management::printers { 'nms_upstairs_copier': }
-  nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+  nacs_management::printers { 'ces_upstairs_wkrm': }
 
   nacs_management::map::nmsshared { '1011121':  }
   nacs_management::map::alldistrict { '1011121': }
@@ -174,6 +175,8 @@ node 'nms-mac-06165.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1001540': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+  nacs_management::printers { 'nms_ces_ricoh_7500': }
 
   nacs_management::map::nmsshared { '1001540':  }
   nacs_management::map::alldistrict { '1001540': }
@@ -234,6 +237,8 @@ node 'nms-mac-06164.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
   nacs_management::printers { 'nms_office_copier': }
+  nacs_management::printers{ 'nms_ces_ricoh_7500': }
+  nacs_management::printers { 'nms_colorlaser': }
 
   nacs_management::map::nmsshared { '1004186':  }
   nacs_management::map::alldistrict { '1004186': }
@@ -281,6 +286,8 @@ node 'nms-mac-06041.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
   nacs_management::printers { 'nms_office_copier': }
+  nacs_management::printers { 'nms_colorlaser': }
+  nacs_management::printers { 'nms_ces_ricoh_7500': }
 
   nacs_management::map::nmsshared { '1004361':  }
   nacs_management::map::alldistrict { '1004361': }
@@ -429,6 +436,7 @@ node 'nms-mac-06062.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
   nacs_management::printers { 'nms_office_copier': }
+  nacs_management::printers{ 'ces_wkrm': }
 
   nacs_management::map::alldistrict { '1011990': }
 }

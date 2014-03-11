@@ -368,6 +368,11 @@ node 'dhcp.nas.local' {
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
   }
 
+  dhcp::server::host { 'nms-proctorcache-2':
+    address   => '10.20.24.3',
+    hwaddress => '00:50:56:a0:00:29',
+  }
+
   #
   ##MS Printers
   #
@@ -398,11 +403,11 @@ node 'dhcp.nas.local' {
 
   #MS Wireless
   dhcp::server::subnet { '10.20.26.0':
-    netmask     => '255.255.255.0',
+    netmask     => '255.255.254.0',
     routers     => '10.20.26.1',
     broadcast   => '10.20.26.255',
     range_begin => '10.20.26.10',
-    range_end   => '10.20.26.200',
+    range_end   => '10.20.27.254',
     filename    => 'pxelinux.0',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
@@ -439,6 +444,12 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'nms-uquiti':
     address   => '10.20.26.2',
     hwaddress => '00:11:11:59:19:f6',
+  }
+
+  #MS Wireless Proctor Cache
+  dhcp::server::host { 'nms-proctorcache-1':
+    address   => '10.20.26.3',
+    hwaddress => '00:50:56:a0:00:02',
   }
 
   #CES Staff
@@ -926,11 +937,11 @@ node 'dhcp.nas.local' {
 
   #CES Wireless
   dhcp::server::subnet { '10.20.36.0':
-    netmask     => '255.255.255.0',
+    netmask     => '255.255.254.0',
     routers     => '10.20.36.1',
     broadcast   => '10.20.36.255',
-    range_begin => '10.20.36.30',
-    range_end   => '10.20.36.200',
+    range_begin => '10.20.36.20',
+    range_end   => '10.20.37.254',
     filename    => 'pxelinux.0',
     other_opts  => 'option ubnt.unifi-address 10.20.2.50',
     next_server => '10.20.2.35',

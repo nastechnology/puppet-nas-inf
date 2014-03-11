@@ -284,6 +284,7 @@ node 'wes-mac-06214.nas.local' inherits 'teachersmacnode' {
 
   nacs_management::printers { 'wes_wkrm_copier': }
   nacs_management::printers { 'wes_office': }
+  nacs_management::printers { 'wes_wkrm_color': }
 }
 
 # Julie Yunker Mac
@@ -321,10 +322,10 @@ node 'wes-101-0.nas.local' inherits 'winbasenode' {
 }
 
 node /^wes\-lab\-\d+\.nas\.local/ inherits 'winbasenode' {
+  
 }
 
 node 'wes-105-0.nas.local' inherits 'winbasenode' {
-  include nacs_management::screen::1024x768
 }
 
 node 'wes-lib-1.nas.local' inherits 'winbasenode' {

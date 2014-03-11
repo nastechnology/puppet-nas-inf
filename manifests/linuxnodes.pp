@@ -35,7 +35,6 @@ node 'puppet.nas.local' {
 
 # PuppetDB File
 node 'pdb.nas.local' {
-  include nagios::target::ubuntu
 
   class { 'puppetdb::database::postgresql':
     listen_addresses => 'pdb.nas.local',
@@ -49,17 +48,20 @@ node 'pdb.nas.local' {
 
 # Puppet Dashboard
 node 'puppetdb.nas.local' {
-  include nagios::target::ubuntu
+  # Configure Apache on this server
+  #class { 'apache': }
+  #class { 'apache::mod::wsgi': }
+
+  # Configure Puppetboard
+  #class { 'puppetboard': }
 }
 
 # NAS API
 node 'api.nas.local' {
-  include nagios::target::ubuntu
 }
 
 # Heidi Songs Website
 node 'nas-hsongs.nas.local' {
-  include nagios::target::ubuntu
 }
 
 node 'nmspcoip-1.nacs.local' {
@@ -72,7 +74,6 @@ node 'nmspcoip-1.nacs.local' {
 
 
 node 'java.nas.local' {
-  include nagios::target::ubuntu
 
   package { 'openjdk-7-jdk':
     ensure => installed
@@ -306,7 +307,6 @@ node 'nas-helpdesk.nas.local' {
 
 
 node 'tech.nas.local' {
-  include nagios::target::ubuntu
 
   package { 'openssh-server':
     ensure => present,
@@ -341,17 +341,6 @@ node 'staff.nas.local' {
   }
 }
 
-node 'nagios.nas.local' {
-  include nagios::monitor
-
-  package { 'openssh-server':
-    ensure => installed,
-  }
-
-  package { 'build-essential':
-    ensure => installed,
-  }
-}
 
 # Construction Blog
 node 'build.nas.local' {
@@ -369,4 +358,31 @@ node 'build.nas.local' {
   }
 
  
+}
+
+
+node 'sensu.nas.local' {
+  package { 'erlang-nox':
+    ensure => installed,
+  }
+
+  package { 'redis-server':
+    ensure => installed,
+  }
+
+  package { 'ruby-json': 
+    ensure => installed,
+  }
+
+  class { 'sensu':
+    rabbitmq_password => 'T2Gt1wU',
+    server            => true,
+    dashboard         => true,
+    api               => true,
+    #plugins           => [
+    #  'puppet:///data/sensu/plugins/ntp.rb',
+    #  'puppet:///data/sensu/plugins/postfix.rb'
+    #]
+  }
+
 }

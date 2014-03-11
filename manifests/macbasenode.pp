@@ -25,10 +25,11 @@ node 'macbasenode' {
     ensure   => installed,
   }
 
-  package { 'AdobeFlashPlayer12.0.0.44':
+  package { 'AdobeFlashPlayer12.0.0.70':
     provider => pkgdmg,
+    #http://www.adobe.com/uk/products/flashplayer/distribution3.html
     #source   => 'http://fpdownload.macromedia.com/get/flashplayer/current/licensing/mac/install_flash_player_12_osx_pkg.dmg',
-    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/02/install_flash_player_12_osx_pkg.dmg',
+    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/03/install_flash_player_12_osx_pkg.dmg',
     ensure   => installed,
   }
 

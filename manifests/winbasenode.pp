@@ -6,9 +6,21 @@ node winbasenode {
   include nacs_management::delprof
   include nacs_management::oaascreen
 
-  class { 'windows_puppet':
-    version => '3.4.2',
-  }
+#  class { 'windows_puppet':
+#    version => '3.4.3',
+#  }
+
+#  scheduled_task { 'UpgradePuppet':
+#    ensure    => present,
+#    enabled   => false,
+#    command   => 'C:\WINDOWS\system32\msiexec.exe',
+#    arguments => '/qn /i C:\software\puppet-3.4.3.msi',
+#    trigger => {
+#      schedule    => monthly,
+#      start_date  => '2014-02-25',
+#      start_time  => '11:00',
+#    },
+#  }
 
   windows_eventlog { 'Application':
     log_path       => '%SystemRoot%\system32\config\AppEvent.Evt',

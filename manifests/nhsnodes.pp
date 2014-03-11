@@ -56,6 +56,8 @@ node 'nhs-mac-06184.nas.local' inherits 'staffmacnode' {
   
   nacs_management::map::nhsshared { '1011459':  }
   nacs_management::map::alldistrict { '1011459': }
+ 
+  nacs_management::tmutil { '1011459': }
 }
 
 # Jenna Storrer Mac
@@ -669,7 +671,6 @@ node 'nhs-226-3.nas.local' inherits 'winbasenode' {
 
 node 'nhs-218-0.nas.local' inherits 'winbasenode' {
   include nacs_management::saxon
-  include nacs_management::cm-trl
 }
 
 node 'nhs-235-0.nas.local' inherits 'winbasenode' {

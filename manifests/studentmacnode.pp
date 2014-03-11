@@ -19,10 +19,11 @@ node 'studentmacnode' {
     ensure   => installed,
   }
 
-  package { 'AdobeFlashPlayer12.0.0.44':
+  package { 'AdobeFlashPlayer12.0.0.70':
     provider => pkgdmg,
+    #http://www.adobe.com/uk/products/flashplayer/distribution3.html
     #source   => 'http://fpdownload.macromedia.com/get/flashplayer/current/licensing/mac/install_flash_player_12_osx_pkg.dmg',
-    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/02/install_flash_player_12_osx_pkg.dmg',
+    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/03/install_flash_player_12_osx_pkg.dmg',
     ensure   => installed,
   }
 
@@ -30,5 +31,15 @@ node 'studentmacnode' {
   #  provider => pkgdmg,
   #  source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/02/JavaForOSX2013-05.dmg',
   #  ensure   => installed,
+  #}
+
+  package { 'Java7u51':
+    provider => pkgdmg,
+    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/02/jre-7u51-macosx-x64.dmg',
+    ensure   => installed,
+  }
+
+  #exec { 'EnableScreenSharing':
+  #  command => '/System/Library/CoreServices/RemoteMangement/ARDAgent.app/Contents/Resources/kickstart -activate -configure -access -off -restart -agent -privs -all -allowAccessFor -allUsers',
   #}
 }

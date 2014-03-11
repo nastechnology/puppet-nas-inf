@@ -26,7 +26,10 @@ node 'boe-mac-06185.nas.local' inherits 'staffmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::printers { 'boe_copier': }
 
-  nacs_management::tmutil { '1003297': }
+  #nacs_management::tmutil { '1003297': }
+  exec { 'DisableTmutil':
+    command => "/usr/bin/tmutil disable",
+  }
 }
 
 # Marks MacBook Pro
@@ -46,6 +49,8 @@ node 'nas-tech-tc.nas.local' inherits 'staffmacnode' {
 node 'nas-tech-st.nas.local' inherits 'staffmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::printers { 'boe_copier': }
+
+  nacs_management::printers { 'wes_wkrm_copier': }
 
   nacs_management::printers { 'nhs_wkrm_copier': }
   nacs_management::printers { 'nhs_wkrm_copier_2': }
@@ -103,6 +108,9 @@ node 'nhs-adm-rw.nas.local' inherits 'staffmacnode' {
 
 
 node 'adm-emis.nas.local' inherits 'winbasenode' {
+  package { 'filezilla':
+    ensure => installed,
+  }
 }
 
 node 'adm-mb.nasadm.local' inherits 'winbasenode' {

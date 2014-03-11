@@ -211,8 +211,6 @@ node 'ces-mac-06056.nas.local' inherits 'teachersmacnode' {
 
 # CES Lab
 node /^ces\-lab\-\d+\.nas\.local/ inherits 'winbasenode' {
-#  include wpkg::nms-labs
-#  include nacs_win_management::oaascreensize
 }
 
 node 'ces-113-nur.nas.local' inherits 'winbasenode' {

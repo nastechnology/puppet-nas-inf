@@ -40,6 +40,7 @@ node 'cdb-mac-06190.nas.local' inherits 'teachersmacnode' {
 
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1010346': }
+  nacs_management::printers{ 'cdb_wkrm_colorlaser': }
   nacs_management::printers{ 'ces_kg_colorlaser': }
   nacs_management::printers{ 'nms_ces_ricoh_7500': }
   nacs_management::tmutil{ '1010346': }
@@ -160,6 +161,7 @@ node 'cdb-mac-06095.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1002471': }
   nacs_management::printers{ 'cdb_wkrm_copier': }
   nacs_management::printers{ 'cdb_wkrm_colorlaser': }
+  nacs_management::printers{ 'cdb_108_copier': }
 
   nacs_management::map::cdbshared { '1002471': }
   nacs_management::map::alldistrict { '1002471': }
@@ -249,6 +251,7 @@ node 'cdb-mac-06230.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1011079': }
   nacs_management::printers{ 'cdb_wkrm_copier': }
   nacs_management::printers{ 'cdb_wkrm_colorlaser': }
+  nacs_management::printers{ 'cdb_108_copier': }
 
   nacs_management::map::cdbshared { '1011079': }
   nacs_management::map::alldistrict { '1011079': }
