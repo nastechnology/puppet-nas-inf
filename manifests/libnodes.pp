@@ -37,3 +37,21 @@ node 'wes-lib-0.nas.local' inherits 'winbasenode' {
 node 'cdb-lib-0.nas.local' inherits 'winbasenode' {
   include nacs_management::sirsi
 }
+
+
+node 'nhs-studylab-1.nas.local' {
+  include roles::base
+}
+
+node 'nhs-132-0.nas.local' {
+  include roles::base
+}
+
+node 'nhs-241-0.nas.local' {
+  include roles::base
+}
+
+node 'nhs-211-0.nas.local.nas.local' {
+  include roles::base
+}
+

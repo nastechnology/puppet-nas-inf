@@ -1,6 +1,5 @@
 node 'dhcp.nas.local' {
   include dhcp::server
-  include nagios::target::ubuntu
 
   class { 'apache':
     mpm_module => 'prefork'
@@ -110,13 +109,20 @@ node 'dhcp.nas.local' {
     netmask     => '255.255.255.0',
     routers     => '10.20.13.1',
     broadcast   => '10.20.13.255',
-    range_begin => '10.20.13.100',
+    range_begin => '10.20.13.10',
     range_end   => '10.20.13.200',
-    #filename    => 'pxelinux.0',
+    filename    => 'pxelinux.0',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
   }
+
+  #HS Student Proctor Cache
+  dhcp::server::host { 'nhs-proctorcache-1':
+    address   => '10.20.13.3',
+    hwaddress => '00:50:56:a0:00:1f',
+  }
+
 
   #HS Labs
   dhcp::server::subnet { '10.20.14.0':
@@ -242,7 +248,6 @@ node 'dhcp.nas.local' {
     range_end   => '10.20.19.250',
     filename    => 'pxelinux.0',
     next_server => '10.20.2.35',
-    other_opts  => 'option ubnt.unifi-address 10.20.2.50',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
   }
@@ -446,11 +451,6 @@ node 'dhcp.nas.local' {
     hwaddress => '00:11:11:59:19:f6',
   }
 
-  #MS Wireless Proctor Cache
-  dhcp::server::host { 'nms-proctorcache-1':
-    address   => '10.20.26.3',
-    hwaddress => '00:50:56:a0:00:02',
-  }
 
   #CES Staff
   dhcp::server::subnet { '10.20.30.0':

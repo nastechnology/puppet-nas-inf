@@ -60,6 +60,10 @@ node 'puppetdb.nas.local' {
 node 'api.nas.local' {
 }
 
+node 'nas-web.nas.local' {
+#  include roles::server
+}
+
 # Heidi Songs Website
 node 'nas-hsongs.nas.local' {
 }
@@ -145,13 +149,48 @@ node 'munkiwa.nas.local' {
   }
 }
 
+node 'nas-appstore.nas.local' {
+  include roles::server
+}
+
+node 'nas-cameras.nas.local' {
+  include roles::server
+}
+
+node 'cog.nas.local' {
+  include roles::server
+}
+
+node 'ftp.nas.local' {
+  include roles::server
+}
+
+node 'printers.nas.local' {
+  include roles::server
+
+  package { 'cups':
+    ensure => installed,
+  }
+}
+
+# MySQL Server
+node 'mysql.nas.local' {
+  exec {'mysqladmin':
+    command => '/usr/bin/mysqladmin -ure_root -pT2Gt1wU flush-host',
+  }
+}
+
 node 'ipadsignout.nas.local' {
+  
+  Vcsrepo { provider => git }
+
   package { 'openssh-server':
     ensure => installed,
   }
 
   class { 'apache':
-    mpm_module => 'prefork',
+    mpm_module    => 'prefork',
+    default_vhost => false,
   }
 
   class { 'apache::mod::php': }

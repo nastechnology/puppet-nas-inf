@@ -181,3 +181,16 @@ node /^nas\-\w+\-\w+\-\d\.nas\.local/ inherits 'winbasenode' {
 
 node 'nas-sped-trn-14.nas.local' inherits 'winbasenode' {
 }
+
+
+node 'nas-spedtrn-12.nas.local' {
+  include roles::bus::laptop
+}
+
+node 'nas-speech-mobi.nas.local' {
+  include roles::bus::laptop
+}
+
+node 'nhs-spedlap-2.nas.local' {
+  include roles::bus::laptop
+}

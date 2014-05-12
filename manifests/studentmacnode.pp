@@ -13,6 +13,8 @@ node 'studentmacnode' {
     #}
   }
 
+  include nacs_management::parcc
+
   package { 'Firefox-27.0.1.dmg':
     provider => pkgdmg,
     source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/02/Firefox-27.0.1.dmg',

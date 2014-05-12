@@ -19,23 +19,35 @@ node 'macbasenode' {
     ensure   => installed,
   }  
 
-  package { 'Firefox-27.0.1.dmg':
+  package { 'Firefox-29.0.1.dmg':
     provider => pkgdmg,
-    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/02/Firefox-27.0.1.dmg',
+    source => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/05/Firefox-29.0.1.dmg',
+    ensure => installed,
+  }
+
+  package { 'AdobeFlashPlayer13.0.0.206':
+    provider => pkgdmg,
+    #source => 'http://fpdownload.macromedia.com/get/flashplayer/current/licensing/mac/install_flash_player_13_osx_pkg.dmg',
+    source => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/04/install_flash_player_13_osx_pkg.dmg',
+    ensure => installed,
+  }
+
+  package { 'Silverlight5.1.30317.0':
+    provider => pkgdmg,
+    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/04/Silverlight.dmg',
     ensure   => installed,
   }
 
-  package { 'AdobeFlashPlayer12.0.0.70':
+  package { 'ShockwavePlayer12.0':
     provider => pkgdmg,
-    #http://www.adobe.com/uk/products/flashplayer/distribution3.html
-    #source   => 'http://fpdownload.macromedia.com/get/flashplayer/current/licensing/mac/install_flash_player_12_osx_pkg.dmg',
-    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/03/install_flash_player_12_osx_pkg.dmg',
+    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/03/Shockwave_Installer_Full_64bit.dmg',
     ensure   => installed,
   }
 
-  #package { 'JavaForOSX2013-05':
-  #  provider => pkgdmg,
-  #  source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/02/JavaForOSX2013-05.dmg',
-  #  ensure   => installed,
-  #}
+  package { 'JavaRuntime8.05':
+    provider => pkgdmg,
+    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/04/jre-8u5-macosx-x64.dmg',
+    ensure   => installed,
+  }
+
 }

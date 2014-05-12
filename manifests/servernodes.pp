@@ -5,13 +5,6 @@ node 'nas-printserver.nas.local' {
   }
 }
 
-# MySQL Server
-node 'nas-mysql.nas.local' {
-  exec {'mysqladmin':
-    command => '/usr/bin/mysqladmin -ure_root -pT2Gt1wU flush-host',
-  }
-}
-
 # Veeam Backup Server
 node 'nas-vstore.nas.local' {
   include winfacts
@@ -93,18 +86,7 @@ node 'nas-exchange-2.nas.local' {
 node 'nas-fs.nas.local' {
   include winfacts
   include nacs_management
-
-  windows_eventlog { 'Application':
-    log_path       => '%SystemRoot%\system32\config\AppEvent.Evt',
-    log_size       => '2097152',
-    max_log_policy => 'overwrite',
-  }
-
-  windows_eventlog { 'Security':
-    log_path       => '%SystemRoot%\system32\config\SecEvent.Evt',
-    log_size       => '2097152',
-    max_log_policy => 'overwrite',
-  }
+  include roles::server
 }
 
 # File Server

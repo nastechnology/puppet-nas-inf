@@ -5,45 +5,49 @@ FORGE
     badgerious/windows_env (2.0.2)
     glarizza/property_list_key (0.2.0)
     grahamgilbert/mac_facts (0.4.0)
-    hunner/wordpress (0.5.1)
+    hunner/wordpress (0.6.0)
       puppetlabs/concat (>= 1.0.0)
       puppetlabs/mysql (>= 2.1.0)
       puppetlabs/stdlib (>= 2.3.1)
     joshcooper/powershell (0.0.6)
+    liamjbennett/windows_eventlog (0.0.1)
+      puppetlabs/registry (>= 0.1.1)
+      puppetlabs/stdlib (< 4.0.0, >= 3.0.0)
     mosen/cups (1.2.1)
-    puppetlabs/apache (0.9.0)
+    puppetlabs/apache (1.0.1)
       puppetlabs/concat (>= 1.0.0)
       puppetlabs/stdlib (>= 2.4.0)
-    puppetlabs/apt (1.4.0)
+    puppetlabs/apt (1.4.2)
       puppetlabs/stdlib (>= 2.2.1)
-    puppetlabs/concat (1.0.0-rc1)
-    puppetlabs/firewall (0.4.2)
-    puppetlabs/inifile (1.0.0)
-    puppetlabs/mysql (2.1.0)
-      puppetlabs/stdlib (>= 2.2.1)
-    puppetlabs/ntp (3.0.1)
+    puppetlabs/concat (1.1.0-rc1)
+      puppetlabs/stdlib (>= 3.0.0)
+    puppetlabs/firewall (1.0.2)
+    puppetlabs/inifile (1.0.3)
+    puppetlabs/mysql (2.2.3)
+      puppetlabs/stdlib (>= 3.2.0)
+    puppetlabs/ntp (3.0.3)
       puppetlabs/stdlib (>= 0.1.6)
-    puppetlabs/postgresql (3.2.0)
+    puppetlabs/postgresql (3.3.3)
       puppetlabs/apt (< 2.0.0, >= 1.1.0)
       puppetlabs/concat (< 2.0.0, >= 1.0.0)
       puppetlabs/firewall (>= 0.0.4)
       puppetlabs/stdlib (< 5.0.0, >= 3.2.0)
-    puppetlabs/puppetdb (3.0.0)
+    puppetlabs/puppetdb (3.0.1)
       puppetlabs/firewall (>= 0.0.4)
       puppetlabs/inifile (~> 1)
       puppetlabs/postgresql (< 4.0.0, >= 3.1.0)
       puppetlabs/stdlib (>= 2.2.0)
-    puppetlabs/reboot (0.1.2)
-    puppetlabs/registry (0.1.2)
+    puppetlabs/reboot (0.1.5)
+    puppetlabs/registry (1.0.0)
       puppetlabs/stdlib (>= 2.3.0)
-    puppetlabs/stdlib (4.1.0)
+    puppetlabs/stdlib (3.2.1)
     puppetlabs/vcsrepo (0.2.0)
     rcoleman/mac_profiles_handler (0.2.0)
 
 GIT
   remote: https://github.com/chocolatey/puppet-chocolatey.git
   ref: master
-  sha: 686b1aa1577aeb295f50cbc39ca695510c16c69b
+  sha: cca5946c43a7a536c261a5d88e7f065474ea69f9
   specs:
     chocolatey (0.0.2)
 
@@ -70,12 +74,28 @@ GIT
     munkiclient (0.0.1)
 
 GIT
+  remote: https://github.com/nastechnology/nacs-profiles.git
+  ref: master
+  sha: 47e717d3b655823269377d182f3f4bf7586a2c7e
+  specs:
+    profiles (0.0.1)
+      adenning/winfacts (= 0.0.3)
+      liamjbennett/windows_eventlog (= 0.0.1)
+
+GIT
+  remote: https://github.com/nastechnology/nacs-roles.git
+  ref: master
+  sha: 3f71a8306df7f4773911a2ec47c161a8148de0c3
+  specs:
+    roles (0.0.1)
+
+GIT
   remote: https://github.com/nastechnology/nacs_management.git
   ref: master
-  sha: de4d129322a1668c3648b524a39569c44d4a90c2
+  sha: 420c5a1b63fd2555b6661b6fd2297d101bdbcadd
   specs:
-    nacs_management (0.2.1)
-      puppetlabs/registry (>= 0.1.1)
+    nacs_management (0.2.3)
+      mosen/cups (= 1.2.1)
 
 GIT
   remote: https://github.com/nastechnology/puppet-dhcp
@@ -112,18 +132,20 @@ DEPENDENCIES
   mosen/cups (>= 0)
   munkiclient (>= 0)
   nacs_management (>= 0)
+  profiles (>= 0)
   puppetlabs/apache (>= 0)
   puppetlabs/apt (>= 0)
   puppetlabs/concat (>= 0)
-  puppetlabs/inifile (= 1.0.0)
+  puppetlabs/inifile (>= 0)
   puppetlabs/ntp (>= 0)
   puppetlabs/postgresql (>= 0)
   puppetlabs/puppetdb (>= 0)
   puppetlabs/reboot (>= 0)
-  puppetlabs/stdlib (>= 0)
+  puppetlabs/stdlib (= 3.2.1)
   puppetlabs/vcsrepo (>= 0)
   rcoleman/mac_profiles_handler (>= 0)
   registry (>= 0)
+  roles (>= 0)
   setacl (>= 0)
   windows_eventlog (>= 0)
 

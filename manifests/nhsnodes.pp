@@ -11,14 +11,17 @@ node 'nhs-train-0.nas.local' inherits 'winbasenode' {
 }
 
 # Heidi Mekus Mac
-node 'nhs-mac-06160.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1005320': }
-  nacs_management::printers{ 'nhs_copier': }
-  nacs_management::printers{ 'nhs_131_copier': }
+node 'nhs-mac-06160.nas.local' {
+  #class { 'nacs_management::allprinters': }
+  #nacs_management::map::idrive { '1005320': }
+  #nacs_management::printers{ 'nhs_copier': }
+  #nacs_management::printers{ 'nhs_131_copier': }
 
-  nacs_management::map::alldistrict { '1005320': }
-  nacs_management::map::nhsshared { '1005320': }
+  #nacs_management::map::alldistrict { '1005320': }
+  #nacs_management::map::nhsshared { '1005320': }
+  class { 'roles::teacher::nhs':
+    user => '1005320',
+  }
 }
 
 # Ann Bosenbark Mac
@@ -301,6 +304,7 @@ node 'nhs-mac-06002.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
+  nacs_management::printers{ 'nhs_copier': }
 
   nacs_management::map::nhsshared { '1003402': }
   nacs_management::map::alldistrict { '1003402': }
@@ -390,6 +394,7 @@ node 'nhs-mac-06012.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_copier': }
   nacs_management::printers{ 'nhs_140_c': }
   nacs_management::printers{ 'hs_stafflounge': }
+  nacs_management::printers{ 'nhs_color': }
 
   nacs_management::map::nhsshared { '1006685': }
   nacs_management::map::alldistrict { '1006685': }
@@ -483,6 +488,7 @@ node 'nhs-mac-06016.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_copier_2': }
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
+  nacs_management::printers{ 'nhs_color': }
 
   nacs_management::map::nhsshared { '1008505': }
   nacs_management::map::alldistrict { '1008505': }
@@ -534,6 +540,7 @@ node 'nhs-mac-06073.nas.local' inherits 'teachersmacnode' {
 node 'nhs-mac-06044.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1007623': }
+  nacs_management::map::admk { '1007623': }
   nacs_management::printers{ 'nhs_copier': }
   nacs_management::printers{ 'nhs_131_copier': }
 
@@ -555,14 +562,18 @@ node 'nhs-mac-06072.nas.local' inherits 'teachersmacnode' {
 }
 
 # Megan Frankart Mac
-node 'nhs-mac-06043.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1008463': }
-  nacs_management::printers{ 'nhs_copier': }
-  nacs_management::printers{ 'nhs_131_copier': }
+node 'nhs-mac-06043.nas.local' {
+  #class { 'nacs_management::allprinters': }
+  #nacs_management::map::idrive { '1008463': }
+  #nacs_management::printers{ 'nhs_copier': }
+  #nacs_management::printers{ 'nhs_131_copier': }
 
-  nacs_management::map::nhsshared { '1008414': }
-  nacs_management::map::alldistrict { '1008414': }
+  #nacs_management::map::nhsshared { '1008463': }
+  #nacs_management::map::alldistrict { '1008463': }
+
+  class { 'roles::teacher::nhs':
+    user => '1008463',
+  }
 }
 
 # Dan Baer Mac
@@ -688,9 +699,14 @@ node 'nhs-235-0.nas.local' inherits 'winbasenode' {
 }
 
 
-# RATS machines - Custodial - SPED Laptops
-node /^nhs\-\w+\-\d/ inherits 'winbasenode' {
+# CES LIBLAB
+node /^nhs\-studylab\-\d+/ {
+  include roles::labs
 }
+
+# RATS machines - Custodial - SPED Laptops
+#node /^nhs\-\w+\-\d/ inherits 'winbasenode' {
+#}
 
 # All NHS Machines that have a digit after building name
 # this excludes any lab's or special computer names i.e. gym, yrbk
@@ -706,10 +722,13 @@ node 'nhs-spedlap-8.nas.local' inherits 'winbasenode' {
   }
 }
 
+# Joe Good
 node 'nhs-jg.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::printers{ 'nhs_140_c': }
   nacs_management::printers{ 'nhs_color': }  
+  nacs_management::printers{ 'nhs_wkrm_copier': }
+  nacs_management::printers{ 'nhs_wkrm_copier_2': }
 }
 
 # NHS Teacher machines

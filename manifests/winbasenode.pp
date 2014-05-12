@@ -6,9 +6,12 @@ node winbasenode {
   include nacs_management::delprof
   include nacs_management::oaascreen
 
-#  class { 'windows_puppet':
-#    version => '3.4.3',
-#  }
+  if ($::puppetversion != '3.5.1'){
+    class { 'puppetversion':
+      version    => '3.5.1',
+      start_time => '12:00',
+    }
+  }
 
 #  scheduled_task { 'UpgradePuppet':
 #    ensure    => present,
@@ -100,7 +103,7 @@ node winbasenode {
   }
 
   package { 'javaruntime':
-    ensure  => '7.0.40',
+    ensure  => '7.0.55',
     require => Package['firefox'],
   }
 

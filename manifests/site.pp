@@ -26,14 +26,20 @@ import 'cescart1.pp'
 import 'cescart2.pp'
 import 'wescart1.pp'
 import 'wescart2.pp'
+import 'oplab.pp'
 
 $puppetserver = 'puppet.nacswildcats.org'
 
 if $operatingsystem == 'windows' {
   $sid = 'NACS'
   $serverpath = '\\nasapp\ChocoPack'
-  Exec { path => [ 'C:/', 'C:/Windows/System32/', 'C:/Windows/', 'C:/Chocolatey/bin', 'C:/NACSManage' ] }
+  Exec { path => [ 'C:/', 'C:/Windows/System32/', 'C:/Windows/', 'C:/Chocolatey/bin', 'C:/NACSManage', 'C:/Windows/System32/WindowsPowerShell/v1.0' ] }
   Package { provider => chocolatey }
+  
+  if($::puppetversion == '3.4.3'){
+    File { source_permissions => ignore }
+  }
+
   file { 'C:\Chocolatey\\chocolateyinstall\\chocolatey.config':
     ensure => file,
     source => 'puppet:///modules/nacs_management/chocolatey.config',
@@ -53,6 +59,5 @@ if $operatingsystem == 'windows' {
 File { backup => 'main' }
 
 filebucket { 'main':
-  server  => 'puppet.nas.local',
   path    => false,
 }

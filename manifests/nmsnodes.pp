@@ -3,7 +3,38 @@
 node /^nms\-\d+\-\d+/ inherits 'winbasenode' {
 }
 
-node 'nms-108-0.nas.local' inherits 'winbasenode' {
+# Parcc lab @ NHS
+node 'nhs-parcc-lab1' {
+  include roles::labs::lab8
+
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
+  }
+}
+
+# Parcc lab @ nhs
+node 'nms-108-0.nas.local' {
+  include roles::labs::lab8
+
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
+  }
+
+}
+
+# Parcc lab @ nhs
+node 'nms-205-0.nas.local' {
+  include roles::labs::lab8
+
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
+  }
 }
 
 node 'nms-aircart-1.nas.local' inherits 'macbasenode' {
@@ -31,6 +62,12 @@ node 'nms-mac-06173.nas.local' inherits 'staffmacnode' {
   nacs_management::map::nmsshared { '1002786': }
 
   nacs_management::tmutil { '1002786': }
+
+  package { 'Java7u51':
+    provider => pkgdmg,
+    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/02/jre-7u51-macosx-x64.dmg',
+    ensure   => installed,
+  }
 }
 
 # Angies Myers mac laptop
@@ -50,6 +87,8 @@ node 'nms-mac-06167.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1001988': }
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
+  nacs_management::printers { 'nms_office_copier': }
+  nacs_management::printers { 'nms_8lab': }
 
   nacs_management::map::nmsshared { '1001988': }
   nacs_management::map::alldistrict { '1001988': }
@@ -152,6 +191,7 @@ node 'nms-mac-06162.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1002800': }
   nacs_management::printers { 'ces_wkrm': }
+  nacs_management::printers { 'ces_upstairs_wkrm': }
 
   nacs_management::map::cesshared { '1002800': }
   nacs_management::map::alldistrict { '1002800': }
@@ -251,6 +291,7 @@ node 'nms-mac-06089.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
   nacs_management::printers { 'nms_office_copier': }
+  nacs_management::printers { 'nms_colorlaser': }
 
   nacs_management::map::nmsshared { '1004410':  }
   nacs_management::map::alldistrict { '1004410': }
@@ -441,46 +482,136 @@ node 'nms-mac-06062.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::alldistrict { '1011990': }
 }
 
-node 'nms-111-0.nas.local' inherits 'winbasenode' {
-  package { 'office2007nooutlook':
-    ensure => installed,
+# Parcc lab @ NHS
+node 'nms-111-0.nas.local' {
+  include roles::labs::lab8
+
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
+  }
+
+  auto_login { 'testuser':
+    password => 'test',
   }
 }
 
-node 'nms-103-0.nas.local' inherits 'winbasenode' {
-  package { 'Ready2GoOn':
-    ensure => installed,
-  }
+#Parcc lab @nhs
+node 'nms-b100-0.nas.local' {
+  include roles::labs::lab8
 
-  package { 'PHLiteratureG7':
-    ensure => installed,
-  }
-}
-
-node 'nms-204-0.nas.local' inherits 'winbasenode' {
-
-  package { 'PHLiteratureGr8':
-    ensure => installed,
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
   }
 
 }
 
-node 'nms-211-0.nas.local' inherits 'winbasenode' {
-#  include nacs_management::saxon
-  include nacs_management::examview::algebra1
-  include nacs_management::examview
+#Parcc lab @ nhs
+node 'nms-103-0.nas.local' {
+  include roles::labs::lab8
+
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
+  }
+
 }
 
+#Parcc lab @ nhs
+node 'nms-110-0.nas.local' {
+  include roles::labs::lab8
 
-node 'nms-209-0.nas.local' inherits 'winbasenode' {
-  include nacs_management::examview
-  include nacs_management::examview::historyto1877
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
+  }
+
+}
+# Parcc lab @ nhs
+node 'nms-202-0.nas.local' {
+  include roles::labs::lab8
+ 
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
+  }
+
+}
+
+#Parcc lab @ nhs
+node 'nms-109-0.nas.local' {
+  include roles::labs::lab8
+
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
+  }
+
+}
+
+#Parcc lab @ nhs
+node 'nms-204-0.nas.local' {
+  include roles::labs::lab8
+
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
+  }
+
+}
+
+node 'nms-211-0.nas.local' {
+  include roles::labs::lab8
+
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
+  }
+}
+
+# Parcc Lab @ nhs
+node 'nms-209-0.nas.local' {
+  include roles::labs::lab8
+
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
+  }
+}
+
+#Parcc lab @ nhs
+node 'nms-107-0.nas.local' {
+  include roles::labs::lab8
+
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
+  }
 }
 
 node 'nms-health-0.nas.local' inherits 'winbasenode' {
 }
 
-node 'nms-art-0.nas.local' inherits 'winbasenode' {
+#Parcc lab @ nhs
+node 'nms-art-0.nas.local' {
+  include roles::labs::lab8
+
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
+  }
 }
 
 node 'nms-conf.nas.local' inherits 'winbasenode' {
@@ -501,29 +632,72 @@ node 'nms-c101-0.nas.local' inherits 'winbasenode' {
   }
 }
 
-node 'nms-102-0.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
-  include nacs_management::atrtt
-}
+# Parcc lab @ nhs
+node 'nms-102-0.nas.local' {
+  include roles::labs::lab8
 
-node 'nms-207-0a.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
-  include nacs_management::atrtt
-}
-
-node 'nms-207-0.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
-  include nacs_management::atrtt
-
-  package { 'cdburnerxp':
-    ensure => installed,
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
   }
 }
 
-node 'nms-207-0b.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
-  include nacs_management::atrtt
+# Parcc lab @ nhs
+node 'nms-206-0.nas.local' {
+  include roles::labs::lab8
+
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
+  }
 }
+
+node 'nms-207-0a.nas.local' {
+  include roles::labs::lab8
+
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
+  }
+}
+
+# Parcc lab @nhs 
+node 'nms-207-0.nas.local' {
+  include roles::labs::lab8
+
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
+  }
+}
+
+# Parcc lab @ nhs
+node 'nms-207-0b.nas.local' {
+  include roles::labs::lab8
+
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
+  }
+}
+
+# Parcc lab @ nhs
+node 'nms-b101-0.nas.local' {
+  include roles::labs::lab8
+
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
+  }
+}
+
+
 
 node 'nms-c100-0.nas.local' inherits 'winbasenode' {
   package { 'examview.readingstreetGr6':
@@ -559,14 +733,17 @@ node 'nms-c202-0.nas.local' inherits 'winbasenode' {
   }
 }
 
-node 'nms-212-0.nas.local' inherits 'winbasenode' {
-  package {'examview.readingstreetGr6':
-    ensure => installed,
+
+#Parcc lab @ nhs
+node 'nms-212-0.nas.local' {
+  include roles::labs::lab8
+
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
   }
 
-  package { 'examview.mathCCGr6':
-    ensure => installed,
-  }
 }
 
 # RATS machines - Custodial - SPED Laptops
@@ -589,358 +766,359 @@ node /^nms\-lib\-cast\d/ inherits 'winbasenode' {
 
 # All NMS Labs
 
-node 'nms-6lab-1.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-1.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-2.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-2.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-3.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-3.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-4.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-4.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-5.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-5.nas.local'  {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-6.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-6.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-7.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-7.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-8.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-8.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-9.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-9.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-10.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-10.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-11.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-11.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-12.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-12.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-13.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-13.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-14.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-14.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-15.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-15.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-16.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-16.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-17.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-17.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-18.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-18.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-19.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-19.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-20.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-20.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-21.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-21.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-22.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-22.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-23.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-23.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-24.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-24.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-25.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-25.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-26.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-26.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-27.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-27.nas.local' {
+  include roles::labs::lab6
 }
 
-node 'nms-6lab-28.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-6lab-28.nas.local' {
+  include roles::labs::lab6
 }
 
 # NMS 7 Lab
-node 'nms-7lab-1.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-1.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-2.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-2.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-3.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-3.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-4.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-4.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-5.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-5.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-6.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-6.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-7.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-7.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-8.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-8.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-9.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-9.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-10.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-10.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-11.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-11.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-12.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-12.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-13.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-13.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-14.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-14.nas.local' {
+  include roles::labs::lab7
+
 }
 
-node 'nms-7lab-15.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-15.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-16.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-16.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-17.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-17.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-18.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-18.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-19.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-19.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-20.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-20.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-21.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-21.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-22.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-22.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-23.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-23.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-24.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-24.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-25.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-25.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-26.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-26.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-27.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-27.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-28.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-28.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-29.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-29.nas.local' {
+  include roles::labs::lab7
 }
 
-node 'nms-7lab-30.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-7lab-30.nas.local' {
+  include roles::labs::lab7
 }
 
 # NMS 8 Lab
-node 'nms-8lab-1.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-1.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-2.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-2.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-3.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-3.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-4.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-4.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-5.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-5.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-6.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-6.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-7.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-7.nas.local' {
+  include roles::labs::lab8 
 }
 
-node 'nms-8lab-8.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-8.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-9.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-9.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-10.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-10.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-11.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-11.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-12.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-12.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-13.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-13.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-14.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-14.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-15.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-15.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-16.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-16.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-17.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-17.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-18.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-18.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-19.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-19.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-20.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-20.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-21.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-21.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-22.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-22.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-23.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-23.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-24.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-24.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-25.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-25.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-26.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-26.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-27.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-27.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-28.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-28.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-29.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-29.nas.local' {
+  include roles::labs::lab8
 }
 
-node 'nms-8lab-30.nas.local' inherits 'winbasenode' {
-  include nacs_management::atrts
+node 'nms-8lab-30.nas.local' {
+  include roles::labs::lab8
 }
 
 

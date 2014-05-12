@@ -1,8 +1,3 @@
-# All Central Machines that have a digit after building name
-# this excludes any lab's or special computer names i.e. gym, mus
-node /^ces\-\d+\-\d+/ inherits 'winbasenode' {
-}
-
 # Adams Machine
 node 'ces-mac-06174.nas.local' inherits 'staffmacnode' {
   $user = '1005838'
@@ -140,13 +135,10 @@ node 'ces-mac-06233.nas.local' inherits 'teachersmacnode' {
 }
 
 # Sarah Rosebrock Mac
-node 'ces-mac-06071.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1008491' : }
-  nacs_management::map::cesshared { '1008491': }
-  nacs_management::map::alldistrict { '1008491': }
-  nacs_management::printers{ 'ces_wkrm': }
-  nacs_management::printers{ 'ces_upstairs_wkrm': }
+node 'ces-mac-06071.nas.local' {
+  class { 'roles::teacher::ces': 
+    user => '1008491',
+  }
 }
 
 # Shawna Schroeder Mac
@@ -210,7 +202,8 @@ node 'ces-mac-06056.nas.local' inherits 'teachersmacnode' {
 }
 
 # CES Lab
-node /^ces\-lab\-\d+\.nas\.local/ inherits 'winbasenode' {
+node /^ces\-lab\-\d+\.nas\.local/ {
+  include roles::labs::ceslab
 }
 
 node 'ces-113-nur.nas.local' inherits 'winbasenode' {
@@ -222,6 +215,23 @@ node 'ces-skills-0a.nas.local' inherits 'winbasenode' {
   package { 'prezidesktop':
     ensure => installed,
   }
+}
+
+# Parcc lab @ nhs 
+node 'ces-b108-kg0.nas.local' {
+  include roles::labs::lab8
+  
+  user { 'testuser':
+    ensure   => present,
+    home     => 'C:/Documents and Settings/testuser',
+    password => 'test',
+  }
+}
+
+# Parcc lab @ nhs
+node 'ces-b110-kg0.nas.local' {
+  include roles::labs::lab8
+
 }
 
 # CES Basement computers
@@ -268,10 +278,25 @@ node /^ces\-b107\-kg\d\.nas\.local/ inherits 'winbasenode' {
   }
 }
 
-# RATS machines - Custodial - SPED Laptops
-node /^ces\-\w+\-\d/ inherits 'winbasenode' {
+# CES Cafe money machines
+
+node 'cescafe1.nas.local' inherits 'winbasenode' {
 }
 
+node 'cescafe2.nas.local' inherits 'winbasenode' {
+}
+
+# CES LIBLAB
+node /^ces\-liblab\-\d+\.nas\.local/ {
+  include roles::labs::cesliblab
+}
+
+# All Central Machines that have a digit after building name
+# this excludes any lab's or special computer names i.e. gym, mus
+node /^ces\-\d+\-\d+/ inherits 'winbasenode' {
+}
+
+ 
 
 node 'ces-108-0.nas.local' inherits 'winbasenode' {
   package { 'Gr4Math' :
@@ -376,3 +401,4 @@ node 'ces-204-0.nas.local' inherits 'winbasenode' {
     ensure => installed,
   }
 }
+

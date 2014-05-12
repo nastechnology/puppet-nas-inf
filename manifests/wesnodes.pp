@@ -47,15 +47,11 @@ node 'wes-mac-06175.nas.local' inherits 'teachersmacnode' {
 }
 
 # Jen Gerken mac laptop
-node 'wes-mac-06189.nas.local' inherits 'teachersmacnode' {
+node 'wes-mac-06189.nas.local' {
   $user = '1003500'
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { "${user}": }
-  nacs_management::map::wesshared { "${user}": }
-  nacs_management::map::alldistrict { "${user}": }
-
-  nacs_management::printers { 'wes_wkrm_copier': }
-  nacs_management::printers { 'wes_office': }
+  class { 'roles::teacher::wes':
+    user => $user,
+  }
 }
 
 # Megan Sherman mac laptop
@@ -164,6 +160,8 @@ node 'wes-mac-06200.nas.local' inherits 'teachersmacnode' {
 
   nacs_management::printers { 'wes_wkrm_copier': }
   nacs_management::printers { 'wes_office': }
+
+  nacs_management::printers { 'nhs_copier': }
 }
 
 # Deb Jones Mac
@@ -219,6 +217,7 @@ node 'wes-mac-06216.nas.local' inherits 'teachersmacnode' {
 
   nacs_management::printers { 'wes_wkrm_copier': }
   nacs_management::printers { 'wes_office': }
+  nacs_management::printers { 'wes_wkrm_color': }
 }
 
 # Lisa Leonard Mac
@@ -321,8 +320,8 @@ node 'wes-101-0.nas.local' inherits 'winbasenode' {
   }
 }
 
-node /^wes\-lab\-\d+\.nas\.local/ inherits 'winbasenode' {
-  
+node /^wes\-lab\-\d+\.nas\.local/ {
+  include roles::labs::weslab
 }
 
 node 'wes-105-0.nas.local' inherits 'winbasenode' {
