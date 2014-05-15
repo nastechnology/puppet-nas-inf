@@ -1,14 +1,6 @@
-node 'hscafe2.nas.local' inherits 'winbasenode' {
-}
-
-node 'hscafe1.nas.local' inherits 'winbasenode' {
-}
-
-node 'nas-snackbar.nas.local' inherits 'winbasenode' {
-}
-
-node 'nhs-train-0.nas.local' inherits 'winbasenode' {
-}
+#
+#  Staff MacBook Laptops
+#
 
 # Heidi Mekus Mac
 node 'nhs-mac-06160.nas.local' {
@@ -56,10 +48,10 @@ node 'nhs-mac-06184.nas.local' inherits 'staffmacnode' {
   nacs_management::map::idrive { '1011459':
     server => 'adm-fs.nasadm.local',
   }
-  
+
   nacs_management::map::nhsshared { '1011459':  }
   nacs_management::map::alldistrict { '1011459': }
- 
+
   nacs_management::tmutil { '1011459': }
 }
 
@@ -116,7 +108,7 @@ node 'nhs-mac-06169.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::nhsshared { '1011424': }
 }
 
-# All laptops after initial release below this line please 
+# All laptops after initial release below this line please
 
 # Tory Strock Mac
 node 'nhs-mac-06005.nas.local' inherits 'teachersmacnode' {
@@ -268,7 +260,7 @@ node 'nhs-mac-06023.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::alldistrict { '1001687': }
 }
 
-# Krysann Dunbar 
+# Krysann Dunbar
 node 'nhs-mac-06004.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1002919': }
@@ -626,55 +618,92 @@ node 'nhs-band-5.nas.local' inherits 'macbasenode' {
 }
 
 
-node 'nas-lib-laptop.nas.local' inherits 'winbasenode' {
+#
+# NHS Windows Machines
+#
+
+node 'hscafe2.nas.local' {
+  include roles
+}
+
+node 'hscafe1.nas.local' {
+  include roles
+}
+
+node 'nas-snackbar.nas.local' {
+  include roles
+}
+
+node 'nhs-train-0.nas.local' {
+  include roles
+}
+
+node 'nas-lib-laptop.nas.local' {
+  include roles
+
   package { 'SirsiWorkflows' :
     ensure => installed,
   }
 }
 
-node 'nhs-235-1' inherits 'winbasenode' {
+node 'nhs-235-1' {
+  include roles
+
   package { 'photoshop7' :
     ensure => installed,
   }
 }
 
-node 'nhs-235-2' inherits 'winbasenode' {
+node 'nhs-235-2' {
+  include roles
+
   package { 'photoshop7' :
     ensure => installed,
   }
 }
 
-node 'nhs-235-3' inherits 'winbasenode' {
+node 'nhs-235-3' {
+  include roles
+
   package { 'photoshop7' :
     ensure => installed,
   }
 }
 
-node 'nhs-239-0.nas.local' inherits 'winbasenode' {
+node 'nhs-239-0.nas.local' {
+  include roles::teacher
+
   package { 'office2007nooutlook':
     ensure => installed,
   }
 }
 
-node 'nhs-226-0.nas.local' inherits 'winbasenode' {
+node 'nhs-226-0.nas.local' {
+  include roles::teacher
+
   package { 'office2007nooutlook':
     ensure => installed,
   }
 }
 
-node 'nhs-226-1.nas.local' inherits 'winbasenode' {
+node 'nhs-226-1.nas.local' {
+  include roles
   package { 'office2007nooutlook':
     ensure => installed,
   }
 }
 
-node 'nhs-226-2.nas.local' inherits 'winbasenode' {
+node 'nhs-226-2.nas.local' {
+  include roles
+
   package { 'office2007nooutlook':
     ensure => installed,
   }
 }
 
-node 'nhs-226-3.nas.local' inherits 'winbasenode' {
+node 'nhs-226-3.nas.local' {
+  include roles
+
   package { 'office2007nooutlook':
     ensure => installed,
   }
@@ -726,7 +755,7 @@ node 'nhs-spedlap-8.nas.local' inherits 'winbasenode' {
 node 'nhs-jg.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::printers{ 'nhs_140_c': }
-  nacs_management::printers{ 'nhs_color': }  
+  nacs_management::printers{ 'nhs_color': }
   nacs_management::printers{ 'nhs_wkrm_copier': }
   nacs_management::printers{ 'nhs_wkrm_copier_2': }
 }
@@ -1034,5 +1063,3 @@ node 'nhs-mad-19.nas.local' inherits 'macbasenode' {
 
 node 'nhs-mad-20.nas.local' inherits 'macbasenode' {
 }
-
-
