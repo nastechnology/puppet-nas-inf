@@ -813,7 +813,7 @@ node 'nhs-233-0.nas.local' inherits 'winbasenode' {
 }
 
 node 'nhs-231-0.nas.local' {
-  include roles::teacher::nhs
+  include roles::teacher
 }
 
 node 'nhs-223-0.nas.local' inherits 'winbasenode' {
