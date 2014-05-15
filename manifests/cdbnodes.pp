@@ -11,12 +11,13 @@ node 'cdb-m128-0.nas.local' inherits 'winbasenode' {
 }
 
 # Dana Ward's mac
+# backup user created
 node 'cdb-mac-06172.nas.local' inherits 'staffmacnode' {
   class { 'nacs_management::allprinters': }
   exec { 'DanaWard':
     command => "/bin/echo 'UsersName=DanaWard' >> /opt/NACSManage/facts.txt",
   }
-  
+
   nacs_management::map::idrive { '1011438':
     server => 'adm-fs.nasadm.local',
   }
@@ -35,22 +36,30 @@ node 'cdb-mac-06172.nas.local' inherits 'staffmacnode' {
 
 
 # Jodi Myers' mac
+# backup user created
 node 'cdb-mac-06190.nas.local' {
+  $user = '1010346'
   class { 'roles::teacher::cdb::ceskg':
-    user => '1010346',
+    user => "${user}",
   }
 
 }
 
 # Jen Croninger mac
-node 'cdb-mac-06191.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1002534': }
-  nacs_management::printers{ 'cdb_wkrm_copier': }
-  nacs_management::printers{ 'cdb_wkrm_colorlaser': }
+# backup user created
+node 'cdb-mac-06191.nas.local' {
+  $user = '1002534'
+  #class { 'nacs_management::allprinters': }
+  #nacs_management::map::idrive { '1002534': }
+  #nacs_management::printers{ 'cdb_wkrm_copier': }
+  #nacs_management::printers{ 'cdb_wkrm_colorlaser': }
 
-  nacs_management::map::cdbshared { '1002534': }
-  nacs_management::map::alldistrict { '1002534': }
+  #nacs_management::map::cdbshared { '1002534': }
+  #nacs_management::map::alldistrict { '1002534': }
+
+  class { 'roles::teacher::cdb':
+    user => "${user}",
+  }
 
 }
 
@@ -66,7 +75,7 @@ node 'cdb-mac-06099.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::idrive { '1002849': }
   nacs_management::printers{ 'cdb_wkrm_copier': }
   nacs_management::printers{ 'cdb_wkrm_colorlaser': }
- 
+
   nacs_management::map::cdbshared { '1002849': }
   nacs_management::map::alldistrict { '1002849': }
 }
@@ -171,7 +180,7 @@ node 'cdb-mac-06193.nas.local' inherits 'teachersmacnode' {
 node 'cdb-mac-06192.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1004627': }
-  
+
   nacs_management::printers{ 'cdb_wkrm_copier': }
   nacs_management::printers{ 'cdb_wkrm_colorlaser': }
 
