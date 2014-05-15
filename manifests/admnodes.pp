@@ -50,6 +50,8 @@ node 'nas-tech-tc.nas.local' inherits 'staffmacnode' {
   nacs_management::printers { 'ces_wkrm': }
   nacs_management::printers { 'ces_upstairs_wkrm': }
 
+  nacs_management::printers { 'cdb_wkrm_copier': }
+
 #  nacs_management::printers { 'nhs_wkrm_copier': }
   nacs_management::printers { 'nhs_wkrm_copier_2': }
   nacs_management::printers { 'hs_stafflounge': }
