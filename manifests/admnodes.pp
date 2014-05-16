@@ -13,7 +13,7 @@ node 'nhs-mtn-3.nasadm.local' inherits 'winbasenode' {
 node 'bus-supe.nasadm.local' inherits 'winbasenode' {
 }
 
-node 'bus-sup-lap.nasadm.local' {
+node 'bus-sup-lap.nas.local' {
   include roles
 }
 
