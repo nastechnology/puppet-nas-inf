@@ -13,6 +13,10 @@ node 'nhs-mtn-3.nasadm.local' inherits 'winbasenode' {
 node 'bus-supe.nasadm.local' inherits 'winbasenode' {
 }
 
+node 'bus-sup-lap.nasadm.local' {
+  include roles
+}
+
 # Parcc lab @ nhs
 node 'adm-super.nasadm.local' {
   include roles::labs::lab8
