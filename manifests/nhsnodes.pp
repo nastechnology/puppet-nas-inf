@@ -83,7 +83,7 @@ node 'nhs-mac-06176.nas.local' inherits 'teachersmacnode' {
 
 # Lindy Seagrave
 # backup user created
-node 'nhs-mac-06182.nas.local' inherits {
+node 'nhs-mac-06182.nas.local' {
   $user = '1010009'
 
   class { 'roles::teacher::nhs':
