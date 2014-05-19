@@ -254,7 +254,8 @@ node 'cdb-mac-06230.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::alldistrict { '1011079': }
 }
 
-# Linsday Murray Mac
+# Lindsay Murray Mac
+# backup user created
 node 'cdb-mac-06231.nas.local' inherits 'teachersmacnode' {
   $user = '1004116'
 
