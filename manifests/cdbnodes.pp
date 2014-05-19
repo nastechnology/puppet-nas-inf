@@ -39,6 +39,7 @@ node 'cdb-mac-06172.nas.local' inherits 'staffmacnode' {
 # backup user created
 node 'cdb-mac-06190.nas.local' {
   $user = '1010346'
+
   class { 'roles::teacher::cdb::ceskg':
     user => "${user}",
   }
@@ -255,14 +256,11 @@ node 'cdb-mac-06230.nas.local' inherits 'teachersmacnode' {
 
 # Linsday Murray Mac
 node 'cdb-mac-06231.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1004116': }
-  nacs_management::printers{ 'ces_kg_colorlaser': }
-  nacs_management::printers{ 'nms_ces_ricoh_7500': }
-  nacs_management::printers{ 'cdb_wkrm_copier': }
+  $user = '1004116'
 
-  nacs_management::map::cdbshared { '1004116': }
-  nacs_management::map::alldistrict { '1004116': }
+  class { 'roles::teacher::cdb::ceskg':
+    user => "${user}",
+  }
 }
 
 # Beverly Nye
