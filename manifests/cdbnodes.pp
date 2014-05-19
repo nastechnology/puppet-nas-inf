@@ -256,7 +256,7 @@ node 'cdb-mac-06230.nas.local' inherits 'teachersmacnode' {
 
 # Lindsay Murray Mac
 # backup user created
-node 'cdb-mac-06231.nas.local' inherits 'teachersmacnode' {
+node 'cdb-mac-06231.nas.local' {
   $user = '1004116'
 
   class { 'roles::teacher::cdb::ceskg':
