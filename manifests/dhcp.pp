@@ -146,7 +146,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'nhs-auxts-1':
     address     => '10.20.14.70',
     hwaddress   => '70:71:bc:43:e5:19',
-    #filename    => 'pro/4.6.1/undionly.kpxe',
+    #filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.14.61',
   }
 
@@ -154,7 +154,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'nhs-auxts-3':
     address     => '10.20.14.72',
     hwaddress   => '00:27:0e:0f:12:57',
-    #filename    => 'pro/4.6.1/undionly.kpxe',
+    #filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.14.61',
   }
 
@@ -162,7 +162,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'nhs-auxts-4':
     address     => '10.20.14.73',
     hwaddress   => '00:27:0e:0f:12:39',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.14.61',
   }
 
@@ -170,7 +170,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'nhs-auxts-5':
     address     => '10.20.14.74',
     hwaddress   => '00:27:0e:0f:12:61',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.14.61',
   }
 
@@ -178,7 +178,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'nhs-auxts-6':
     address     => '10.20.14.75',
     hwaddress   => '00:27:0e:0f:12:65',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.14.61',
   }
 
@@ -186,7 +186,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'nhs-auxts-7':
     address     => '10.20.14.76',
     hwaddress   => '00:27:0e:0f:12:6e',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.14.61',
   }
 
@@ -194,7 +194,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'nhs-auxts-8':
     address     => '10.20.14.77',
     hwaddress   => '70:71:bc:43:e7:4d',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.14.61',
   }
 
@@ -202,7 +202,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'nhs-auxts-10':
     address     => '10.20.14.79',
     hwaddress   => '00:27:0e:0f:12:6a',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.14.61',
   }
 
@@ -530,7 +530,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'nms-C2XX-3':
     address     => '10.20.33.56',
     hwaddress   => '00:11:11:59:2b:22',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -540,7 +540,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-206-3':
     address     => '10.20.33.50',
     hwaddress   => '00:07:e9:57:57:24',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -549,7 +549,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-206-2':
     address     => '10.20.33.51',
     hwaddress   => '00:11:11:83:fc:ee',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -558,7 +558,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-205-2':
     address     => '10.20.33.52',
     hwaddress   => '00:07:e9:57:0b:60',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -567,7 +567,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-205-1':
     address     => '10.20.33.53',
     hwaddress   => '00:07:e9:57:0b:3f',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -576,7 +576,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-204-2':
     address     => '10.20.33.54',
     hwaddress   => '00:11:11:1d:38:27',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -585,7 +585,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-204-3':
     address     => '10.20.33.55',
     hwaddress   => '00:11:11:59:2b:31',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -608,7 +608,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-1':
     address     => '10.20.34.50',
     hwaddress   => '00:11:11:58:fc:94',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -617,7 +617,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-2':
     address     => '10.20.34.51',
     hwaddress   => '00:11:11:83:f8:4b',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -626,7 +626,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-3':
     address     => '10.20.34.52',
     hwaddress   => '00:11:11:83:f4:64',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -635,7 +635,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-4':
     address     => '10.20.34.53',
     hwaddress   => '00:11:11:59:59:73',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -644,7 +644,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-5':
     address     => '10.20.34.54',
     hwaddress   => '00:11:11:84:00:70',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -653,7 +653,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-6':
     address     => '10.20.34.55',
     hwaddress   => '00:11:11:59:5e:08',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -662,7 +662,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-7':
     address     => '10.20.34.56',
     hwaddress   => '00:11:11:59:5e:a2',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -671,7 +671,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-8':
     address     => '10.20.34.57',
     hwaddress   => '00:11:11:59:5e:10',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -680,7 +680,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-9':
     address     => '10.20.34.58',
     hwaddress   => '00:11:11:60:30:15',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -689,7 +689,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-10':
     address     => '10.20.34.59',
     hwaddress   => '00:11:11:48:c1:77',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -698,7 +698,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-11':
     address     => '10.20.34.60',
     hwaddress   => '00:11:11:84:4f:83',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -707,7 +707,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-12':
     address     => '10.20.34.61',
     hwaddress   => '00:11:11:60:5c:65',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -716,7 +716,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-13':
     address     => '10.20.34.62',
     hwaddress   => '00:11:11:6d:09:3b',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -725,7 +725,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-14':
     address     => '10.20.34.63',
     hwaddress   => '00:11:11:59:5e:42',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -734,7 +734,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-15':
     address     => '10.20.34.64',
     hwaddress   => '00:11:11:84:4f:84',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -743,7 +743,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-16':
     address     => '10.20.34.65',
     hwaddress   => '00:0c:f1:ec:d5:47',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -752,7 +752,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-17':
     address     => '10.20.34.66',
     hwaddress   => '00:11:11:60:30:2a',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -761,7 +761,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-18':
     address     => '10.20.34.67',
     hwaddress   => '00:11:11:59:5e:04',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -770,7 +770,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-19':
     address     => '10.20.34.68',
     hwaddress   => '00:11:11:59:5e:66',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -779,7 +779,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-20':
     address     => '10.20.34.69',
     hwaddress   => '00:11:11:74:b5:d9',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -788,7 +788,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-21':
     address     => '10.20.34.70',
     hwaddress   => '00:11:11:59:5e:29',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -797,7 +797,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-22':
     address     => '10.20.34.71',
     hwaddress   => '00:11:11:1a:c1:4c',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -806,7 +806,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-23':
     address     => '10.20.34.72',
     hwaddress   => '00:11:11:59:5e:44',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -815,7 +815,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-24':
     address     => '10.20.34.73',
     hwaddress   => '00:11:11:1a:bd:66',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -824,7 +824,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-25':
     address     => '10.20.34.74',
     hwaddress   => '00:11:11:1a:c1:49',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -833,7 +833,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-26':
     address     => '10.20.34.75',
     hwaddress   => '00:11:11:60:2f:d1',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -842,7 +842,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-27':
     address     => '10.20.34.76',
     hwaddress   => '00:11:11:59:2b:22',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -851,7 +851,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-28':
     address     => '10.20.34.77',
     hwaddress   => '00:07:e9:57:57:24',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -860,7 +860,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-29':
     address     => '10.20.34.78',
     hwaddress   => '00:07:e9:57:53:25',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -869,7 +869,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-30':
     address     => '10.20.34.79',
     hwaddress   => '00:07:e9:57:0b:60',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -878,7 +878,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-31':
     address     => '10.20.34.80',
     hwaddress   => '00:07:e9:57:0b:3f',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -887,7 +887,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-32':
     address     => '10.20.34.81',
     hwaddress   => '00:11:11:1d:38:27',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -896,7 +896,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-33':
     address     => '10.20.34.82',
     hwaddress   => '00:11:11:59:2b:31',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
@@ -905,7 +905,7 @@ node 'dhcp.nas.local' {
   dhcp::server::host {'ces-liblab-34':
     address     => '10.20.34.83',
     hwaddress   => '00:11:11:83:fc:ee',
-    filename    => 'pro/4.6.1/undionly.kpxe',
+    filename    => 'pro/4.6.1/pxelinux.0',
     next_server => '10.20.34.10',
   }
 
