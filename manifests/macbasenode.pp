@@ -17,7 +17,7 @@ node 'macbasenode' {
     provider => pkgdmg,
     source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2013/12/YouTubeDownloader-1.7.dmg',
     ensure   => installed,
-  }  
+  }
 
   package { 'Firefox-29.0.1.dmg':
     provider => pkgdmg,
@@ -25,10 +25,10 @@ node 'macbasenode' {
     ensure => installed,
   }
 
-  package { 'AdobeFlashPlayer13.0.0.206':
+  package { 'AdobeFlashPlayer13.0.0.214':
     provider => pkgdmg,
     #source => 'http://fpdownload.macromedia.com/get/flashplayer/current/licensing/mac/install_flash_player_13_osx_pkg.dmg',
-    source => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/04/install_flash_player_13_osx_pkg.dmg',
+    source => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/05/install_flash_player_13_osx_pkg.dmg',
     ensure => installed,
   }
 
