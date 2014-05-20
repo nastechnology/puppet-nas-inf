@@ -393,16 +393,13 @@ node 'nhs-mac-06061.nas.local' inherits 'teachersmacnode' {
 
 # Sara Schiffer Mac
 # backup user created
-node 'nhs-mac-06012.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1006685': }
-  nacs_management::printers{ 'nhs_copier': }
-  nacs_management::printers{ 'nhs_140_c': }
-  nacs_management::printers{ 'hs_stafflounge': }
-  nacs_management::printers{ 'nhs_color': }
+node 'nhs-mac-06012.nas.local' {
+  $user = '1006685'
 
-  nacs_management::map::nhsshared { '1006685': }
-  nacs_management::map::alldistrict { '1006685': }
+  class { 'roles::teacher::nhs':
+    user => "${user}",
+  }
+
 }
 
 # Anita Schlatter Mac
