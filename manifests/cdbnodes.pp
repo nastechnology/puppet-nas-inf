@@ -309,7 +309,7 @@ node 'cdb-mac-06226.nas.local' inherits 'teachersmacnode' {
 node 'cdb-mac-06225.nas.local' {
   $user = '1007959'
 
-  class { 'roles::teacher::cdb::ceskg':
+  class { 'roles::teacher::cdb':
     user => "${user}",
   }
 }
