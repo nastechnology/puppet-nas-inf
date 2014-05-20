@@ -179,7 +179,7 @@ node 'wes-mac-06220.nas.local' inherits 'teachersmacnode' {
 
 # Kathy Jones Mac
 # backup user created
-node 'wes-mac-06219.nas.local' inherits 'teachersmacnode' {
+node 'wes-mac-06219.nas.local' {
   $user = '1011417'
 
   class { 'roles::teacher::wes':
