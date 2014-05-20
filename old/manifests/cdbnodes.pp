@@ -11,13 +11,12 @@ node 'cdb-m128-0.nas.local' inherits 'winbasenode' {
 }
 
 # Dana Ward's mac
-# backup user created
 node 'cdb-mac-06172.nas.local' inherits 'staffmacnode' {
   class { 'nacs_management::allprinters': }
   exec { 'DanaWard':
     command => "/bin/echo 'UsersName=DanaWard' >> /opt/NACSManage/facts.txt",
   }
-
+  
   nacs_management::map::idrive { '1011438':
     server => 'adm-fs.nasadm.local',
   }
@@ -36,24 +35,22 @@ node 'cdb-mac-06172.nas.local' inherits 'staffmacnode' {
 
 
 # Jodi Myers' mac
-# backup user created
 node 'cdb-mac-06190.nas.local' {
-  $user = '1010346'
-
   class { 'roles::teacher::cdb::ceskg':
-    user => "${user}",
+    user => '1010346',
   }
 
 }
 
 # Jen Croninger mac
-# backup user created
-node 'cdb-mac-06191.nas.local' {
-  $user = '1002534'
+node 'cdb-mac-06191.nas.local' inherits 'teachersmacnode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1002534': }
+  nacs_management::printers{ 'cdb_wkrm_copier': }
+  nacs_management::printers{ 'cdb_wkrm_colorlaser': }
 
-  class { 'roles::teacher::cdb':
-    user => "${user}",
-  }
+  nacs_management::map::cdbshared { '1002534': }
+  nacs_management::map::alldistrict { '1002534': }
 
 }
 
@@ -64,19 +61,17 @@ node 'cdb-mac-06191.nas.local' {
 
 
 # Pam Downey Mac
-# backup user created
 node 'cdb-mac-06099.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1002849': }
   nacs_management::printers{ 'cdb_wkrm_copier': }
   nacs_management::printers{ 'cdb_wkrm_colorlaser': }
-
+ 
   nacs_management::map::cdbshared { '1002849': }
   nacs_management::map::alldistrict { '1002849': }
 }
 
 # Sue Abshire Mac
-# backup user created
 node 'cdb-mac-06228.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1001001': }
@@ -90,7 +85,6 @@ node 'cdb-mac-06228.nas.local' inherits 'teachersmacnode' {
 }
 
 # Tiffany Biderstedt Mac
-# backup user created
 node 'cdb-mac-06098.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1001582': }
@@ -104,7 +98,6 @@ node 'cdb-mac-06098.nas.local' inherits 'teachersmacnode' {
 }
 
 # Amber Billow Mac
-# backup user created
 node 'cdb-mac-06097.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1009855': }
@@ -116,7 +109,6 @@ node 'cdb-mac-06097.nas.local' inherits 'teachersmacnode' {
 }
 
 # Laurie Gilson Mac
-# backup user created
 node 'cdb-mac-06195.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1003591': }
@@ -128,17 +120,18 @@ node 'cdb-mac-06195.nas.local' inherits 'teachersmacnode' {
 }
 
 # Kelli Good Mac
-# backup user created
-node 'cdb-mac-06194.nas.local' {
-  $user = '1003675'
+node 'cdb-mac-06194.nas.local' inherits 'teachersmacnode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1003675': }
+  nacs_management::printers{ 'cdb_wkrm_copier': }
+  nacs_management::printers{ 'cdb_wkrm_colorlaser': }
+  nacs_management::printers{ 'cdb_108_copier': }
 
-  class { 'roles::teacher::cdb':
-    user => "${user}",
-  }
+  nacs_management::map::cdbshared { '1003675': }
+  nacs_management::map::alldistrict { '1003675': }
 }
 
 # Jennifer Burkhart Mac
-# backup user created
 node 'cdb-mac-06096.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1002128': }
@@ -150,38 +143,43 @@ node 'cdb-mac-06096.nas.local' inherits 'teachersmacnode' {
 }
 
 # Denine Cramer Mac
-# backup user created
-node 'cdb-mac-06095.nas.local' {
-  $user = '1002471'
+node 'cdb-mac-06095.nas.local' inherits 'teachersmacnode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1002471': }
+  nacs_management::printers{ 'cdb_wkrm_copier': }
+  nacs_management::printers{ 'cdb_wkrm_colorlaser': }
+  nacs_management::printers{ 'cdb_108_copier': }
 
-  class { 'roles::teacher::cdb':
-    user => "${user}",
-  }
+  nacs_management::map::cdbshared { '1002471': }
+  nacs_management::map::alldistrict { '1002471': }
 }
 
 # Bev Junge Mac
-# backup user created
-node 'cdb-mac-06193.nas.local' {
-  $user = '1004501'
+node 'cdb-mac-06193.nas.local' inherits 'teachersmacnode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1004501': }
+  nacs_management::printers{ 'cdb_wkrm_copier': }
+  nacs_management::printers{ 'cdb_wkrm_colorlaser': }
+  nacs_management::printers{ 'cdb_108': }
+  nacs_management::printers{ 'cdb_108_copier': }
 
-  class { 'roles::teacher::cdb':
-    user => "${user}",
-  }
+  nacs_management::map::cdbshared { '1004501': }
+  nacs_management::map::alldistrict { '1004501': }
 }
 
 # Jen Kin Mac
-# backup user created
-node 'cdb-mac-06192.nas.local' {
-  $user = '1004627'
+node 'cdb-mac-06192.nas.local' inherits 'teachersmacnode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1004627': }
+  
+  nacs_management::printers{ 'cdb_wkrm_copier': }
+  nacs_management::printers{ 'cdb_wkrm_colorlaser': }
 
-  class { 'roles::teacher::cdb':
-    user => "${user}",
-  }
-
+  nacs_management::map::cdbshared { '1004627': }
+  nacs_management::map::alldistrict { '1004627': }
 }
 
 # Justin Marrowquin Mac
-# backup user created
 node 'cdb-mac-06208.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1005187': }
@@ -194,7 +192,6 @@ node 'cdb-mac-06208.nas.local' inherits 'teachersmacnode' {
 }
 
 # Linda Martinez Mac
-# backup user created
 node 'cdb-mac-06232.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1005215': }
@@ -222,8 +219,7 @@ node 'cdb-mac-06227.nas.local' inherits 'teachersmacnode' {
 }
 
 
-# Kylie Speiser Mac
-# backup user created
+# Kylie Spieser Mac
 node 'cdb-mac-06209.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1007266': }
@@ -237,7 +233,6 @@ node 'cdb-mac-06209.nas.local' inherits 'teachersmacnode' {
 }
 
 # Lainee Meyer Mac
-# backup user created
 node 'cdb-mac-06230.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1011079': }
@@ -249,18 +244,19 @@ node 'cdb-mac-06230.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::alldistrict { '1011079': }
 }
 
-# Lindsay Murray Mac
-# backup user created
-node 'cdb-mac-06231.nas.local' {
-  $user = '1004116'
+# Linsday Murray Mac
+node 'cdb-mac-06231.nas.local' inherits 'teachersmacnode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1004116': }
+  nacs_management::printers{ 'ces_kg_colorlaser': }
+  nacs_management::printers{ 'nms_ces_ricoh_7500': }
+  nacs_management::printers{ 'cdb_wkrm_copier': }
 
-  class { 'roles::teacher::cdb::ceskg':
-    user => "${user}",
-  }
+  nacs_management::map::cdbshared { '1004116': }
+  nacs_management::map::alldistrict { '1004116': }
 }
 
 # Beverly Nye
-# backup user created
 node 'cdb-mac-06229.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1005887': }
@@ -274,7 +270,6 @@ node 'cdb-mac-06229.nas.local' inherits 'teachersmacnode' {
 }
 
 # Susie Wagner Mac
-# backup user created
 node 'cdb-mac-06226.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1007707': }
@@ -286,17 +281,18 @@ node 'cdb-mac-06226.nas.local' inherits 'teachersmacnode' {
 }
 
 # Deb Wesche Mac
-# backup user created
-node 'cdb-mac-06225.nas.local' {
-  $user = '1007959'
+node 'cdb-mac-06225.nas.local' inherits 'teachersmacnode' {
+  class { 'nacs_management::allprinters': }
+  nacs_management::map::idrive { '1007959': }
+  nacs_management::printers{ 'cdb_wkrm_copier': }
+  nacs_management::printers{ 'cdb_wkrm_colorlaser': }
+  nacs_management::printers{ 'cdb_108_copier': }
 
-  class { 'roles::teacher::cdb':
-    user => "${user}",
-  }
+  nacs_management::map::cdbshared { '1007959': }
+  nacs_management::map::alldistrict { '1007959': }
 }
 
 # Jackie Westhoven Mac
-# backup user created
 node 'cdb-mac-06224.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1008015': }
@@ -308,7 +304,6 @@ node 'cdb-mac-06224.nas.local' inherits 'teachersmacnode' {
 }
 
 # Sue Goebel  Mac
-# backup user created
 node 'cdb-mac-06223.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1003633': }
@@ -325,7 +320,6 @@ node 'cdb-mac-06223.nas.local' inherits 'teachersmacnode' {
 }
 
 # Suzanne Badenhop Mac
-# backup user created
 node 'cdb-mac-06207.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1001337': }
@@ -338,7 +332,6 @@ node 'cdb-mac-06207.nas.local' inherits 'teachersmacnode' {
 }
 
 # Megan Flanagan Mac
-# backup user created
 node 'cdb-mac-06234.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::map::idrive { '1011970': }

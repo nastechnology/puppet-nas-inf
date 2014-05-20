@@ -1,0 +1,43 @@
+node 'ces-cart1-05989.nas.local' inherits 'studentmacnode' {
+
+}
+
+node 'ces-cart1-05990.nas.local' inherits 'studentmacnode' {
+
+}
+
+node 'ces-cart1-05991.nas.local' inherits 'studentmacnode' {
+
+}
+
+node 'ces-cart1-05992.nas.local' inherits 'studentmacnode' {
+
+}
+
+node 'ces-cart1-05848.nas.local' inherits 'studentmacnode' {
+
+}
+
+node 'ces-cart1-05949.nas.local' inherits 'studentmacnode' {
+
+}
+
+node 'ces-cart1-05950.nas.local' inherits 'studentmacnode' {
+
+}
+
+node 'ces-cart1-05951.nas.local' inherits 'studentmacnode' {
+
+}
+
+node 'ces-cart1-05952.nas.local' inherits 'studentmacnode' {
+
+}
+
+node 'ces-cart1-05953.nas.local' inherits 'studentmacnode' {
+
+}
+
+node 'ces-cart1-059laskassalkjaslkjsdljakljdaslsa.nas.local' inherits 'studentmacnode' {
+
+}
