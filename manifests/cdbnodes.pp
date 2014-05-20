@@ -50,13 +50,6 @@ node 'cdb-mac-06190.nas.local' {
 # backup user created
 node 'cdb-mac-06191.nas.local' {
   $user = '1002534'
-  #class { 'nacs_management::allprinters': }
-  #nacs_management::map::idrive { '1002534': }
-  #nacs_management::printers{ 'cdb_wkrm_copier': }
-  #nacs_management::printers{ 'cdb_wkrm_colorlaser': }
-
-  #nacs_management::map::cdbshared { '1002534': }
-  #nacs_management::map::alldistrict { '1002534': }
 
   class { 'roles::teacher::cdb':
     user => "${user}",
@@ -136,15 +129,12 @@ node 'cdb-mac-06195.nas.local' inherits 'teachersmacnode' {
 
 # Kelli Good Mac
 # backup user created
-node 'cdb-mac-06194.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1003675': }
-  nacs_management::printers{ 'cdb_wkrm_copier': }
-  nacs_management::printers{ 'cdb_wkrm_colorlaser': }
-  nacs_management::printers{ 'cdb_108_copier': }
+node 'cdb-mac-06194.nas.local' {
+  $user = '1003675'
 
-  nacs_management::map::cdbshared { '1003675': }
-  nacs_management::map::alldistrict { '1003675': }
+  class { 'roles::teacher::cdb':
+    user => "${user}",
+  }
 }
 
 # Jennifer Burkhart Mac
