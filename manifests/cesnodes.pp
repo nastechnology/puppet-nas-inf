@@ -7,16 +7,16 @@ node 'ces-mac-06174.nas.local' inherits 'staffmacnode' {
   nacs_management::map::idrive { $user :
     server => 'adm-fs.nasadm.local',
   }
-  nacs_management::map::cesshared { "${user}": }
-  nacs_management::map::admk { "${user}": }
-  nacs_management::map::alldistrict { "${user}": }
-  nacs_management::map::cesoffice { "${user}": }
+  nacs_management::map::cesshared { $user : }
+  nacs_management::map::admk { $user : }
+  nacs_management::map::alldistrict { $user : }
+  nacs_management::map::cesoffice { $user : }
 
   nacs_management::printers{ 'ces_office_copier': }
   nacs_management::printers{ 'ces_wkrm': }
   nacs_management::printers{ 'ces_upstairs_wkrm': }
 
-  nacs_management::tmutil { "${user}": }
+  nacs_management::tmutil { $user : }
 
 }
 
