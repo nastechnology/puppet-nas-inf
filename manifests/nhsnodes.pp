@@ -8,7 +8,7 @@
 node 'nhs-mac-06160.nas.local' {
   $user = '1005320'
   class { 'roles::teacher::nhs':
-    user => "${user}",
+    user => $user,
   }
 }
 
@@ -87,7 +87,7 @@ node 'nhs-mac-06182.nas.local' {
   $user = '1010009'
 
   class { 'roles::teacher::nhs':
-    user => "${user}",
+    user => $user,
   }
 }
 
@@ -97,7 +97,7 @@ node 'nhs-mac-06169.nas.local' {
   $user = '1011424'
 
   class { 'roles::teacher::nhs':
-    user => "${user}",
+    user => $user,
   }
 }
 
@@ -136,7 +136,7 @@ node 'nhs-mac-06006.nas.local' {
   $user = '1002807'
 
   class { 'roles::teacher::nhs':
-    user => "${user}",
+    user => $user,
   }
 }
 
@@ -217,14 +217,14 @@ node 'nhs-mac-06021.nas.local' inherits 'teachersmacnode' {
 node 'nhs-mac-06022.nas.local' inherits 'teachersmacnode' {
   $user = '1011900'
   class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { "${user}": }
+  nacs_management::map::idrive { $user: }
   nacs_management::printers{ 'nhs_wkrm_copier': }
   nacs_management::printers{ 'nhs_wkrm_copier_2': }
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
 
-  nacs_management::map::nhsshared { "${user}": }
-  nacs_management::map::alldistrict { "${user}": }
+  nacs_management::map::nhsshared { $user: }
+  nacs_management::map::alldistrict { $user: }
 }
 
 # Lori Drewes Mac
@@ -393,7 +393,7 @@ node 'nhs-mac-06012.nas.local' {
   $user = '1006685'
 
   class { 'roles::teacher::nhs':
-    user => "${user}",
+    user => $user,
   }
 
 }
@@ -530,7 +530,7 @@ node 'nhs-mac-06073.nas.local' {
   $user = '1008260'
 
   class { 'roles::teacher::nhs':
-    user => "${user}",
+    user => $user,
   }
 
 }
@@ -569,7 +569,7 @@ node 'nhs-mac-06043.nas.local' {
   $user = '1008463'
 
   class { 'roles::teacher::nhs':
-    user => "${user}",
+    user => $user,
   }
 }
 
@@ -815,7 +815,7 @@ node 'nhs-223-0.nas.local' inherits 'winbasenode' {
     ensure => installed,
   }
 
-  file { "C:/Hy-Sport/TFMM3/tfmeet3.mem":
+  file { 'C:/Hy-Sport/TFMM3/tfmeet3.mem':
     ensure  => file,
     source  => 'puppet:///modules/nacs_management/tfmeet3.mem',
     require => Package['trackmm3'],
@@ -826,7 +826,7 @@ node 'nhs-223-0.nas.local' inherits 'winbasenode' {
     require => Package['trackmm3'],
   }
 
-  file { "C:/Hy-Sport/TFTM2/TFTM2.LIC":
+  file { 'C:/Hy-Sport/TFTM2/TFTM2.LIC':
     ensure  => file,
     source  => 'puppet:///modules/nacs_management/TFTM2.LIC',
     require => Package['tracktm2'],
