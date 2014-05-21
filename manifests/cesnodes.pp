@@ -4,7 +4,7 @@ node 'ces-mac-06174.nas.local' inherits 'staffmacnode' {
   $user = '1005838'
 
   class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { "${user}":
+  nacs_management::map::idrive { $user :
     server => 'adm-fs.nasadm.local',
   }
   nacs_management::map::cesshared { "${user}": }
