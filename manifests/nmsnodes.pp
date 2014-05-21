@@ -496,7 +496,7 @@ node 'nms-mac-06090.nas.local' inherits 'teachersmacnode' {
 
 # Amanda Gilles Mac
 # backup user created
-node 'nms-mac-06062.nas.local' inherits 'teachersmacnode' {
+node 'nms-mac-06062.nas.local' {
   $user = '1011990'
 
   class { 'roles::teacher::nms':
