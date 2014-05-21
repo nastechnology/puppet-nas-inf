@@ -65,9 +65,9 @@ node 'nms-mac-06173.nas.local' inherits 'staffmacnode' {
   nacs_management::tmutil { '1002786': }
 
   package { 'Java7u51':
+    ensure   => installed,
     provider => pkgdmg,
     source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/02/jre-7u51-macosx-x64.dmg',
-    ensure   => 'installed',
   }
 }
 
