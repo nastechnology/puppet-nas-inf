@@ -12,7 +12,7 @@ forge "http://forge.puppetlabs.com"
 
  mod "mosen/cups"
  mod "joshcooper/powershell"
- mod "adenning/winfacts"  
+ mod "adenning/winfacts"
  mod "grahamgilbert/mac_facts"
  mod "rcoleman/mac_profiles_handler"
  mod "glarizza/property_list_key"
@@ -20,19 +20,20 @@ forge "http://forge.puppetlabs.com"
  mod "hunner/wordpress"
  mod "puppetlabs/reboot"
  mod "opentable/puppetversion"
+ mod "nastechnology/tmutil"
 
  mod "chocolatey",
    :git => "https://github.com/chocolatey/puppet-chocolatey.git"
 
 # mod "dhcp",
 #   :git => "https://github.com/nastechnology/puppet-dhcp"
- 
+
 # mod "registry",
 #   :git => "https://github.com/nastechnology/puppetlabs-registry.git"
 
  mod "munkiclient",
    :git => "https://github.com/nastechnology/munkiclient.git"
- 
+
 # mod "nacs_management",
 #   :git => "https://github.com/nastechnology/nacs_management.git"
 
@@ -44,7 +45,7 @@ forge "http://forge.puppetlabs.com"
 
  mod "git",
    :git => "https://github.com/nastechnology/git.git"
- 
+
  mod "setacl",
    :git => "https://github.com/nastechnology/setacl.git"
 
