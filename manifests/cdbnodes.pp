@@ -104,14 +104,11 @@ node 'cdb-mac-06097.nas.local' inherits 'teachersmacnode' {
 
 # Laurie Gilson Mac
 # backup user created
-node 'cdb-mac-06195.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1003591': }
-  nacs_management::printers{ 'cdb_wkrm_copier': }
-  nacs_management::printers{ 'cdb_wkrm_colorlaser': }
-
-  nacs_management::map::cdbshared { '1003591': }
-  nacs_management::map::alldistrict { '1003591': }
+node 'cdb-mac-06195.nas.local' {
+  $user = '1003591'
+  class { 'roles::teacher::cdb':
+    user => $user,
+  }
 }
 
 # Kelli Good Mac
