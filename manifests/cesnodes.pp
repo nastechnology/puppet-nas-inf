@@ -148,7 +148,7 @@ node 'ces-mac-06233.nas.local' inherits 'teachersmacnode' {
 
 # Sarah Rosebrock Mac
 # backup user created
-node 'ces-mac-06071.nas.local' :{
+node 'ces-mac-06071.nas.local' {
   class { 'roles::teacher::ces':
     user => '1008491',
   }
