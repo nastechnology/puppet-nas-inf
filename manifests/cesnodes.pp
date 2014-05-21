@@ -174,13 +174,12 @@ node 'ces-mac-06063.nas.local' inherits 'teachersmacnode' {
 
 # Cyndy Tilley Mac
 # backup user created
-node 'ces-mac-06065.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1007497' : }
-  nacs_management::map::cesshared { '1007497': }
-  nacs_management::map::alldistrict { '1007497': }
-  nacs_management::printers{ 'ces_wkrm': }
-  nacs_management::printers{ 'ces_upstairs_wkrm': }
+node 'ces-mac-06065.nas.local' {
+  $user = '1007497'
+
+  class { 'roles::teacher::ces':
+    user => $user,
+  }
 }
 
 # Aaron Walston Mac
