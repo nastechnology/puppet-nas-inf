@@ -57,15 +57,11 @@ node 'ces-mac-06236.nas.local' inherits 'teachersmacnode' {
 
 # Chelsea Dietrich Mac
 # backup user created
-node 'ces-mac-06235.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1011963' : }
-  nacs_management::map::cesshared { '1011963': }
-  nacs_management::map::alldistrict { '1011963': }
-  nacs_management::printers{ 'nms_office_copier': }
-  nacs_management::printers{ 'nms_ces_ricoh_7500': }
-
-  nacs_management::map::nmsshared { '1011963': }
+node 'ces-mac-06235.nas.local' {
+  $user = '1011963'
+  class { 'roles::teacher::ces':
+    user => $user,
+  }
 }
 
 # Jenna Gray Mac
