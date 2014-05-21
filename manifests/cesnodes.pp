@@ -206,13 +206,12 @@ node 'ces-mac-06067.nas.local' inherits 'teachersmacnode' {
 
 # Karl Yunker Mac
 # backup user created
-node 'ces-mac-06056.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1008365' : }
-  nacs_management::map::cesshared { '1008365': }
-  nacs_management::map::alldistrict { '1008365': }
-  nacs_management::printers{ 'ces_wkrm': }
-  nacs_management::printers{ 'ces_upstairs_wkrm': }
+node 'ces-mac-06056.nas.local' {
+  $user = '1008365'
+
+  class { 'roles::teacher::ces':
+    user => $user,
+  }
 }
 
 # CES Lab
