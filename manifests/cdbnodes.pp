@@ -176,7 +176,7 @@ node 'cdb-mac-06208.nas.local' inherits 'teachersmacnode' {
 
 # Linda Martinez Mac
 # backup user created
-node 'cdb-mac-06232.nas.local' inherits 'teachersmacnode' {
+node 'cdb-mac-06232.nas.local' {
   $user = '1005215'
 
   class { 'roles::teacher::cdb':
