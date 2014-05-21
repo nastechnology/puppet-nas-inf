@@ -41,7 +41,7 @@ node 'cdb-mac-06190.nas.local' {
   $user = '1010346'
 
   class { 'roles::teacher::cdb::ceskg':
-    user => "${user}",
+    user => $user,
   }
 
 }
@@ -52,7 +52,7 @@ node 'cdb-mac-06191.nas.local' {
   $user = '1002534'
 
   class { 'roles::teacher::cdb':
-    user => "${user}",
+    user => $user,
   }
 
 }
@@ -68,7 +68,7 @@ node 'cdb-mac-06191.nas.local' {
 node 'cdb-mac-06099.nas.local' {
   $user = '1002849'
   class { 'roles::teacher::cdb':
-    user => "${user}",
+    user => $user,
   }
 }
 
@@ -77,7 +77,7 @@ node 'cdb-mac-06099.nas.local' {
 node 'cdb-mac-06228.nas.local' {
   $user = '1001001'
   class { 'roles::teacher::cdb':
-    user => "${user}",
+    user => $user,
   }
 }
 
@@ -86,7 +86,7 @@ node 'cdb-mac-06228.nas.local' {
 node 'cdb-mac-06098.nas.local' {
   $user = '1001582'
   class { 'roles::teacher::cdb':
-    user => "${user}",
+    user => $user,
   }
 }
 
@@ -120,7 +120,7 @@ node 'cdb-mac-06194.nas.local' {
   $user = '1003675'
 
   class { 'roles::teacher::cdb':
-    user => "${user}",
+    user => $user,
   }
 }
 
@@ -129,7 +129,7 @@ node 'cdb-mac-06194.nas.local' {
 node 'cdb-mac-06096.nas.local' {
   $user = '1002128'
   class { 'roles::teacher::cdb':
-    user => "${user}",
+    user => $user,
   }
 }
 
@@ -139,7 +139,7 @@ node 'cdb-mac-06095.nas.local' {
   $user = '1002471'
 
   class { 'roles::teacher::cdb':
-    user => "${user}",
+    user => $user,
   }
 }
 
@@ -149,7 +149,7 @@ node 'cdb-mac-06193.nas.local' {
   $user = '1004501'
 
   class { 'roles::teacher::cdb':
-    user => "${user}",
+    user => $user,
   }
 }
 
@@ -159,7 +159,7 @@ node 'cdb-mac-06192.nas.local' {
   $user = '1004627'
 
   class { 'roles::teacher::cdb':
-    user => "${user}",
+    user => $user,
   }
 
 }
@@ -239,7 +239,7 @@ node 'cdb-mac-06231.nas.local' {
   $user = '1004116'
 
   class { 'roles::teacher::cdb::ceskg':
-    user => "${user}",
+    user => $user,
   }
 }
 
@@ -248,7 +248,7 @@ node 'cdb-mac-06231.nas.local' {
 node 'cdb-mac-06229.nas.local' {
   $user = '1005887'
   class { 'roles::teacher::cdb':
-    user => "${user}",
+    user => $user,
   }
 }
 
@@ -270,7 +270,7 @@ node 'cdb-mac-06225.nas.local' {
   $user = '1007959'
 
   class { 'roles::teacher::cdb':
-    user => "${user}",
+    user => $user,
   }
 }
 
@@ -279,7 +279,7 @@ node 'cdb-mac-06225.nas.local' {
 node 'cdb-mac-06224.nas.local' {
   $user = '1008015'
   class { 'roles::teacher::cdb':
-    user => "${user}",
+    user => $user,
   }
 }
 
@@ -306,7 +306,7 @@ node 'cdb-mac-06207.nas.local' {
   $user = '1001337'
 
   class { 'roles::teacher::cdb':
-    user => "${user}",
+    user => $user,
   }
 }
 
@@ -315,7 +315,7 @@ node 'cdb-mac-06207.nas.local' {
 node 'cdb-mac-06234.nas.local' {
   $user = '1011970'
   class { 'roles::teacher::cdb':
-    user => "${user}",
+    user => $user,
   }
 }
 
