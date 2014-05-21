@@ -250,15 +250,11 @@ node 'nms-mac-06077.nas.local' inherits 'teachersmacnode' {
 
 # Jay Brown Mac
 # backup user created
-node 'nms-mac-06076.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1010556': }
-  nacs_management::printers { 'nms_upstairs_copier': }
-  nacs_management::printers { 'nms_office': }
-  nacs_management::printers { 'nms_office_copier': }
-
-  nacs_management::map::nmsshared { '1010556':  }
-  nacs_management::map::alldistrict { '1010556': }
+node 'nms-mac-06076.nas.local' {
+  $user = '1010556'
+  class { 'roles::teacher::nms':
+    user => $user,
+  }
 }
 
 # Christa Burken Mac
