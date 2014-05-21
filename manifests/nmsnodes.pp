@@ -497,14 +497,11 @@ node 'nms-mac-06090.nas.local' inherits 'teachersmacnode' {
 # Amanda Gilles Mac
 # backup user created
 node 'nms-mac-06062.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1011990': }
-  nacs_management::printers { 'nms_upstairs_copier': }
-  nacs_management::printers { 'nms_office': }
-  nacs_management::printers { 'nms_office_copier': }
-  nacs_management::printers{ 'ces_wkrm': }
+  $user = '1011990'
 
-  nacs_management::map::alldistrict { '1011990': }
+  class { 'roles::teacher::nms':
+    user => $user,
+  }
 }
 
 # Parcc lab @ NHS
