@@ -35,15 +35,12 @@ node 'wes-mac-06186.nas.local' inherits 'staffmacnode' {
 }
 
 # Doug Edwards mac laptop
-node 'wes-mac-06175.nas.local' inherits 'teachersmacnode' {
+node 'wes-mac-06175.nas.local' {
   $user = '1003038'
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { $user: }
-  nacs_management::map::wesshared { $user: }
-  nacs_management::map::alldistrict { $user: }
 
-  nacs_management::printers { 'wes_wkrm_copier': }
-  nacs_management::printers { 'wes_office': }
+  class { 'roles::teacher::wes':
+    user => $user,
+  }
 }
 
 # Jen Gerken mac laptop
