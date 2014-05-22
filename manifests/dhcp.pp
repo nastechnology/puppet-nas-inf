@@ -1,3 +1,4 @@
+# DHCP SERVER configuration
 node 'dhcp.nas.local' {
   include dhcp::server
 
@@ -51,7 +52,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.9.255',
     range_begin => '10.20.9.100',
     range_end   => '10.20.9.200',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     other_opts  => 'option ubnt.unifi-address 10.20.2.50',
     domain_name => 'nas.local',
@@ -65,7 +66,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.10.255',
     range_begin => '10.20.10.20',
     range_end   => '10.20.10.250',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -78,7 +79,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.11.255',
     range_begin => '10.20.11.50',
     range_end   => '10.20.11.250',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -98,7 +99,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.12.255',
     range_begin => '10.20.12.100',
     range_end   => '10.20.12.200',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -111,7 +112,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.13.255',
     range_begin => '10.20.13.10',
     range_end   => '10.20.13.200',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -131,7 +132,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.14.255',
     range_begin => '10.20.14.11',
     range_end   => '10.20.14.250',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -213,7 +214,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.15.255',
     range_begin => '10.20.15.195',
     range_end   => '10.20.15.199',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -246,7 +247,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.19.255',
     range_begin => '10.20.16.10',
     range_end   => '10.20.19.250',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -311,7 +312,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.20.255',
     range_begin => '10.20.20.20',
     range_end   => '10.20.20.250',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -325,7 +326,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.21.255',
     range_begin => '10.20.21.50',
     range_end   => '10.20.21.250',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -339,7 +340,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.22.255',
     range_begin => '10.20.22.100',
     range_end   => '10.20.22.200',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -353,7 +354,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.23.255',
     range_begin => '10.20.23.100',
     range_end   => '10.20.23.200',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -367,7 +368,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.24.255',
     range_begin => '10.20.24.10',
     range_end   => '10.20.24.200',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -413,7 +414,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.26.255',
     range_begin => '10.20.26.10',
     range_end   => '10.20.27.254',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     other_opts  => 'option ubnt.unifi-address 10.20.2.50',
@@ -459,7 +460,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.30.255',
     range_begin => '10.20.30.100',
     range_end   => '10.20.30.200',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -478,7 +479,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.31.255',
     range_begin => '10.20.31.100',
     range_end   => '10.20.31.200',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -492,7 +493,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.32.255',
     range_begin => '10.20.32.100',
     range_end   => '10.20.32.200',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -505,7 +506,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.33.255',
     range_begin => '10.20.33.80',
     range_end   => '10.20.33.250',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -597,316 +598,10 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.34.255',
     range_begin => '10.20.34.84',
     range_end   => '10.20.34.254',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
-  }
-
-  #
-  #CES Lib Lab 1
-  dhcp::server::host {'ces-liblab-1':
-    address     => '10.20.34.50',
-    hwaddress   => '00:11:11:58:fc:94',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 2
-  dhcp::server::host {'ces-liblab-2':
-    address     => '10.20.34.51',
-    hwaddress   => '00:11:11:83:f8:4b',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 3
-  dhcp::server::host {'ces-liblab-3':
-    address     => '10.20.34.52',
-    hwaddress   => '00:11:11:83:f4:64',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 4
-  dhcp::server::host {'ces-liblab-4':
-    address     => '10.20.34.53',
-    hwaddress   => '00:11:11:59:59:73',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 5
-  dhcp::server::host {'ces-liblab-5':
-    address     => '10.20.34.54',
-    hwaddress   => '00:11:11:84:00:70',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 6
-  dhcp::server::host {'ces-liblab-6':
-    address     => '10.20.34.55',
-    hwaddress   => '00:11:11:59:5e:08',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 7
-  dhcp::server::host {'ces-liblab-7':
-    address     => '10.20.34.56',
-    hwaddress   => '00:11:11:59:5e:a2',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 8
-  dhcp::server::host {'ces-liblab-8':
-    address     => '10.20.34.57',
-    hwaddress   => '00:11:11:59:5e:10',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 9
-  dhcp::server::host {'ces-liblab-9':
-    address     => '10.20.34.58',
-    hwaddress   => '00:11:11:60:30:15',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 10
-  dhcp::server::host {'ces-liblab-10':
-    address     => '10.20.34.59',
-    hwaddress   => '00:11:11:48:c1:77',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 11
-  dhcp::server::host {'ces-liblab-11':
-    address     => '10.20.34.60',
-    hwaddress   => '00:11:11:84:4f:83',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 12
-  dhcp::server::host {'ces-liblab-12':
-    address     => '10.20.34.61',
-    hwaddress   => '00:11:11:60:5c:65',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 13
-  dhcp::server::host {'ces-liblab-13':
-    address     => '10.20.34.62',
-    hwaddress   => '00:11:11:6d:09:3b',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 14
-  dhcp::server::host {'ces-liblab-14':
-    address     => '10.20.34.63',
-    hwaddress   => '00:11:11:59:5e:42',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 15
-  dhcp::server::host {'ces-liblab-15':
-    address     => '10.20.34.64',
-    hwaddress   => '00:11:11:84:4f:84',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 16
-  dhcp::server::host {'ces-liblab-16':
-    address     => '10.20.34.65',
-    hwaddress   => '00:0c:f1:ec:d5:47',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 17
-  dhcp::server::host {'ces-liblab-17':
-    address     => '10.20.34.66',
-    hwaddress   => '00:11:11:60:30:2a',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 18
-  dhcp::server::host {'ces-liblab-18':
-    address     => '10.20.34.67',
-    hwaddress   => '00:11:11:59:5e:04',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 19
-  dhcp::server::host {'ces-liblab-19':
-    address     => '10.20.34.68',
-    hwaddress   => '00:11:11:59:5e:66',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 20
-  dhcp::server::host {'ces-liblab-20':
-    address     => '10.20.34.69',
-    hwaddress   => '00:11:11:74:b5:d9',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 21
-  dhcp::server::host {'ces-liblab-21':
-    address     => '10.20.34.70',
-    hwaddress   => '00:11:11:59:5e:29',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 22
-  dhcp::server::host {'ces-liblab-22':
-    address     => '10.20.34.71',
-    hwaddress   => '00:11:11:1a:c1:4c',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 23
-  dhcp::server::host {'ces-liblab-23':
-    address     => '10.20.34.72',
-    hwaddress   => '00:11:11:59:5e:44',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 24
-  dhcp::server::host {'ces-liblab-24':
-    address     => '10.20.34.73',
-    hwaddress   => '00:11:11:1a:bd:66',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 25
-  dhcp::server::host {'ces-liblab-25':
-    address     => '10.20.34.74',
-    hwaddress   => '00:11:11:1a:c1:49',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 26
-  dhcp::server::host {'ces-liblab-26':
-    address     => '10.20.34.75',
-    hwaddress   => '00:11:11:60:2f:d1',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 27
-  dhcp::server::host {'ces-liblab-27':
-    address     => '10.20.34.76',
-    hwaddress   => '00:11:11:59:2b:22',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 28
-  dhcp::server::host {'ces-liblab-28':
-    address     => '10.20.34.77',
-    hwaddress   => '00:07:e9:57:57:24',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 29
-  dhcp::server::host {'ces-liblab-29':
-    address     => '10.20.34.78',
-    hwaddress   => '00:07:e9:57:53:25',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 30
-  dhcp::server::host {'ces-liblab-30':
-    address     => '10.20.34.79',
-    hwaddress   => '00:07:e9:57:0b:60',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 31
-  dhcp::server::host {'ces-liblab-31':
-    address     => '10.20.34.80',
-    hwaddress   => '00:07:e9:57:0b:3f',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 32
-  dhcp::server::host {'ces-liblab-32':
-    address     => '10.20.34.81',
-    hwaddress   => '00:11:11:1d:38:27',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 33
-  dhcp::server::host {'ces-liblab-33':
-    address     => '10.20.34.82',
-    hwaddress   => '00:11:11:59:2b:31',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
-  }
-
-  #
-  #CES Lib Lab 34
-  dhcp::server::host {'ces-liblab-34':
-    address     => '10.20.34.83',
-    hwaddress   => '00:11:11:83:fc:ee',
-    filename    => 'pro/4.6.1/pxelinux.0',
-    next_server => '10.20.34.10',
   }
 
   #
@@ -942,7 +637,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.36.255',
     range_begin => '10.20.36.20',
     range_end   => '10.20.37.254',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     other_opts  => 'option ubnt.unifi-address 10.20.2.50',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
@@ -969,7 +664,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.40.255',
     range_begin => '10.20.40.100',
     range_end   => '10.20.40.200',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -995,7 +690,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.41.255',
     range_begin => '10.20.41.100',
     range_end   => '10.20.41.200',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -1008,7 +703,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.42.255',
     range_begin => '10.20.42.100',
     range_end   => '10.20.42.200',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -1021,7 +716,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.43.255',
     range_begin => '10.20.43.10',
     range_end   => '10.20.43.250',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -1034,7 +729,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.44.255',
     range_begin => '10.20.44.10',
     range_end   => '10.20.44.200',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -1074,7 +769,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.46.255',
     range_begin => '10.20.46.10',
     range_end   => '10.20.46.250',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     other_opts  => 'option ubnt.unifi-address 10.20.2.50',
     domain_name => 'nas.local',
@@ -1088,7 +783,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.50.255',
     range_begin => '10.20.50.100',
     range_end   => '10.20.50.200',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -1101,7 +796,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.51.255',
     range_begin => '10.20.51.100',
     range_end   => '10.20.51.200',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -1114,7 +809,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.52.255',
     range_begin => '10.20.52.100',
     range_end   => '10.20.52.200',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -1127,7 +822,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.53.255',
     range_begin => '10.20.53.10',
     range_end   => '10.20.53.210',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -1140,7 +835,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.54.255',
     range_begin => '10.20.54.100',
     range_end   => '10.20.54.200',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
@@ -1185,7 +880,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.56.255',
     range_begin => '10.20.56.10',
     range_end   => '10.20.56.250',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     other_opts  => 'option ubnt.unifi-address 10.20.2.50',
     domain_name => 'nas.local',
