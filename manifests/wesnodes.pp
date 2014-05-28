@@ -35,6 +35,7 @@ node 'wes-mac-06186.nas.local' inherits 'staffmacnode' {
 }
 
 # Doug Edwards mac laptop
+# backup user created
 node 'wes-mac-06175.nas.local' {
   $user = '1003038'
 
@@ -44,6 +45,7 @@ node 'wes-mac-06175.nas.local' {
 }
 
 # Jen Gerken mac laptop
+# backup user created
 node 'wes-mac-06189.nas.local' {
   $user = '1003500'
   class { 'roles::teacher::wes':
@@ -116,6 +118,7 @@ node 'wes-mac-06222.nas.local' inherits 'teachersmacnode' {
 }
 
 # Sheri Mansfield Mac
+# backup user created
 node 'wes-mac-06201.nas.local' {
   $user = '1005159'
   class { 'roles::teacher::wes':
