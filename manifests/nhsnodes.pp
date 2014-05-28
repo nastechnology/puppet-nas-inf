@@ -256,16 +256,11 @@ node 'nhs-mac-06023.nas.local' inherits 'teachersmacnode' {
 
 # Krysann Dunbar
 # backup user created
-node 'nhs-mac-06004.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1002919': }
-  nacs_management::printers{ 'nhs_wkrm_copier': }
-  nacs_management::printers{ 'nhs_wkrm_copier_2': }
-  nacs_management::printers{ 'nhs_wkrm_231': }
-  nacs_management::printers{ 'nhs_library': }
-
-  nacs_management::map::nhsshared { '1002919': }
-  nacs_management::map::alldistrict { '1002919': }
+node 'nhs-mac-06004.nas.local' {
+  $user = '1002919'
+  class { 'roles::teacher::nhs':
+    user => $user,
+  }
 }
 
 # Bill Inselman Mac
