@@ -68,16 +68,13 @@ node 'wes-mac-06170.nas.local' {
 #
 
 # Tim Atkinson mac laptop
-node 'wes-mac-06210.nas.local' inherits 'teachersmacnode' {
+# backup user created
+node 'wes-mac-06210.nas.local' {
   $user = '1001211'
-  class { 'nacs_management::allprinters': }
 
-  nacs_management::map::idrive { $user: }
-  nacs_management::map::wesshared { $user: }
-  nacs_management::map::alldistrict { $user: }
-
-  nacs_management::printers { 'wes_wkrm_copier': }
-  nacs_management::printers { 'wes_office': }
+  class { 'roles::teacher::wes':
+    user => $user,
+  }
 }
 
 # Denise Davis mac laptop
@@ -137,32 +134,26 @@ node 'wes-mac-06221.nas.local' inherits 'teachersmacnode' {
 }
 
 # Kara Miller Mac
-node 'wes-mac-06200.nas.local' inherits 'teachersmacnode' {
+# backup user created
+node 'wes-mac-06200.nas.local' {
   $user = '1008654'
-  class { 'nacs_management::allprinters': }
 
-  nacs_management::map::idrive { $user: }
-  nacs_management::map::wesshared { $user: }
-  nacs_management::map::alldistrict { $user: }
-
-  nacs_management::printers { 'wes_wkrm_copier': }
-  nacs_management::printers { 'wes_office': }
-
-  nacs_management::printers { 'nhs_copier': }
+  class { 'roles::teacher::wes':
+    user => $user,
+  }
 }
+
 
 # Deb Jones Mac
-node 'wes-mac-06220.nas.local' inherits 'teachersmacnode' {
+# backup user created
+node 'wes-mac-06220.nas.local' {
   $user = '1004473'
-  class { 'nacs_management::allprinters': }
 
-  nacs_management::map::idrive { $user: }
-  nacs_management::map::wesshared { $user: }
-  nacs_management::map::alldistrict { $user: }
-
-  nacs_management::printers { 'wes_wkrm_copier': }
-  nacs_management::printers { 'wes_office': }
+  class { 'roles::teacher::wes':
+    user => $user,
+  }
 }
+
 
 # Kathy Jones Mac
 # backup user created
