@@ -236,17 +236,13 @@ node 'wes-mac-06203.nas.local' inherits 'teachersmacnode' {
 }
 
 # Julie Wiemken Mac
-node 'wes-mac-06214.nas.local' inherits 'teachersmacnode' {
+# backup user created
+node 'wes-mac-06214.nas.local' {
   $user = '1008113'
-  class { 'nacs_management::allprinters': }
 
-  nacs_management::map::idrive { $user: }
-  nacs_management::map::wesshared { $user: }
-  nacs_management::map::alldistrict { $user: }
-
-  nacs_management::printers { 'wes_wkrm_copier': }
-  nacs_management::printers { 'wes_office': }
-  nacs_management::printers { 'wes_wkrm_color': }
+  class { 'roles::teacher::wes':
+    user => $user,
+  }
 }
 
 # Julie Yunker Mac
