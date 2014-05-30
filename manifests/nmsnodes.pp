@@ -265,17 +265,11 @@ node 'nms-mac-06082.nas.local' inherits 'teachersmacnode' {
 
 # Andrea Hoffman Mac
 # backup user created
-node 'nms-mac-06164.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1004186': }
-  nacs_management::printers { 'nms_upstairs_copier': }
-  nacs_management::printers { 'nms_office': }
-  nacs_management::printers { 'nms_office_copier': }
-  nacs_management::printers{ 'nms_ces_ricoh_7500': }
-  nacs_management::printers { 'nms_colorlaser': }
-
-  nacs_management::map::nmsshared { '1004186':  }
-  nacs_management::map::alldistrict { '1004186': }
+node 'nms-mac-06164.nas.local' {
+  $user = '1004186'
+  class { 'roles::teacher::nms':
+    user => $user,
+  }
 }
 
 # Jodi Irving Mac
@@ -366,16 +360,14 @@ node 'nms-mac-06087.nas.local' {
 
 # Ashley Miller Mac
 # backup user created
-node 'nms-mac-06085.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1009333': }
-  nacs_management::printers { 'nms_upstairs_copier': }
-  nacs_management::printers { 'nms_office': }
-  nacs_management::printers { 'nms_office_copier': }
+node 'nms-mac-06085.nas.local' {
+  $user = '1009333'
 
-  nacs_management::map::nmsshared { '1009333':  }
-  nacs_management::map::alldistrict { '1009333': }
+  class { 'roles::teacher::nms':
+    user => $user,
+  }
 }
+
 
 # Peggy Mossing Mac
 # backup user created
