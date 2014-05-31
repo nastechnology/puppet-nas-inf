@@ -160,17 +160,12 @@ node 'nhs-mac-06007.nas.local' {
 
 # Joe Brownson Mac
 # backup user created
-node 'nhs-mac-06050.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1001981': }
-  nacs_management::printers{ 'nhs_wkrm_copier': }
-  nacs_management::printers{ 'nhs_wkrm_copier_2': }
-  nacs_management::printers{ 'nhs_wkrm_231': }
-  nacs_management::printers{ 'nhs_library': }
-  nacs_management::printers{ 'nhs_207': }
-
-  nacs_management::map::nhsshared { '1001981': }
-  nacs_management::map::alldistrict { '1001981': }
+# Backup enabled
+node 'nhs-mac-06050.nas.local' {
+  $user = '1001981'
+  class { 'roles::teacher::nhs':
+    user => $user,
+  }
 }
 
 # Randy Burke Mac
