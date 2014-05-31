@@ -295,42 +295,29 @@ node 'nhs-mac-06000.nas.local' inherits 'teachersmacnode' {
 
 # Jill Petee Mac
 # backup user created
-node 'nhs-mac-06051.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1006041': }
-  nacs_management::printers{ 'nhs_wkrm_copier': }
-  nacs_management::printers{ 'nhs_wkrm_copier_2': }
-  nacs_management::printers{ 'nhs_wkrm_231': }
-  nacs_management::printers{ 'nhs_library': }
-  nacs_management::printers{ 'nhs_207': }
-
-  nacs_management::map::nhsshared { '1006041': }
-  nacs_management::map::alldistrict { '1006041': }
+node 'nhs-mac-06051.nas.local' {
+  $user = '1006041'
+  class { 'roles::teacher::nhs':
+    user => $user,
+  }
 }
 
 # Denise Lalonde Mac
-# backup user created
-node 'nhs-mac-06032.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1004767': }
-  nacs_management::printers{ 'nhs_copier': }
-  nacs_management::printers{ 'nhs_140_c': }
-  nacs_management::printers{ 'hs_stafflounge': }
-
-  nacs_management::map::nhsshared { '1004767': }
-  nacs_management::map::alldistrict { '1004767': }
+# backup enabled
+node 'nhs-mac-06032.nas.local' {
+  $user = '1004767'
+  class { 'roles::teacher::nhs':
+    user => $user,
+  }
 }
 
 #Yolanda Monnin Mac
 # backup user created
-node 'nhs-mac-06060.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1005579': }
-  nacs_management::printers{ 'nhs_copier': }
-  nacs_management::printers{ 'nhs_art': }
-
-  nacs_management::map::nhsshared { '1005579': }
-  nacs_management::map::alldistrict { '1005579': }
+node 'nhs-mac-06060.nas.local' {
+  $user = '1005579'
+  class { 'roles::teacher::nhs':
+    user => $user,
+  }
 }
 
 #Kevin Milius Mac
@@ -452,17 +439,12 @@ node 'nhs-mac-06016.nas.local' inherits 'teachersmacnode' {
 }
 
 # Tracy Weber Mac
-# backup user created
-node 'nhs-mac-06015.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1001351': }
-  nacs_management::printers{ 'nhs_wkrm_copier': }
-  nacs_management::printers{ 'nhs_wkrm_copier_2': }
-  nacs_management::printers{ 'nhs_wkrm_231': }
-  nacs_management::printers{ 'nhs_library': }
-
-  nacs_management::map::nhsshared { '1001351': }
-  nacs_management::map::alldistrict { '1001351': }
+# backup enabled
+node 'nhs-mac-06015.nas.local' {
+  $user = '1001351'
+  class { 'roles::teacher::nhs':
+    user => $user,
+  }
 }
 
 # Lori Vorwerk Mac
