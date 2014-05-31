@@ -22,13 +22,11 @@ node 'ces-mac-06174.nas.local' inherits 'staffmacnode' {
 
 # Brett Cordy mac
 # backup user created
-node 'ces-mac-06188.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1010584' : }
-  nacs_management::map::cesshared { '1010584': }
-  nacs_management::map::alldistrict { '1010584': }
-  nacs_management::printers{ 'ces_wkrm': }
-  nacs_management::printers{ 'ces_upstairs_wkrm': }
+node 'ces-mac-06188.nas.local' {
+  $user = '1010584'
+  class { 'roles::teacher::ces':
+    user => $user,
+  }
 }
 
 # ------------ After Image ------------ #
@@ -73,14 +71,13 @@ node 'ces-mac-06055.nas.local' {
 
 # Cami Haas Mac
 # backup user created
-node 'ces-mac-06070.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1011914' : }
-  nacs_management::map::cesshared { '1011914': }
-  nacs_management::map::alldistrict { '1011914': }
-  nacs_management::printers{ 'ces_wkrm': }
-  nacs_management::printers{ 'ces_upstairs_wkrm': }
+node 'ces-mac-06070.nas.local' {
+  $user = '1011914'
+  class { 'roles::teacher::ces':
+    user => $user,
+  }
 }
+
 
 # Pam Hersha Mac
 # backup user created
@@ -159,13 +156,11 @@ node 'ces-mac-06064.nas.local' inherits 'teachersmacnode' {
 
 # Kristin Shepard Mac
 # backup user created
-node 'ces-mac-06063.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1001036' : }
-  nacs_management::map::cesshared { '1001036': }
-  nacs_management::map::alldistrict { '1001036': }
-  nacs_management::printers{ 'ces_wkrm': }
-  nacs_management::printers{ 'ces_upstairs_wkrm': }
+node 'ces-mac-06063.nas.local' {
+  $user = '1001036'
+  class { 'roles::teacher::ces':
+    user => $user,
+  }
 }
 
 # Cyndy Tilley Mac
