@@ -26,7 +26,7 @@ node 'dhcp.nas.local' {
     broadcast   => '10.20.8.255',
     range_begin => '10.20.8.100',
     range_end   => '10.20.8.200',
-    #filename    => 'undionly.kpxe',
+    filename    => 'undionly.kpxe',
     next_server => '10.20.2.35',
     domain_name => 'nas.local',
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
