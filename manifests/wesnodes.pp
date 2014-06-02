@@ -121,16 +121,11 @@ node 'wes-mac-06201.nas.local' {
 }
 
 # Kendra Getz Mac
-node 'wes-mac-06221.nas.local' inherits 'teachersmacnode' {
+node 'wes-mac-06221.nas.local' {
   $user = '1011935'
-  class { 'nacs_management::allprinters': }
-
-  nacs_management::map::idrive { $user: }
-  nacs_management::map::wesshared { $user: }
-  nacs_management::map::alldistrict { $user: }
-
-  nacs_management::printers { 'wes_wkrm_copier': }
-  nacs_management::printers { 'wes_office': }
+  class { 'roles::teacher::wes':
+    user => $user,
+  }
 }
 
 # Kara Miller Mac
