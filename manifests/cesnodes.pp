@@ -93,24 +93,20 @@ node 'ces-mac-06054.nas.local' inherits 'teachersmacnode' {
 
 # Kelly Haseman Mac
 # backup user created
-node 'ces-mac-06069.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1008647' : }
-  nacs_management::map::cesshared { '1008647': }
-  nacs_management::map::alldistrict { '1008647': }
-  nacs_management::printers{ 'ces_wkrm': }
-  nacs_management::printers{ 'ces_upstairs_wkrm': }
+node 'ces-mac-06069.nas.local' {
+  $user = '1008647'
+  class { 'roles::teacher::ces':
+    user => $user,
+  }
 }
 
 # Mackenzie Plassman Mac
 # backup user created
-node 'ces-mac-06053.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1010792' : }
-  nacs_management::map::cesshared { '1010792': }
-  nacs_management::map::alldistrict { '1010792': }
-  nacs_management::printers{ 'ces_wkrm': }
-  nacs_management::printers{ 'ces_upstairs_wkrm': }
+node 'ces-mac-06053.nas.local' {
+  $user = '1010792'
+  class { 'roles::teacher::ces':
+    user => $user,
+  }
 }
 
 # Jessica Ramirez Mac

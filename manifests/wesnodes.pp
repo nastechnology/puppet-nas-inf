@@ -179,16 +179,12 @@ node 'wes-mac-06216.nas.local' {
 }
 
 # Lisa Leonard Mac
-node 'wes-mac-06218.nas.local' inherits 'teachersmacnode' {
+# backup user created
+node 'wes-mac-06218.nas.local' {
   $user = '1007875'
-  class { 'nacs_management::allprinters': }
-
-  nacs_management::map::idrive { $user: }
-  nacs_management::map::wesshared { $user: }
-  nacs_management::map::alldistrict { $user: }
-
-  nacs_management::printers { 'wes_wkrm_copier': }
-  nacs_management::printers { 'wes_office': }
+  class { 'roles::teacher::wes':
+    user => $user,
+  }
 }
 
 # Lisa Schimmoeller Mac
@@ -201,16 +197,12 @@ node 'wes-mac-06215.nas.local' {
 }
 
 # Andrea Wardinski Mac
-node 'wes-mac-06212.nas.local' inherits 'teachersmacnode' {
+# backup user created
+node 'wes-mac-06212.nas.local' {
   $user = '1004004'
-  class { 'nacs_management::allprinters': }
-
-  nacs_management::map::idrive { $user: }
-  nacs_management::map::wesshared { $user: }
-  nacs_management::map::alldistrict { $user: }
-
-  nacs_management::printers { 'wes_wkrm_copier': }
-  nacs_management::printers { 'wes_office': }
+  class { 'roles::teacher::wes':
+    user => $user,
+  }
 }
 
 # Louise Weekley

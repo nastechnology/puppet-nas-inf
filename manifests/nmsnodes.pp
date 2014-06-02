@@ -127,19 +127,11 @@ node 'nms-mac-06168.nas.local' inherits 'teachersmacnode' {
 
 # Sherry Hogan mac laptop
 # backup user created
-node 'nms-mac-06178.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1004200': }
-
-  nacs_management::printers { 'nms_office_copier': }
-  nacs_management::printers { 'nms_office': }
-  nacs_management::printers { 'nms_ces_ricoh_7500': }
-  nacs_management::printers { 'nms_upstairs_copier': }
-  nacs_management::printers { 'ces_upstairs_wkrm': }
-
-
-  nacs_management::map::nmsshared { '1004200': }
-  nacs_management::map::alldistrict { '1004200': }
+node 'nms-mac-06178.nas.local' {
+  $user = '1004200'
+  class { 'roles::teacher::nms':
+    user => $user,
+  }
 }
 
 # --------------- Added After Test Group ---------------
@@ -155,15 +147,11 @@ node 'nms-mac-06079.nas.local' {
 
 # Kelley Borton Mac
 # backup user created
-node 'nms-mac-06078.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1001736': }
-  nacs_management::printers { 'nms_upstairs_copier': }
-  nacs_management::printers { 'nms_office': }
-  nacs_management::printers { 'nms_office_copier': }
-
-  nacs_management::map::nmsshared { '1001736':  }
-  nacs_management::map::alldistrict { '1001736': }
+node 'nms-mac-06078.nas.local' {
+  $user = '1001736'
+  class { 'roles::teacher::nms':
+    user => $user,
+  }
 }
 
 # Lynne Debbe Mac
@@ -203,16 +191,12 @@ node 'nms-mac-06083.nas.local' {
 
 # Celeste Fryman Mac
 # backup user created
-node 'nms-mac-06165.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1001540': }
-  nacs_management::printers { 'nms_upstairs_copier': }
-  nacs_management::printers { 'nms_office': }
-  nacs_management::printers { 'nms_office_copier': }
-  nacs_management::printers { 'nms_ces_ricoh_7500': }
+node 'nms-mac-06165.nas.local' {
+  $user = '1001540'
 
-  nacs_management::map::nmsshared { '1001540':  }
-  nacs_management::map::alldistrict { '1001540': }
+  class { 'roles::teacher::nms':
+    user => $user,
+  }
 }
 
 # Kenny Bostelman Mac
@@ -295,15 +279,11 @@ node 'nms-mac-06088.nas.local' inherits 'teachersmacnode' {
 
 # Holli Horn Mac
 # backup user created
-node 'nms-mac-06081.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1010199': }
-  nacs_management::printers { 'nms_upstairs_copier': }
-  nacs_management::printers { 'nms_office': }
-  nacs_management::printers { 'nms_office_copier': }
-
-  nacs_management::map::nmsshared { '1010199':  }
-  nacs_management::map::alldistrict { '1010199': }
+node 'nms-mac-06081.nas.local' {
+  $user = '1010199'
+  class { 'roles::teacher::nms':
+    user => $user,
+  }
 }
 
 # Mike Hummer Mac
@@ -322,15 +302,12 @@ node 'nms-mac-06041.nas.local' inherits 'teachersmacnode' {
 
 # Jim Murcko Mac
 # backup user created
-node 'nms-mac-06080.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1005677': }
-  nacs_management::printers { 'nms_upstairs_copier': }
-  nacs_management::printers { 'nms_office': }
-  nacs_management::printers { 'nms_office_copier': }
+node 'nms-mac-06080.nas.local' {
+  $user = '1005677'
 
-  nacs_management::map::nmsshared { '1005677':  }
-  nacs_management::map::alldistrict { '1005677': }
+  class { 'roles::teacher::nms':
+    user => $user,
+  }
 }
 
 # Jeff Peters Mac
@@ -385,28 +362,22 @@ node 'nms-mac-06094.nas.local' {
 
 # Jen Rausch Mac
 # backup user created
-node 'nms-mac-06038.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1009505': }
-  nacs_management::printers { 'nms_upstairs_copier': }
-  nacs_management::printers { 'nms_office': }
-  nacs_management::printers { 'nms_office_copier': }
+node 'nms-mac-06038.nas.local' {
+  $user = '1009505'
 
-  nacs_management::map::nmsshared { '1009505':  }
-  nacs_management::map::alldistrict { '1009505': }
+  class { 'roles::teacher::nms':
+    user => $user,
+  }
 }
 
 # Jason Seiler Mac
 # backup user created
-node 'nms-mac-06093.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1006895': }
-  nacs_management::printers { 'nms_upstairs_copier': }
-  nacs_management::printers { 'nms_office': }
-  nacs_management::printers { 'nms_office_copier': }
+node 'nms-mac-06093.nas.local' {
+  $user = '1006895'
 
-  nacs_management::map::nmsshared { '1006895':  }
-  nacs_management::map::alldistrict { '1006895': }
+  class { 'roles::teacher::nms':
+    user => $user,
+  }
 }
 
 # Tyler Swary Mac
