@@ -27,6 +27,7 @@ node 'cdb-mac-06172.nas.local' inherits 'staffmacnode' {
 
   nacs_management::printers{ 'cdb_wkrm_copier': }
   nacs_management::printers{ 'cdb_108_copier': }
+  nacs_management::printers { 'cdb_wkrm_colorlaser': }
 
   nacs_management::tmutil { '1011438': }
 

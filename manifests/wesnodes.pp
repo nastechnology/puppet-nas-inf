@@ -158,6 +158,12 @@ node 'wes-mac-06219.nas.local' {
   class { 'roles::teacher::wes':
     user => $user,
   }
+
+  nacs_management::printers { 'cdb_wkrm_colorlaser': }
+  nacs_management::printers { 'cdb_wkrm_copier': }
+  nacs_management::printers { 'cdb_mod': }
+  nacs_management::printers { 'cdb_108_copier': }
+  nacs_management::printers { 'cdb_108': }
 }
 
 # Jill Niese Mac
