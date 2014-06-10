@@ -215,7 +215,7 @@ node 'cdb-mac-06209.nas.local' {
 node 'cdb-mac-06230.nas.local' {
   $user = '1011079'
 
-  class { 'roles::teacher::cdb':
+  class { 'roles::teacher::wes':
     user => $user,
   }
 
