@@ -108,6 +108,7 @@ node 'nhs-mac-06005.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nhs_wkrm_231': }
   nacs_management::printers{ 'nhs_library': }
   nacs_management::printers{ 'nhs_207': }
+  nacs_management::printers{ 'nhs_copier': }
 }
 
 # Cinda Strock Mac
