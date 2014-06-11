@@ -86,16 +86,12 @@ node 'wes-mac-06206.nas.local' {
 }
 
 # Christy Eberle mac laptop
-node 'wes-mac-06202.nas.local' inherits 'teachersmacnode' {
+# backup user created
+node 'wes-mac-06202.nas.local' {
   $user = '1002975'
-  class { 'nacs_management::allprinters': }
-
-  nacs_management::map::idrive { $user: }
-  nacs_management::map::weshared { $user: }
-  nacs_management::map::alldistrict { $user: }
-
-  nacs_management::printers { 'wes_wkrm_copier': }
-  nacs_management::printers { 'wes_office': }
+  class { 'roles::teacher::wes':
+    user => $user,
+  }
 }
 
 # Angiala Franz Mac
