@@ -32,7 +32,6 @@ node 'cdb-mac-06172.nas.local' inherits 'staffmacnode' {
   nacs_management::tmutil { '1011438': }
 
   nacs_management::map::cdbshared { '1011438': }
-  nacs_management::map::alldistrict { '1011438': }
 }
 
 
