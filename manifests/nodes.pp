@@ -126,22 +126,6 @@ node 'nas-test-0.nas.local' {
 node 'ces-214-guid.nas.local' inherits 'winbasenode' {
 }
 
-
-
-node 'tech-dev-mini.local' {
-  include nacs_management
-  include nacs_management::techspecs
-  #include munkiclient
-  #include munkiclient::config
-  #include nacs_management::maccheckmngsft
-
-  class { 'nacs_management::allprinters': }   
-
-  nacs_management::printers{'nhs_copier': }
-  nacs_management::printers{ 'ces_office_copier': }
- 
-}
-
 node 'nhs-ios-server.nas.local' inherits 'macbasenode' {
 
 }
