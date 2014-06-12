@@ -13,13 +13,13 @@ node 'nas-tech-tc.nas.local' inherits 'staffmacnode' {
 
   include nacs_management::checkin
 
-  printer { "NHS_WKRM_COPIER1":
-        ensure      => present,
-        uri         => "ipp://10.20.2.9/printers/NHS_WKRM_COPIER1",
-        description => "NHS WKRM Copier1",
-        location    => "NHS 231",
-        shared      => false,
-      }
+  printer { 'NHS_WKRM_COPIER1':
+    ensure      => present,
+    uri         => 'ipp://10.20.2.9/printers/NHS_WKRM_COPIER1',
+    description => 'NHS WKRM Copier1',
+    location    => 'NHS 231',
+    shared      => false,
+  }
 }
 
 # Chris MacBook Professional
