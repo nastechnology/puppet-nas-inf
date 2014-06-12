@@ -1,7 +1,4 @@
-import 'macbasenode.pp'
-import 'teachersmacnode.pp'
-import 'staffmacnode.pp'
-import 'studentmacnode.pp'
+
 
 if $::operatingsystem == 'windows' {
   $sid = 'NACS'
