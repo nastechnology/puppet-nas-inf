@@ -83,7 +83,6 @@ node winbasenode {
 
   package { 'adobereader':
     ensure  => installed,
-    require => Package['PDFCreator'],
   }
 
   package { 'firefox':
@@ -92,47 +91,38 @@ node winbasenode {
 
   package { 'javaruntime':
     ensure  => '7.0.60',
-    require => Package['firefox'],
   }
 
   package { 'googlechrome':
     ensure  => installed,
-    require => Package['javaruntime'],
   }
 
   package { 'flashplayeractivex':
     ensure  => latest,
-    require => Package['googlechrome'],
   }
 
   package { 'flashplayerplugin':
     ensure  => latest,
-    require => Package['firefox'],
   }
 
   package { 'vlc':
     ensure  => installed,
-    require => Package['flashplayerplugin'],
   }
 
   package { 'putty':
     ensure  => installed,
-    require => Package['vlc'],
   }
 
   package { 'winscp':
     ensure  => installed,
-    require => Package['putty'],
   }
 
   package { 'Silverlight':
     ensure  => '5.1',
-    require => Package['winscp'],
   }
 
   package { 'PDFCreator':
     ensure  => installed,
-    require => Package['Silverlight'],
   }
 
   package { 'Quicktime':
