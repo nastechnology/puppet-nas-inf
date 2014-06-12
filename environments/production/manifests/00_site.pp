@@ -6,9 +6,7 @@ if $::operatingsystem == 'windows' {
   Exec { path => [ 'C:/', 'C:/Windows/System32/', 'C:/Windows/', 'C:/Chocolatey/bin', 'C:/NACSManage', 'C:/Windows/System32/WindowsPowerShell/v1.0' ] }
   Package { provider => chocolatey }
 
-  if($::puppetversion == '3.4.3'){
-    File { source_permissions => ignore }
-  }
+  File { source_permissions => ignore }
 
   file { 'C:\Chocolatey\\chocolateyinstall\\chocolatey.config':
     ensure => file,
