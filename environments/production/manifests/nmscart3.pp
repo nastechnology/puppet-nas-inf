@@ -8,7 +8,7 @@ node 'nms-cart3-06131.nas.local' inherits 'studentmacnode' {
   nacs_management::printers { 'nms_office_copier': }
 }
 
-node 'nms-cart3-06132.nas.local' inherits 'studentmacnode' {  
+node 'nms-cart3-06132.nas.local' inherits 'studentmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::printers { 'nms_office_copier': }
 }
@@ -147,4 +147,3 @@ node 'nms-cart3-06149.nas.local' inherits 'studentmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::printers { 'nms_office_copier': }
 }
-
