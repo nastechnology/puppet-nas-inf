@@ -103,7 +103,7 @@ node winbasenode {
   }
 
   package { 'javaruntime':
-    ensure  => '7.0.55',
+    ensure  => '7.0.60',
     require => Package['firefox'],
   }
 
