@@ -13,18 +13,6 @@ node winbasenode {
     }
   }
 
-#  scheduled_task { 'UpgradePuppet':
-#    ensure    => present,
-#    enabled   => false,
-#    command   => 'C:\WINDOWS\system32\msiexec.exe',
-#    arguments => '/qn /i C:\software\puppet-3.4.3.msi',
-#    trigger => {
-#      schedule    => monthly,
-#      start_date  => '2014-02-25',
-#      start_time  => '11:00',
-#    },
-#  }
-
   windows_eventlog { 'Application':
     log_path       => '%SystemRoot%\system32\config\AppEvent.Evt',
     log_size       => '524288',
