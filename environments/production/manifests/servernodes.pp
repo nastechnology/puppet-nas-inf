@@ -24,38 +24,38 @@ node 'nas-vstore.nas.local' {
 
   # Veeam Backup Catalog Data Service
   service { 'Veeam Backup Catalog Data Service':
-    ensure  => 'running',
+    ensure => 'running',
     enable => true,
   }
 
   # Veeam Backup Proxy Service
   service { 'VeeamTransportSvc':
-    ensure  => 'running',
+    ensure => 'running',
     enable => true,
-  }  
+  }
 
   # Veeam Backup Service
   service { 'Veeam Backup and Replication Service':
-    ensure  => 'running',
+    ensure => 'running',
     enable => true,
   }
 
   # Veeam Installer Service
   service { 'VeeamDeploymentService':
-    ensure  => 'running',
+    ensure => 'running',
     enable => true,
   }
 
   # Veeam vPower NFS Service
   service { 'VeeamNFSSvc':
-    ensure  => 'running',
+    ensure => 'running',
     enable => true,
   }
 }
 
 node 'nas-exchange-2.nas.local' {
   include winfacts
-  include nacs_management  
+  include nacs_management
 
   windows_eventlog { 'Application':
     log_path       => '%SystemRoot%\system32\winevt\Logs\Application.evtx',
@@ -71,13 +71,13 @@ node 'nas-exchange-2.nas.local' {
 
   # MS Exchange Information Store Service
   service { 'MSExchangeIS':
-    ensure  => 'running',
+    ensure => 'running',
     enable => true,
   }
 
   # MS Exchange Transport Service
   service { 'MSExchangeTransport':
-    ensure  => 'running',
+    ensure => 'running',
     enable => true,
   }
 }

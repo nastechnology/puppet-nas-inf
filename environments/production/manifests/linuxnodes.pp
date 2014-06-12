@@ -15,7 +15,7 @@ node 'puppet.nas.local' {
   }
 
   notify { "debug: tidy command should run now": }
- 
+
   file { "/etc/sudoers":
     owner   => "root",
     group   => "root",
@@ -108,7 +108,7 @@ node 'java.nas.local' {
 
   package { 'php5-mcrypt':
     ensure => installed,
-  } 
+  }
 }
 
 node 'munkiwa.nas.local' {
@@ -181,7 +181,7 @@ node 'mysql.nas.local' {
 }
 
 node 'ipadsignout.nas.local' {
-  
+
   Vcsrepo { provider => git }
 
   package { 'openssh-server':
@@ -196,7 +196,7 @@ node 'ipadsignout.nas.local' {
   class { 'apache::mod::php': }
   apache::mod { 'rewrite': }
 
-  package { 'php5-mysql': 
+  package { 'php5-mysql':
     ensure => installed,
   }
 
@@ -396,7 +396,7 @@ node 'build.nas.local' {
     require => Package['build-essential'],
   }
 
- 
+
 }
 
 
@@ -409,7 +409,7 @@ node 'sensu.nas.local' {
     ensure => installed,
   }
 
-  package { 'ruby-json': 
+  package { 'ruby-json':
     ensure => installed,
   }
 
