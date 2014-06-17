@@ -24,3 +24,12 @@ node 'boe-treasurer.nasadm.local' {
     user => $user,
   }
 }
+
+# Char Weber
+node 'boe-ssec.nasadm.local' {
+  $user = '1007861'
+
+  class { 'roles::staff::boe::secretaries':
+    user => $user
+  }
+}
