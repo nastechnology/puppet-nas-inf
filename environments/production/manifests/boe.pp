@@ -29,7 +29,7 @@ node 'boe-treasurer.nasadm.local' {
 node 'boe-ssec.nasadm.local' {
   $user = '1007861'
 
-  class { 'roles::staff::boe::secretaries':
+  class { 'roles::staff::boe::secretary':
     user => $user
   }
 }
