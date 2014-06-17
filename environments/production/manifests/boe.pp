@@ -15,3 +15,12 @@ node 'boe-acctrecv.nasadm.local' {
     user => $user,
   }
 }
+
+# Mike Bostelman
+node 'boe-treasurer.nasadm.local' {
+  $user = '1001799'
+
+  class { 'roles::staff::boe::treasurers':
+    user => $user,
+  }
+}
