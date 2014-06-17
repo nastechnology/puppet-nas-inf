@@ -6,3 +6,12 @@ node 'boe-emis.nas.local' {
     user => $user,
   }
 }
+
+# Sara Buchhop
+node 'boe-acctrecv.nasadm.local' {
+  $user = '1002044'
+
+  class { 'roles::staff::boe::treasurers':
+    user => $user,
+  }
+}
