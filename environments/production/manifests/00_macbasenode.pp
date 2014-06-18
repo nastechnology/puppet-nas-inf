@@ -19,9 +19,9 @@ node 'macbasenode' {
     ensure   => installed,
   }
 
-  package { 'Firefox-29.0.1.dmg':
+  package { 'Firefox-30.0.dmg':
     provider => pkgdmg,
-    source => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/05/Firefox-29.0.1.dmg',
+    source => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/06/Firefox-30.0.dmg',
     ensure => installed,
   }
 
