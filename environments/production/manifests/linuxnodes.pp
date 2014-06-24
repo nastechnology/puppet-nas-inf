@@ -410,6 +410,10 @@ node 'build.nas.local' {
 # NACS Controller
 node 'controller.nas.local' {
 
+  package { 'git':
+    ensure => installed,
+  }
+
   package { 'apache2':
     ensure => installed,
   }
