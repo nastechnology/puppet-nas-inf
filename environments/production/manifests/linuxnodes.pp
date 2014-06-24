@@ -14,12 +14,12 @@ node 'puppet.nas.local' {
     type    => 'ctime',
   }
 
-  notify { "debug: tidy command should run now": }
+  notify { 'debug: tidy command should run now': }
 
-  file { "/etc/sudoers":
-    owner   => "root",
-    group   => "root",
-    mode    => "440",
+  file { '/etc/sudoers':
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0440',
   }
 
   package { 'apache2':
@@ -38,13 +38,13 @@ node 'puppet.nas.local' {
     ensure => installed,
   }
 
-  augeas { "addnasadmintosudoers":
-    context => "/files/etc/sudoers",
+  augeas { 'addnasadmintosudoers':
+    context => '/files/etc/sudoers',
     changes => [
-      "set spec[user = 'nasadmin']/user nasadmin",
-      "set spec[user = 'nasadmin']/host_group/host ALL",
-      "set spec[user = 'nasadmin']/host_group/command ALL",
-      "set spec[user = 'nasadmin']/host_group/command/runas_user ALL",
+      'set spec[user = \'nasadmin\']/user nasadmin',
+      'set spec[user = \'nasadmin\']/host_group/host ALL',
+      'set spec[user = \'nasadmin\']/host_group/command ALL',
+      'set spec[user = \'nasadmin\']/host_group/command/runas_user ALL',
     ],
   }
 }
@@ -99,19 +99,19 @@ node 'java.nas.local' {
     ensure => installed
   }
 
-  file { "/etc/sudoers":
-    owner   => "root",
-    group   => "root",
-    mode    => "440",
+  file { '/etc/sudoers':
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0440',
   }
 
-  augeas { "addnasadmintosudoers":
-    context => "/files/etc/sudoers",
+  augeas { 'addnasadmintosudoers':
+    context => '/files/etc/sudoers',
     changes => [
-      "set spec[user = 'nasadmin']/user nasadmin",
-      "set spec[user = 'nasadmin']/host_group/host ALL",
-      "set spec[user = 'nasadmin']/host_group/command ALL",
-      "set spec[user = 'nasadmin']/host_group/command/runas_user ALL",
+      'set spec[user = \'nasadmin\']/user nasadmin',
+      'set spec[user = \'nasadmin\']/host_group/host ALL',
+      'set spec[user = \'nasadmin\']/host_group/command ALL',
+      'set spec[user = \'nasadmin\']/host_group/command/runas_user ALL',
     ],
   }
 
@@ -181,14 +181,6 @@ node 'ftp.nas.local' {
   include roles::server
 }
 
-node 'printers.nas.local' {
-  include roles::server
-
-  package { 'cups':
-    ensure => installed,
-  }
-}
-
 # MySQL Server
 node 'mysql.nas.local' {
   exec {'mysqladmin':
@@ -226,9 +218,9 @@ node 'ipadsignout.nas.local' {
 
   apache::vhost { 'ipadsignout.nacswildcats.org':
     serveraliases => 'ipadsingout.napoleonareaschools.org',
-    docroot     => '/var/ipadsignout/public',
-    port        => '80',
-    directories => [ {
+    docroot       => '/var/ipadsignout/public',
+    port          => '80',
+    directories   => [ {
       path           => '/var/ipadsignout/public',
       allow_override => 'All'
     } ],
@@ -256,9 +248,9 @@ node 'nasapp.nas.local' {
 
   apache::vhost { 'bully.nacswildcats.org':
     serveraliases => 'bully.napoleonareaschools.org',
-    docroot     => '/media/data2/web/www/bullyapp/public',
-    port        => '80',
-    directories => [ {
+    docroot       => '/media/data2/web/www/bullyapp/public',
+    port          => '80',
+    directories   => [ {
       path           => '/media/data2/web/www/bullyapp/public',
       allow_override => 'All'
     } ],
@@ -266,14 +258,14 @@ node 'nasapp.nas.local' {
 
   apache::vhost { 'apps.napoleonareaschools.org':
     serveraliases   => 'apps.nacswildcats.org',
-    docroot => '/media/data2/web/www/app',
-    port    => '80'
+    docroot         => '/media/data2/web/www/app',
+    port            => '80'
   }
   apache::vhost { 'pdforms.napoleonareaschools.org':
     serveraliases => 'pdfforms.nacswildcats.org',
-    docroot     => '/media/data2/web/www/pdforms/public',
-    port        => '80',
-    directories => [ {
+    docroot       => '/media/data2/web/www/pdforms/public',
+    port          => '80',
+    directories   => [ {
       path           => '/media/data2/web/www/pdforms/public',
       allow_override => 'All',
       allow          => 'from all'
@@ -312,9 +304,9 @@ node 'nasapp.nas.local' {
 
   apache::vhost { 'training.napoleonareaschools.org':
     serveraliases => 'training.nacswildcats.org',
-    docroot     => '/media/data2/web/www/training/public',
-    port        => '80',
-    directories => [ {
+    docroot       => '/media/data2/web/www/training/public',
+    port          => '80',
+    directories   => [ {
       path           => '/media/data2/web/www/training/public',
       allow_override => 'All'
     } ],
@@ -322,9 +314,9 @@ node 'nasapp.nas.local' {
 
   apache::vhost { 'caps.napoleonareaschools.org':
     serveraliases => 'caps.nacswildcats.org',
-    docroot     => '/media/data2/web/www/caps/public',
-    port        => '80',
-    directories => [ {
+    docroot       => '/media/data2/web/www/caps/public',
+    port          => '80',
+    directories   => [ {
       path           => '/media/data2/web/www/caps/public',
       allow_override => 'All'
     } ],
@@ -412,6 +404,30 @@ node 'build.nas.local' {
     require => Package['build-essential'],
   }
 
+
+}
+
+# NACS Controller
+node 'controller.nas.local' {
+
+  package { 'apache2':
+    ensure => installed,
+  }
+
+  package { 'php5':
+    ensure  => installed,
+    require => Package['apache2'],
+  }
+
+  package { 'php5-common':
+    ensure  => installed,
+    require => Package['apache2'],
+  }
+
+  package { 'libapache2-mod-php5':
+    ensure  => installed,
+    require => Package['php5-common'],
+  }
 
 }
 
