@@ -22,6 +22,22 @@ node 'puppet.nas.local' {
     mode    => "440",
   }
 
+  package { 'apache2':
+    ensure => installed,
+  }
+
+  package { 'libapache2-mod-php5':
+    ensure => installed,
+  }
+
+  package { 'php5':
+    ensure => installed,
+  }
+
+  package { 'php5-common':
+    ensure => installed,
+  }
+
   augeas { "addnasadmintosudoers":
     context => "/files/etc/sudoers",
     changes => [
