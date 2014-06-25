@@ -14,22 +14,22 @@ node 'macbasenode' {
   }
 
   package { 'YouTubeDownloader-1.7.dmg':
+    ensure   => installed,
     provider => pkgdmg,
     source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2013/12/YouTubeDownloader-1.7.dmg',
-    ensure   => installed,
   }
 
   package { 'Firefox-30.0.dmg':
+    ensure   => installed,
     provider => pkgdmg,
-    source => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/06/Firefox-30.0.dmg',
-    ensure => installed,
+    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/06/Firefox-30.0.dmg',
   }
 
-  package { 'AdobeFlashPlayer13.0.0.214':
+  package { 'AdobeFlashPlayer14.0.0.125':
+    ensure   => installed,
     provider => pkgdmg,
     #source => 'http://fpdownload.macromedia.com/get/flashplayer/current/licensing/mac/install_flash_player_13_osx_pkg.dmg',
-    source => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/05/install_flash_player_13_osx_pkg.dmg',
-    ensure => installed,
+    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/06/install_flash_player_14_osx_pkg.dmg',
   }
 
   package { 'Silverlight5.1.30317.0':
@@ -39,15 +39,15 @@ node 'macbasenode' {
   }
 
   package { 'ShockwavePlayer12.0':
+    ensure   => installed,
     provider => pkgdmg,
     source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/03/Shockwave_Installer_Full_64bit.dmg',
-    ensure   => installed,
   }
 
   package { 'JavaRuntime8.05':
+    ensure   => installed,
     provider => pkgdmg,
     source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/04/jre-8u5-macosx-x64.dmg',
-    ensure   => installed,
   }
 
 }
