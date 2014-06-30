@@ -5,13 +5,13 @@ node 'nas-tech-tc.nas.local' {
   class { 'roles::staff::tech':
     user => $user,
   }
-  printer { 'hs_stafflounge':
+  printer { 'nhs_131_copier':
     ensure      => present,
-    uri         => "lpd://10.20.15.23/HS_STAFFLOUNGE",
-    description => "NHS Staff Lounge",
-    location    => "NHS Staff Lounge",
+    uri         => "lpd://10.20.15.23/nhs_131_copier",
+    description => "Guidance Ciopier",
+    location    => "NHS Guidance",
     shared      => false,
-    ppd         => "/Library/Printers/PPDs/Contents/Resources/Kyocera FS-3920DN.PPD",
+    ppd         => "/Library/Printers/PPDs/Contents/Resources/en.lproj/Ricoh-Aficio_MP_5001-pxlmono-Ricoh.ppd.gz",
   }
 }
 
