@@ -5,6 +5,14 @@ node 'nas-tech-tc.nas.local' {
   class { 'roles::staff::tech':
     user => $user,
   }
+  printer { 'hs_stafflounge':
+    ensure      => present,
+    uri         => "lpd://10.20.15.23/HS_STAFFLOUNGE",
+    description => "NHS Staff Lounge",
+    location    => "NHS Staff Lounge",
+    shared      => false,
+    ppd         => "/Library/Printers/PPDs/Contents/Resources/Kyocera FS-3920DN.PPD",
+  }
 }
 
 # Chris MacBook Professional
@@ -27,13 +35,5 @@ node 'tech-dev-mini.nas.local' {
 
   nacs_management::printers{'nhs_copier': }
   nacs_management::printers{ 'ces_office_copier': }
-  printer { 'hs_stafflounge':
-    ensure      => present,
-    uri         => "lpd://10.20.15.23/HS_STAFFLOUNGE",
-    description => "NHS Staff Lounge",
-    location    => "NHS Staff Lounge",
-    shared      => false,
-    ppd         => "/Library/Printers/PPDs/Contents/Resources/Kyocera FS-3920DN.PPD",
-  }
 
 }
