@@ -6,3 +6,7 @@
   :datadir: /etc/puppet/hieradata
 :json:
   :datadir: /etc/puppet/hieradata
+:hierarchy:
+  - "%{::clientcert}"
+  - "%{::environment}"
+  - common

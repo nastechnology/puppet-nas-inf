@@ -32,6 +32,11 @@ node 'nhs-mac-06183.nas.local' {
   }
 }
 
+# Ryan Wilde Mac
+node 'nhs-mac-06307.nas.local' {
+  include roles::teacher::nhs
+}
+
 # Dan Curtis Mac
 # backup user created
 # backup enabled
