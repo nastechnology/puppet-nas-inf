@@ -7,6 +7,6 @@
 :json:
   :datadir: /etc/puppet/hieradata
 :hierarchy:
-  - "%{::clientcert}"
+  - "%{::fqdn}"
   - "%{::environment}"
   - common
