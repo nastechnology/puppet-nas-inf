@@ -1,2 +1,2 @@
 ---
-  roles::staff::nhs::user: "1008127"
+  user: "1008127"
