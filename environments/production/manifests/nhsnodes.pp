@@ -36,7 +36,7 @@ node 'nhs-mac-06183.nas.local' {
 node 'nhs-mac-06307.nas.local' {
   include roles::staff::nhs
 
-  package { 'VMware Horizon View Client 3.0.0-1887158':
+  package { 'VMware_Horizon_View_Client-3.0.0-1887158':
     ensure   => installed,
     provider => 'pkgdmg',
     source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/07/VMware_Horizon_View_Client-3.0.0-1887158.dmg',
