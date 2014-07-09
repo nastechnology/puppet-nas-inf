@@ -35,6 +35,21 @@ node 'nhs-mac-06183.nas.local' {
 # Ryan Wilde Mac
 node 'nhs-mac-06307.nas.local' {
   include roles::staff::nhs
+  $version = '4.3.12'
+  $patch_level = '93733'
+
+  exec { 'Kill Virtual Box Processes':
+    command     => 'pkill "VBoxXPCOMIPCD" || true && pkill "VBoxSVC" || true && pkill "VBoxHeadless" || true',
+    path        => '/usr/bin:/usr/sbin:/bin:/usr/local/bin',
+    refreshonly => true,
+  }
+
+  package { "VirtualBox-${version}-${patch_level}":
+    ensure   => installed,
+    provider => 'pkgdmg',
+    source   => "http://download.virtualbox.org/virtualbox/${version}/VirtualBox-${version}-${patch_level}-OSX.dmg",
+    require  => Exec['Kill Virtual Box Processes'],
+  }
 }
 
 # Dan Curtis Mac
