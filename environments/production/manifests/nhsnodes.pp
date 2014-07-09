@@ -33,6 +33,12 @@ node 'nhs-mac-05647.nas.local' {
     user   => $user,
     idrive => 0,
   }
+
+  package { 'Google_Drive-20140709':
+    ensure   => installed,
+    provider => 'pkgdmg',
+    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/07/Google_Drive-20140709.dmg',
+  }
 }
 
 #
