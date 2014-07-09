@@ -62,11 +62,6 @@ node 'tech-choco-test.nas.local' inherits 'winbasenode' {
   }
 }
 
-node 'nas-dsign.nas.local' {
-  include sudo
-  package { 'sshd': ensure => present }
-}
-
 node 'nas-sped-trn-13.nasadm.local' inherits 'winbasenode' {
 }
 

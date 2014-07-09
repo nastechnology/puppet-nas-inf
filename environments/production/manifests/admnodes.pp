@@ -83,20 +83,6 @@ node 'nas-tc.nas.local' inherits 'macbasenode' {
 
 }
 
-node 'nhs-adm-rw.nas.local' inherits 'staffmacnode' {
-  include nacs_management::checkin
-  class { 'nacs_management::allprinters': }
-  nacs_management::printers { 'nhs_color': }
-  nacs_management::printers { 'nhs_copier': }
-
-  class { 'nacs_management::user_homedir':
-    user   => '1008127',
-    server => 'adm-fs.nasadm.local',
-  }
-
-  nacs_management::wireless { 'staff': }
-}
-
 
 node 'adm-emis.nas.local' inherits 'winbasenode' {
   package { 'filezilla':
