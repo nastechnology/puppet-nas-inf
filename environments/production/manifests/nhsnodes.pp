@@ -1,4 +1,41 @@
 #
+# Admin MacBook Laptops
+#
+
+# Ryan Wilde Mac
+# Backup user created
+# Backup enabled
+node 'nhs-mac-06307.nas.local' {
+  include roles::staff::nhs
+
+  package { 'VMware_Horizon_View_Client-3.0.0-1887158':
+    ensure   => installed,
+    provider => 'pkgdmg',
+    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/07/VMware_Horizon_View_Client-3.0.0-1887158.dmg',
+  }
+}
+
+# Dan Curtis Mac
+# backup user created
+# backup enabled
+node 'nhs-mac-06184.nas.local' {
+  $user = '1011459'
+  class { 'roles::staff::nhs':
+    user => $user,
+  }
+}
+
+# Josh Meyer
+
+node 'nhs-mac-05647.nas.local' {
+  $user = '1012645'
+  class { 'roles::staff::nhs':
+    user   => $user,
+    idrive => 0,
+  }
+}
+
+#
 #  Staff MacBook Laptops
 #
 
@@ -30,49 +67,6 @@ node 'nhs-mac-06183.nas.local' {
   class { 'roles::teacher::nhs':
     user => $user,
   }
-}
-
-# Ryan Wilde Mac
-node 'nhs-mac-06307.nas.local' {
-  include roles::staff::nhs
-
-  package { 'VMware_Horizon_View_Client-3.0.0-1887158':
-    ensure   => installed,
-    provider => 'pkgdmg',
-    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/07/VMware_Horizon_View_Client-3.0.0-1887158.dmg',
-  }
-  #$version = '4.3.12'
-  #$patch_level = '93733'
-
-  #exec { 'Kill Virtual Box Processes':
-  #  command     => 'pkill "VBoxXPCOMIPCD" || true && pkill "VBoxSVC" || true && pkill "VBoxHeadless" || true',
-  #  path        => '/usr/bin:/usr/sbin:/bin:/usr/local/bin',
-  #  refreshonly => true,
-  #}
-
-  #package { "VirtualBox-${version}-${patch_level}":
-  #  ensure   => installed,
-  #  provider => 'pkgdmg',
-  #  source   => "http://download.virtualbox.org/virtualbox/${version}/VirtualBox-${version}-${patch_level}-OSX.dmg",
-  #  require  => Exec['Kill Virtual Box Processes'],
-  #}
-}
-
-# Dan Curtis Mac
-# backup user created
-# backup enabled
-node 'nhs-mac-06184.nas.local' inherits 'staffmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::printers { 'nhs_copier': }
-  nacs_management::printers { 'nhs_color': }
-  nacs_management::map::idrive { '1011459':
-    server => 'adm-fs.nasadm.local',
-  }
-
-  nacs_management::map::nhsshared { '1011459':  }
-  nacs_management::map::alldistrict { '1011459': }
-
-  nacs_management::tmutil { '1011459': }
 }
 
 # Jenna Storrer Mac
