@@ -6,9 +6,9 @@ node winbasenode {
   include nacs_management::delprof
   include nacs_management::oaascreen
 
-  if ($::puppetversion != '3.6.1'){
+  if ($::puppetversion != '3.6.2'){
     class { 'puppetversion':
-      version    => '3.6.1',
+      version    => '3.6.2',
       start_time => '12:00',
     }
   }
