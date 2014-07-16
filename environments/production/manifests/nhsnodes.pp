@@ -533,15 +533,13 @@ node 'nhs-mac-06043.nas.local' {
   }
 }
 
-# Dan Baer Mac
-node 'nhs-mac-06057.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1001358': }
-  nacs_management::printers{ 'nhs_copier': }
-  nacs_management::printers{ 'nhs_131_copier': }
+# Lindsey Wagner Mac
+node 'nhs-mac-06057.nas.local' {
+  $user = '1012677'
 
-  nacs_management::map::nhsshared { '1001358': }
-  nacs_management::map::alldistrict { '1001358': }
+  class { 'roles::teacher::nhs':
+    user => $user,
+  }
 }
 
 # 21st Cent Grant Mac
