@@ -76,11 +76,6 @@ node winbasenode {
     ensure => installed,
   }
 
-  package { 'cipaauthclient':
-    ensure          => '1.2.2.1',
-    install_options => '-force',
-  }
-
   package { 'adobereader':
     ensure  => installed,
   }
