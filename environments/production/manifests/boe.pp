@@ -33,3 +33,12 @@ node 'boe-ssec.nasadm.local' {
     user => $user
   }
 }
+
+# Jodi Stover
+node 'boe-payroll.nasadm.local' {
+  $user = '1007385'
+
+  class { 'roles::staff::boe::treasurers':
+    user => $user
+  }
+}

@@ -9,6 +9,7 @@ forge "http://forge.puppetlabs.com"
  mod "puppetlabs/inifile"
  mod "puppetlabs/postgresql"
  mod "puppetlabs/puppetdb"
+ mod "puppetlabs/registry"
 
  mod "mosen/cups"
  mod "joshcooper/powershell"
@@ -27,9 +28,6 @@ forge "http://forge.puppetlabs.com"
 
 # mod "dhcp",
 #   :git => "https://github.com/nastechnology/puppet-dhcp"
-
-# mod "registry",
-#   :git => "https://github.com/nastechnology/puppetlabs-registry.git"
 
  mod "munkiclient",
    :git => "https://github.com/nastechnology/munkiclient.git"
