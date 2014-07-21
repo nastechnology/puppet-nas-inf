@@ -42,3 +42,12 @@ node 'boe-payroll.nasadm.local' {
     user => $user
   }
 }
+
+# Amy Dietrich
+node 'boe-acctpay.nasadm.local' {
+  $user = '1009568'
+
+  class { 'roles::staff::boe::treasurers':
+    user => $user
+  }
+}
