@@ -22,3 +22,12 @@ node 'nctv-pro2.nas.local' inherits 'macbasenode' {
 node 'nctv-lap2.nas.local' inherits 'macbasenode' {
   include nacs_management::install_printers::nhs_copier
 }
+
+
+node 'nctv-lap4.nas.local' inherits 'macbasenode' {
+  include nacs_management::install_printers::nhs_copier
+}
+
+node 'nctv-lap5.nas.local' inherits 'macbasenode' {
+  include nacs_management::install_printers::nhs_copier
+}
