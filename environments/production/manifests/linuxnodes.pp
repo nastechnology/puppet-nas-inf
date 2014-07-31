@@ -452,7 +452,7 @@ node 'sensu.nas.local' {
   class { 'sensu':
     rabbitmq_password => 'T2Gt1wU',
     server            => true,
-    dashboard         => true,
+    dashboard         => false,
     api               => true,
     #plugins           => [
     #  'puppet:///data/sensu/plugins/ntp.rb',
