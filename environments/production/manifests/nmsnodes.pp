@@ -1,49 +1,9 @@
 # All NMS Machines that have a digit after building name
 # this excludes any lab's or special computer names i.e. gym, mus
-node /^nms\-\d+\-\d+/ inherits 'winbasenode' {
-}
+#node /^nms\-\d+\-\d+/ inherits 'winbasenode' {
+#}
 
-# Parcc lab @ NHS
-node 'nhs-parcc-lab1' {
-  include roles::labs::lab8
 
-  user { 'testuser':
-    ensure   => present,
-    home     => 'C:/Documents and Settings/testuser',
-    password => 'test',
-  }
-}
-
-# Parcc lab @ nhs
-node 'nms-108-0.nas.local' {
-  include roles::labs::lab8
-
-  user { 'testuser':
-    ensure   => present,
-    home     => 'C:/Documents and Settings/testuser',
-    password => 'test',
-  }
-
-}
-
-# Parcc lab @ nhs
-node 'nms-205-0.nas.local' {
-  include roles::labs::lab8
-
-  user { 'testuser':
-    ensure   => present,
-    home     => 'C:/Documents and Settings/testuser',
-    password => 'test',
-  }
-}
-
-node 'nms-aircart-1.nas.local' inherits 'macbasenode' {
-
-}
-
-node 'nms-aircart-2.nas.local' inherits 'macbasenode' {
-
-}
 
 # Matt Dietrich Mac laptop
 # backup user created
