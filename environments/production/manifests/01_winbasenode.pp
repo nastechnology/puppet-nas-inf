@@ -13,6 +13,24 @@ node winbasenode {
     }
   }
 
+  $sid = 'NACS'
+  $serverpath = '\\nasapp\ChocoPack'
+  Package { provider => chocolatey }
+
+  File { source_permissions => ignore }
+
+  file { 'C:\Chocolatey\\chocolateyinstall\\chocolatey.config':
+    ensure => file,
+    source => 'puppet:///modules/nacs_management/chocolatey.config',
+  }
+
+  windows_env { 'PATH=C:\Chocolatey\bin': }
+  windows_env { 'PATH=C:\NACSManage': }
+  windows_env { 'ChocolateyInstall':
+    value     => 'C:\Chocolatey',
+    mergemode => clobber,
+  }
+
   windows_eventlog { 'Application':
     log_path       => '%SystemRoot%\system32\config\AppEvent.Evt',
     log_size       => '524288',
