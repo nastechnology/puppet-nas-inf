@@ -198,6 +198,15 @@ node 'ces-mac-06056.nas.local' {
   }
 }
 
+# Kelley Borton Mac
+# backup user created
+node 'nms-mac-06078.nas.local' {
+  $user = '1001736'
+  class { 'roles::teacher::ces':
+    user => $user,
+  }
+}
+
 # CES Lab
 node /^ces\-lab\-\d+\.nas\.local/ {
   include roles::labs::ceslab

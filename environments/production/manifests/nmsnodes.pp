@@ -105,15 +105,6 @@ node 'nms-mac-06079.nas.local' {
   }
 }
 
-# Kelley Borton Mac
-# backup user created
-node 'nms-mac-06078.nas.local' {
-  $user = '1001736'
-  class { 'roles::teacher::nms':
-    user => $user,
-  }
-}
-
 # Lynne Debbe Mac
 # backup user created
 node 'nms-mac-06084.nas.local' inherits 'teachersmacnode' {
