@@ -31,11 +31,13 @@ node 'nctv-lap2.nas.local' inherits 'macbasenode' {
 
 
 node 'nctv-lap4.nas.local' inherits 'macbasenode' {
+  include profiles::nhscartuser
   class { 'nacs_management::allprinters': }
   nacs_management::printers { 'nhs_copier': }
 }
 
 node 'nctv-lap5.nas.local' inherits 'macbasenode' {
+  include profiles::nhscartuser
   class { 'nacs_management::allprinters': }
   nacs_management::printers { 'nhs_copier': }
 }
