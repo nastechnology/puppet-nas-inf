@@ -237,18 +237,13 @@ node 'nms-mac-06081.nas.local' {
   }
 }
 
-# Mike Hummer Mac
-node 'nms-mac-06041.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1004361': }
-  nacs_management::printers { 'nms_upstairs_copier': }
-  nacs_management::printers { 'nms_office': }
-  nacs_management::printers { 'nms_office_copier': }
-  nacs_management::printers { 'nms_colorlaser': }
-  nacs_management::printers { 'nms_ces_ricoh_7500': }
+# Joe Good Mac
+node 'nms-mac-06041.nas.local' {
+  $user = '1003668'
 
-  nacs_management::map::nmsshared { '1004361':  }
-  nacs_management::map::alldistrict { '1004361': }
+  class { 'roles::teacher::nms':
+    user => $user,
+  }
 }
 
 # Jim Murcko Mac
