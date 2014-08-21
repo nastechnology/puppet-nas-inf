@@ -1,4 +1,4 @@
-# DHCP SERVER configuration
+#DHCP SERVER configuration
 node 'dhcp.nas.local' {
   include dhcp::server
 
