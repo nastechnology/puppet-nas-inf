@@ -424,7 +424,8 @@ node 'nhs-mac-06019.nas.local'  {
   $user = '1012652'
 
   class { 'roles::teacher::nhs':
-    user => $user,
+    user   => $user,
+    idrive => 0,
   }
 }
 
