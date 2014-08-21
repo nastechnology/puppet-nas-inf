@@ -419,17 +419,13 @@ node 'nhs-mac-06010.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::alldistrict { '1010549': }
 }
 
-# Mary Shook Mac
-node 'nhs-mac-06019.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1007000': }
-  nacs_management::printers{ 'nhs_wkrm_copier': }
-  nacs_management::printers{ 'nhs_wkrm_copier_2': }
-  nacs_management::printers{ 'nhs_wkrm_231': }
-  nacs_management::printers{ 'nhs_library': }
+# Ben George Mac
+node 'nhs-mac-06019.nas.local'  {
+  $user = '1012652'
 
-  nacs_management::map::nhsshared { '1007000': }
-  nacs_management::map::alldistrict { '1007000': }
+  class { 'roles::teacher::nhs':
+    user => $user,
+  }
 }
 
 # Mark Stacey Mac
