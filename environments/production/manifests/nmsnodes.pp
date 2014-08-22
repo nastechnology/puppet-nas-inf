@@ -184,7 +184,8 @@ node 'nms-mac-06082.nas.local' {
   $user = '1012638'
 
   class { 'roles::teacher::nms':
-    user => $user,
+    user   => $user,
+    idrive => '0',
   }
 }
 
@@ -193,7 +194,8 @@ node 'nms-mac-06171.nas.local' {
   $user = '1011641'
 
   class { 'roles::teacher::nms':
-    user => $user,
+    user   => $user,
+    idrive => '0'
   }
 }
 
