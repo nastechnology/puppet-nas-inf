@@ -120,17 +120,6 @@ node 'ces-mac-06068.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'ces_upstairs_wkrm': }
 }
 
-# Erin Failor Mac
-# backup user created
-node 'ces-mac-06233.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1009011' : }
-  nacs_management::map::cesshared { '1009011': }
-  nacs_management::map::alldistrict { '1009011': }
-  nacs_management::printers{ 'ces_wkrm': }
-  nacs_management::printers{ 'ces_upstairs_wkrm': }
-}
-
 # Sarah Rosebrock Mac
 # backup user created
 node 'ces-mac-06071.nas.local' {

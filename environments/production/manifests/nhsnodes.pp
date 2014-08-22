@@ -437,6 +437,15 @@ node 'nhs-mac-06016.nas.local' {
   }
 }
 
+# Lindsey Steele Mac
+node 'nhs-mac-06233.nas.local' {
+  $user = '1012631'
+  class { 'roles::teacher::nhs':
+    user   => $user,
+    idrive => '0',
+  }
+}
+
 # Tracy Weber Mac
 # backup enabled
 node 'nhs-mac-06015.nas.local' {
