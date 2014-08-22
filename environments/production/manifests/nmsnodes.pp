@@ -179,16 +179,13 @@ node 'nms-mac-06075.nas.local' {
 
 }
 
-# LuAnn Gorsuch Mac
-node 'nms-mac-06082.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1003696': }
-  nacs_management::printers { 'nms_upstairs_copier': }
-  nacs_management::printers { 'nms_office': }
-  nacs_management::printers { 'nms_office_copier': }
+# Alyssa Bergstedt Mac
+node 'nms-mac-06082.nas.local' {
+  $user = '1012638'
 
-  nacs_management::map::nmsshared { '1003696':  }
-  nacs_management::map::alldistrict { '1003696': }
+  class { 'roles::teacher::nms':
+    user => $user,
+  }
 }
 
 # Andrea Hoffman Mac
