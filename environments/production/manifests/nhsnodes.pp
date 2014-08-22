@@ -375,18 +375,13 @@ node 'nhs-mac-06059.nas.local' inherits 'teachersmacnode' {
   nacs_management::map::alldistrict { '1005859': }
 }
 
-# Bev Nelson Mac
-node 'nhs-mac-06058.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1005754': }
-  nacs_management::printers{ 'nhs_wkrm_copier': }
-  nacs_management::printers{ 'nhs_wkrm_copier_2': }
-  nacs_management::printers{ 'nhs_wkrm_231': }
-  nacs_management::printers{ 'nhs_library': }
-  nacs_management::printers{ 'nhs_207': }
-
-  nacs_management::map::nhsshared { '1005754': }
-  nacs_management::map::alldistrict { '1005754': }
+# Tom Palmer Mac
+node 'nhs-mac-06058.nas.local' {
+  $user = '1009960'
+  class { 'roles::teacher::nhs':
+    user   => $user,
+    idrive => '0',
+  }
 }
 
 
