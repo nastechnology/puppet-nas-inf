@@ -55,16 +55,6 @@ node 'nhs-mac-06160.nas.local' {
   }
 }
 
-# Ann Bosenbark Mac
-node 'nhs-mac-06171.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1001764': }
-  nacs_management::printers{ 'nhs_copier': }
-
-  nacs_management::map::alldistrict { '1001764': }
-  nacs_management::map::nhsshared { '1001764': }
-}
-
 # Cori Niese Mac
 # backup user created
 # Backup enabled
@@ -342,18 +332,12 @@ node 'nhs-mac-06060.nas.local' {
   }
 }
 
-#Kevin Milius Mac
-node 'nhs-mac-06061.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1005453': }
-  nacs_management::printers{ 'nhs_wkrm_copier': }
-  nacs_management::printers{ 'nhs_wkrm_copier_2': }
-  nacs_management::printers{ 'nhs_wkrm_231': }
-  nacs_management::printers{ 'nhs_library': }
-  nacs_management::printers{ 'nhs_207': }
-
-  nacs_management::map::nhsshared { '1005453': }
-  nacs_management::map::alldistrict { '1005453': }
+#Natasha Zsigray Mac
+node 'nhs-mac-06061.nas.local' {
+  $user = '1012684'
+  class { 'roles::teacher::nhs':
+    user => $user,
+  }
 }
 
 # Sara Schiffer Mac

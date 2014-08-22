@@ -188,6 +188,15 @@ node 'nms-mac-06082.nas.local' {
   }
 }
 
+# Sarah Buchhop Mac
+node 'nms-mac-06171.nas.local' {
+  $user = '1011641'
+
+  class { 'roles::teacher::nms':
+    user => $user,
+  }
+}
+
 # Andrea Hoffman Mac
 # backup user created
 node 'nms-mac-06164.nas.local' {
