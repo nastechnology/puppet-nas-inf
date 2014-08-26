@@ -39,6 +39,12 @@ node 'dhcp.nas.local' {
     hwaddress => '00:50:56:a0:00:16',
   }
 
+  #Subway POS
+  dhcp::server::host { 'subwaypos':
+    address   => '10.20.8.99',
+    hwaddress => '00:40:b3:8b:ea:b9',
+  }
+
   #NAS-IT-02
   dhcp::server::host { 'nas-it-02':
     address   => '10.20.8.6',
