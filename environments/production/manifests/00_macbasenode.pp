@@ -25,11 +25,11 @@ node 'macbasenode' {
     source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/07/Firefox-31.0.dmg',
   }
 
-  package { 'AdobeFlashPlayer14.0.0.125':
+  package { 'AdobeFlashPlayer14.0.0.176':
     ensure   => installed,
     provider => pkgdmg,
     #source => 'http://fpdownload.macromedia.com/get/flashplayer/current/licensing/mac/install_flash_player_13_osx_pkg.dmg',
-    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/06/install_flash_player_14_osx_pkg.dmg',
+    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/08/install_flash_player_14_osx_pkg.dmg',
   }
 
   package { 'Silverlight5.1.30317.0':
