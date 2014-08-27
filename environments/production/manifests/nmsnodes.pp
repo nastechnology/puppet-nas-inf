@@ -135,7 +135,7 @@ node 'nms-mac-06162.nas.local' inherits 'teachersmacnode' {
 node 'nms-mac-06083.nas.local' {
   $user = '1011121'
 
-  class { 'roles::teacher::nms':
+  class { 'roles::teacher::wes':
     user => $user,
   }
 }
