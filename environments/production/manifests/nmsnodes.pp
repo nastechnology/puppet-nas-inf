@@ -187,6 +187,9 @@ node 'nms-mac-06082.nas.local' {
     user   => $user,
     idrive => '0',
   }
+
+  nacs_management::printers { 'ces_wkrm': }
+  nacs_management::printers { 'ces_upstairs_wkrm': }
 }
 
 # Sarah Buchhop Mac
