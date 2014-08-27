@@ -693,13 +693,13 @@ node 'nhs-spedlap-8.nas.local' inherits 'winbasenode' {
   }
 }
 
-# Joe Good
-node 'nhs-jg.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::printers{ 'nhs_140_c': }
-  nacs_management::printers{ 'nhs_color': }
-  nacs_management::printers{ 'nhs_wkrm_copier': }
-  nacs_management::printers{ 'nhs_wkrm_copier_2': }
+# Brett Ziegler
+node 'nhs-mac-05594.nas.local' {
+  $user = '1012712'
+
+  class { 'roles::teacher::nhs':
+    user => $user,
+  }
 }
 
 # NHS Teacher machines
