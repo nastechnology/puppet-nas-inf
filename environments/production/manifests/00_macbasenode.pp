@@ -25,6 +25,12 @@ node 'macbasenode' {
     source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/07/Firefox-31.0.dmg',
   }
 
+  package { 'epson16168':
+    ensure   => installed,
+    provider => pkgdmg,
+    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/08/epson16168.dmg',
+  }
+
   package { 'AdobeFlashPlayer14.0.0.176':
     ensure   => installed,
     provider => pkgdmg,
