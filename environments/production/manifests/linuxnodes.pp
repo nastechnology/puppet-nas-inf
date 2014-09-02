@@ -235,92 +235,92 @@ node 'ipadsignout.nas.local' {
 
 node 'nasapp.nas.local' {
 
-  class { 'apache':
-    mpm_module => 'prefork'
-  }
+#  class { 'apache':
+#    mpm_module => 'prefork'
+#  }
 
-  class { 'apache::mod::php': }
-  apache::mod { 'rewrite': }
+#  class { 'apache::mod::php': }
+#  apache::mod { 'rewrite': }
 
-  package { 'php5-mcrypt':
-    ensure => installed,
-  }
+#  package { 'php5-mcrypt':
+#    ensure => installed,
+#  }
 
-  apache::vhost { 'bully.nacswildcats.org':
-    serveraliases => 'bully.napoleonareaschools.org',
-    docroot       => '/media/data2/web/www/bullyapp/public',
-    port          => '80',
-    directories   => [ {
-      path           => '/media/data2/web/www/bullyapp/public',
-      allow_override => 'All'
-    } ],
-  }
+#  apache::vhost { 'bully.nacswildcats.org':
+#    serveraliases => 'bully.napoleonareaschools.org',
+#    docroot       => '/media/data2/web/www/bullyapp/public',
+#    port          => '80',
+#    directories   => [ {
+#      path           => '/media/data2/web/www/bullyapp/public',
+#      allow_override => 'All'
+#    } ],
+#  }
 
-  apache::vhost { 'apps.napoleonareaschools.org':
-    serveraliases   => 'apps.nacswildcats.org',
-    docroot         => '/media/data2/web/www/app',
-    port            => '80'
-  }
-  apache::vhost { 'pdforms.napoleonareaschools.org':
-    serveraliases => 'pdfforms.nacswildcats.org',
-    docroot       => '/media/data2/web/www/pdforms/public',
-    port          => '80',
-    directories   => [ {
-      path           => '/media/data2/web/www/pdforms/public',
-      allow_override => 'All',
-      allow          => 'from all'
-    } ],
-  }
+#  apache::vhost { 'apps.napoleonareaschools.org':
+#    serveraliases   => 'apps.nacswildcats.org',
+#    docroot         => '/media/data2/web/www/app',
+#    port            => '80'
+#  }
+#  apache::vhost { 'pdforms.napoleonareaschools.org':
+#    serveraliases => 'pdfforms.nacswildcats.org',
+#    docroot       => '/media/data2/web/www/pdforms/public',
+#    port          => '80',
+#    directories   => [ {
+#      path           => '/media/data2/web/www/pdforms/public',
+#      allow_override => 'All',
+#      allow          => 'from all'
+#    } ],
+#  }
 
-  apache::vhost { 'budrev':
-    docroot     => '/media/data2/web/www/budrev/public',
-    port        => '80',
-    directories => [ {
-      path           => '/media/data2/web/www/budrev/public',
-      allow_override => 'All',
-      allow          => 'from all'
-    } ],
-  }
+#  apache::vhost { 'budrev':
+#    docroot     => '/media/data2/web/www/budrev/public',
+#    port        => '80',
+#    directories => [ {
+#      path           => '/media/data2/web/www/budrev/public',
+#      allow_override => 'All',
+#      allow          => 'from all'
+#    } ],
+#  }
 
-  apache::vhost { 'promweb':
-    docroot     => '/media/data2/web/www/promweb/public',
-    port        => '80',
-    directories => [ {
-      path           => '/media/data2/web/www/promweb/public',
-      allow_override => 'All',
-      allow          => 'from all'
-    } ],
-  }
+#  apache::vhost { 'promweb':
+#    docroot     => '/media/data2/web/www/promweb/public',
+#    port        => '80',
+#    directories => [ {
+#      path           => '/media/data2/web/www/promweb/public',
+#      allow_override => 'All',
+#      allow          => 'from all'
+#    } ],
+#  }
 
-  apache::vhost { 'apiprom':
-    docroot     => '/media/data2/web/www/prom/public',
-    port        => '80',
-    directories => [ {
-      path           => '/media/data2/web/www/prom/public',
-      allow_override => 'All',
-      allow          => 'from all'
-    } ],
-  }
+#  apache::vhost { 'apiprom':
+#    docroot     => '/media/data2/web/www/prom/public',
+#    port        => '80',
+#    directories => [ {
+#      path           => '/media/data2/web/www/prom/public',
+#      allow_override => 'All',
+#      allow          => 'from all'
+#    } ],
+#  }
 
-  apache::vhost { 'training.napoleonareaschools.org':
-    serveraliases => 'training.nacswildcats.org',
-    docroot       => '/media/data2/web/www/training/public',
-    port          => '80',
-    directories   => [ {
-      path           => '/media/data2/web/www/training/public',
-      allow_override => 'All'
-    } ],
-  }
+#  apache::vhost { 'training.napoleonareaschools.org':
+#    serveraliases => 'training.nacswildcats.org',
+#    docroot       => '/media/data2/web/www/training/public',
+#    port          => '80',
+#    directories   => [ {
+#      path           => '/media/data2/web/www/training/public',
+#      allow_override => 'All'
+#    } ],
+#  }
 
-  apache::vhost { 'caps.napoleonareaschools.org':
-    serveraliases => 'caps.nacswildcats.org',
-    docroot       => '/media/data2/web/www/caps/public',
-    port          => '80',
-    directories   => [ {
-      path           => '/media/data2/web/www/caps/public',
-      allow_override => 'All'
-    } ],
-  }
+#  apache::vhost { 'caps.napoleonareaschools.org':
+#    serveraliases => 'caps.nacswildcats.org',
+#    docroot       => '/media/data2/web/www/caps/public',
+#    port          => '80',
+#    directories   => [ {
+#      path           => '/media/data2/web/www/caps/public',
+#      allow_override => 'All'
+#    } ],
+#  }
 
   class { 'git::clone':
     repo   => 'caps',
