@@ -366,6 +366,8 @@ node 'nms-mac-06090.nas.local' {
   class { 'roles::teacher::nms':
     user => $user,
   }
+
+  nacs_management::printers { 'ces_upstairs_wkrm': }
 }
 
 # Amanda Gilles Mac
