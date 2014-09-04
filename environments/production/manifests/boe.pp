@@ -23,6 +23,10 @@ node 'boe-treasurer.nasadm.local' {
   class { 'roles::staff::boe::treasurers':
     user => $user,
   }
+
+  package { 'dropbox':
+    ensure => installed,
+  }
 }
 
 # Char Weber
