@@ -521,6 +521,15 @@ node 'nhs-mac-06057.nas.local' {
   }
 }
 
+# Brett Ziegler
+node 'nhs-mac-05594.nas.local' {
+  $user = '1012712'
+
+  class { 'roles::teacher::nhs':
+    user => $user,
+  }
+}
+
 # 21st Cent Grant Mac
 node 'nhs-mac-06247.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
@@ -684,181 +693,9 @@ node /^nhs\-studylab\-\d+/ {
 node /^nhs\-\d+\-\d+\.nas\.local/ inherits 'winbasenode' {
 }
 
-node 'nhs-gym-0.nas.local' inherits 'winbasenode' {
-}
 
 node 'nhs-spedlap-8.nas.local' inherits 'winbasenode' {
   package { 'office2007nooutlook':
     ensure => installed,
   }
 }
-
-# Brett Ziegler
-node 'nhs-mac-05594.nas.local' {
-  $user = '1012712'
-
-  class { 'roles::teacher::nhs':
-    user => $user,
-  }
-}
-
-# NHS Teacher machines
-node /^nhs\-\d+\-0\.nas\.local/ inherits 'winbasenode' {
-}
-
-#
-# HS Math Teachers
-#
-node 'nhs-233-0.nas.local' inherits 'winbasenode' {
-  include nacs_management::saxon
-
-  package { 'TIResources':
-    ensure => installed,
-  }
-  package { 'Algebra1InstPresi':
-    ensure => installed,
-  }
-  package { 'Algebra2InstPresi':
-    ensure => installed,
-  }
-  package { 'GeometryInstPresi':
-    ensure => installed,
-  }
-
-}
-
-node 'nhs-231-0.nas.local' {
-  include roles::teacher
-}
-
-node 'nhs-223-0.nas.local' inherits 'winbasenode' {
-  include nacs_management::saxon
-
-  package { 'TIResources':
-    ensure => installed,
-  }
-
-  package { 'Algebra1InstPresi':
-    ensure => installed,
-  }
-  package { 'Algebra2InstPresi':
-    ensure => installed,
-  }
-  package { 'GeometryInstPresi':
-    ensure => installed,
-  }
-
-  package { 'trackmm3':
-    ensure => installed,
-  }
-
-  file { 'C:/Hy-Sport/TFMM3/tfmeet3.mem':
-    ensure  => file,
-    source  => 'puppet:///modules/nacs_management/tfmeet3.mem',
-    require => Package['trackmm3'],
-  }
-
-  package { 'tracktm2':
-    ensure  => installed,
-    require => Package['trackmm3'],
-  }
-
-  file { 'C:/Hy-Sport/TFTM2/TFTM2.LIC':
-    ensure  => file,
-    source  => 'puppet:///modules/nacs_management/TFTM2.LIC',
-    require => Package['tracktm2'],
-  }
-
-  exec { 'ChangeHySportPerms':
-    command => 'C:\SetACL.exe -on "C:\Hy-Sport" -ot file -actn ace -ace "n:Everyone;p:full"',
-    require => Package['tracktm2'],
-  }
-}
-
-node 'nhs-221-0.nas.local' inherits 'winbasenode' {
-  include nacs_management::saxon
-
-  package { 'TIResources':
-    ensure => installed,
-  }
-
-  package { 'Algebra1InstPresi':
-    ensure => installed,
-  }
-  package { 'Algebra2InstPresi':
-    ensure => installed,
-  }
-  package { 'GeometryInstPresi':
-    ensure => installed,
-  }
-
-}
-
-node 'nhs-229-0.nas.local' inherits 'winbasenode' {
-  include nacs_management::saxon
-
-  package { 'TIResources':
-    ensure => installed,
-  }
-  package { 'Algebra1InstPresi':
-    ensure => installed,
-  }
-  package { 'Algebra2InstPresi':
-    ensure => installed,
-  }
-  package { 'GeometryInstPresi':
-    ensure => installed,
-  }
-
-  package { 'precalctestgen':
-    ensure => installed,
-  }
-
-  package { 'ti83emulator':
-    ensure => installed,
-  }
-
-}
-
-node 'nhs-141-0.nas.local' inherits 'winbasenode' {
-  include nacs_managment::saxon
-}
-
-node 'nhs-130-0.nas.local' inherits 'winbasenode' {
-  include nacs_management::saxon
-
-  package { 'TIResources':
-    ensure => installed,
-  }
-  package { 'Algebra1InstPresi':
-    ensure => installed,
-  }
-  package { 'Algebra2InstPresi':
-    ensure => installed,
-  }
-  package { 'GeometryInstPresi':
-    ensure => installed,
-  }
-}
-
-node 'nhs-228-0.nas.local' inherits 'winbasenode' {
-  include nacs_management::saxon
-
-  package { 'TIResources':
-    ensure => installed,
-  }
-  package { 'Algebra1InstPresi':
-    ensure => installed,
-  }
-  package { 'Algebra2InstPresi':
-    ensure => installed,
-  }
-  package { 'GeometryInstPresi':
-    ensure => installed,
-  }
-
-}
-
-#
-# End of Math Teachers
-#
