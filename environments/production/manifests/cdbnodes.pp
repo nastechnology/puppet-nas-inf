@@ -79,6 +79,9 @@ node 'cdb-mac-06228.nas.local' {
   class { 'roles::teacher::cdb':
     user => $user,
   }
+
+  nacs_management::printers { 'nhs_wkrm_copier': }
+  nacs_management::printers { 'nhs_wkrm_copier_2': }
 }
 
 # Tiffany Biderstedt Mac
