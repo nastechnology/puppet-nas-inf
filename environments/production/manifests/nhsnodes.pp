@@ -82,14 +82,12 @@ node 'nhs-mac-06187.nas.local' inherits 'teachersmacnode' {
 
 # Kelly Cooper Mac
 # backup user created
-node 'nhs-mac-06176.nas.local' inherits 'teachersmacnode' {
-  class { 'nacs_management::allprinters': }
-  nacs_management::map::idrive { '1011956': }
-  nacs_management::printers { 'nhs_140_c': }
-  nacs_management::printers { 'nhs_copier': }
-  nacs_management::map::nhsshared { '1011956': }
+node 'nhs-mac-06176.nas.local' {
+  $user = '1011956'
 
-  nacs_management::map::alldistrict { '1011956': }
+  class { 'roles::teacher::nhs':
+    user => $user,
+  }
 }
 
 # Lindy Seagrave
