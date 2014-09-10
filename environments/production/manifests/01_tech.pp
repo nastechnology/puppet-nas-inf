@@ -5,9 +5,16 @@ node 'nas-tech-tc.nas.local' {
   class { 'roles::staff::tech':
     user => $user,
   }
+
+  class { 'tmutil':
+    user     => 'markmyers',
+    password => 'backup',
+    server   => 'xserve.nacswildcats.org',
+    share    => 'nas-tech-tc',
+  }
 }
 
-# Chris MacBook Professional
+# Justin MacBook Professional
 node 'nas-tech-st.nas.local' {
   $user = 'chris'
 
