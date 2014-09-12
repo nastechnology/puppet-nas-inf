@@ -3,3 +3,11 @@
 # Google Chrome
 googleChromeVersion: 'GoogleChrome-20140912.dmg'
 googleChromeUrl: 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/09/GoogleChrome-20140912.dmg'
+
+# Flash Player
+flash: 'AdobeFlashPlayer15.0.0.152'
+flashUrl: 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/09/install_flash_player_15_osx_pkg.dmg'
+
+# Firefox
+firefox: 'Firefox-31.0.dmg'
+firefoxUrl: http://tech.napoleonareaschools.org/wp-content/uploads/2014/07/Firefox-31.0.dmg'
