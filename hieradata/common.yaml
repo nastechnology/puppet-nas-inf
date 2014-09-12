@@ -10,4 +10,5 @@ flashUrl: 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/09/instal
 
 # Firefox
 firefox: 'Firefox-31.0.dmg'
+#source => 'http://fpdownload.macromedia.com/get/flashplayer/current/licensing/mac/install_flash_player_13_osx_pkg.dmg',
 firefoxUrl: http://tech.napoleonareaschools.org/wp-content/uploads/2014/07/Firefox-31.0.dmg'
