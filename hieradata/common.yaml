@@ -6,9 +6,14 @@ googleChromeUrl: 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/09
 
 # Flash Player
 flash: 'AdobeFlashPlayer15.0.0.152'
+#source => 'http://fpdownload.macromedia.com/get/flashplayer/current/licensing/mac/install_flash_player_13_osx_pkg.dmg',
 flashUrl: 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/09/install_flash_player_15_osx_pkg.dmg'
 
 # Firefox
 firefox: 'Firefox-31.0.dmg'
-#source => 'http://fpdownload.macromedia.com/get/flashplayer/current/licensing/mac/install_flash_player_13_osx_pkg.dmg',
 firefoxUrl: 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/07/Firefox-31.0.dmg'
+
+
+# Google Drive
+googleDrive: 'GoogleDrive-20140912.dmg'
+googleDriveUrl: 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/09/GoogleDrive-20140912.dmg'
