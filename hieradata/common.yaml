@@ -10,8 +10,8 @@ flash: 'AdobeFlashPlayer15.0.0.152'
 flashUrl: 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/09/install_flash_player_15_osx_pkg.dmg'
 
 # Firefox
-firefox: 'Firefox-32.0.1.dmg'
-firefoxUrl: 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/09/Firefox-32.0.1.dmg'
+firefox: 'Firefox-20140916.dmg'
+firefoxUrl: 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/09/Firefox-20140916.dmg'
 
 
 # Google Drive
