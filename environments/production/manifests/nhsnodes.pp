@@ -278,7 +278,11 @@ node 'nhs-mac-06002.nas.local' inherits 'teachersmacnode' {
 # Kaitlin Helberg
 # backup user created
 node 'nhs-mac-06001.nas.local' {
-  include roles::teacher::nhs
+  #include roles::teacher::nhs
+  $user = '1004109'
+  class { 'roles::teacher::nhs':
+    user => $user,
+  }
 }
 
 # Paul Hudson Mac
