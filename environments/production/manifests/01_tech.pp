@@ -13,7 +13,7 @@ node 'nas-tech-tc.nas.local' {
     share    => 'nas-tech-tc',
   }
 
-  #nacs_management::printers{'nhs_131_copier': }
+  nacs_management::printers{'nhs_131_copier': }
 }
 
 # Justin MacBook Professional
@@ -23,6 +23,8 @@ node 'nas-tech-st.nas.local' {
   class { 'roles::staff::tech':
     user => $user,
   }
+
+  nacs_management::printers{'nhs_131_copier': }
 }
 
 node 'tech-dev-mini.nas.local' {
