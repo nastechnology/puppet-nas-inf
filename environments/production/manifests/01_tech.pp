@@ -18,7 +18,7 @@ node 'nas-tech-tc.nas.local' {
 
 # Justin MacBook Professional
 node 'nas-tech-st.nas.local' {
-  $user = 'chris'
+  $user = 'justinyant'
 
   class { 'roles::staff::tech':
     user => $user,
