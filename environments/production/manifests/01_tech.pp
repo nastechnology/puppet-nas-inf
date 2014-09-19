@@ -12,6 +12,8 @@ node 'nas-tech-tc.nas.local' {
     server   => 'xserve.nacswildcats.org',
     share    => 'nas-tech-tc',
   }
+
+  nacs_management::printers{'nhs_131_copier': }
 }
 
 # Justin MacBook Professional
