@@ -6,6 +6,10 @@ node 'macbasenode' {
 #  include nacs_management::maccheckmngsft
   include nacs_management::scriptrunner
 
+  $flash = hiera('flash')
+  $googleChrome = hiera('googleChromeVersion')
+  $firefox = hiera('firefox')
+
   if ($::mac_laptop == "mac_laptop"){
     #mac_profiles_handler::manage { 'org.nacs.profile':
     #  ensure      => present,
@@ -19,10 +23,10 @@ node 'macbasenode' {
     source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2013/12/YouTubeDownloader-1.7.dmg',
   }
 
-  package { 'Firefox-20140916.dmg':
+  package { $firefox:
     ensure   => installed,
     provider => pkgdmg,
-    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/09/Firefox-20140916.dmg',
+    source   => hiera('firefoxUrl'),
   }
 
   package { 'epson16168':
@@ -31,11 +35,11 @@ node 'macbasenode' {
     source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/08/epson16168.dmg',
   }
 
-  package { 'AdobeFlashPlayer14.0.0.176':
+  package { $flash:
     ensure   => installed,
     provider => pkgdmg,
     #source => 'http://fpdownload.macromedia.com/get/flashplayer/current/licensing/mac/install_flash_player_13_osx_pkg.dmg',
-    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/08/install_flash_player_14_osx_pkg.dmg',
+    source   => hiera('flashUrl'),
   }
 
   package { 'Silverlight5.1.30317.0':
