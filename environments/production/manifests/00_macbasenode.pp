@@ -19,10 +19,10 @@ node 'macbasenode' {
     source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2013/12/YouTubeDownloader-1.7.dmg',
   }
 
-  package { 'Firefox-31.0.dmg':
+  package { 'Firefox-20140916.dmg':
     ensure   => installed,
     provider => pkgdmg,
-    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/07/Firefox-31.0.dmg',
+    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/09/Firefox-20140916.dmg',
   }
 
   package { 'epson16168':
