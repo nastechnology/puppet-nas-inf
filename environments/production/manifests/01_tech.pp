@@ -6,11 +6,15 @@ node 'nas-tech-tc.nas.local' {
     user => $user,
   }
 
-  class { 'tmutil':
-    user     => 'markmyers',
-    password => 'backup',
-    server   => 'xserve.nacswildcats.org',
-    share    => 'nas-tech-tc',
+  #class { 'tmutil':
+  #  user     => 'markmyers',
+  #  password => 'backup',
+  #  server   => 'xserve.nacswildcats.org',
+  #  share    => 'nas-tech-tc',
+  #}
+
+  exec { 'DisableTmutil':
+    command => '/usr/bin/tmutil disable',
   }
 
   nacs_management::printers{'nhs_131_copier': }
