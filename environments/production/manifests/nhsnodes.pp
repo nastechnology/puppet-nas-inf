@@ -451,6 +451,7 @@ node 'nhs-mac-06074.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers{ 'nms_office_copier': }
   nacs_management::printers{ 'nms_ces_ricoh_7500': }
   nacs_management::printers{ 'nms_colorlaser': }
+  nacs_management::printers { 'nms_upstairs_copier': }
 
   nacs_management::map::nmsshared { '1008456': }
   nacs_management::map::alldistrict { '1008456': }
