@@ -17,6 +17,12 @@ node 'nas-tech-tc.nas.local' {
     command => '/usr/bin/tmutil disable',
   }
 
+  package { 'InstallLoggerPro3':
+    ensure   => installed,
+    provider => pkgdmg,
+    source   => 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/10/InstallLoggerPro3.dmg',
+  }
+
   nacs_management::printers{'nhs_131_copier': }
 }
 
