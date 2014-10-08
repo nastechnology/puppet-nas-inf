@@ -523,6 +523,9 @@ node 'nhs-mac-06247.nas.local' inherits 'teachersmacnode' {
   class { 'nacs_management::allprinters': }
   nacs_management::printers{ 'nhs_copier': }
   nacs_management::printers{ 'nhs_131_copier': }
+  nacs_management::printers{ 'ces_office_copier': }
+  nacs_management::printers{ 'ces_wkrm': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
 }
 
 # NHS Band Lab Macs
