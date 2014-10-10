@@ -13,10 +13,6 @@ node 'nas-tech-tc.nas.local' {
     share    => 'nas-tech-tc',
   }
 
-  exec { 'DisableTmutil':
-    command => '/usr/bin/tmutil disable',
-  }
-
   nacs_management::printers{'nhs_131_copier': }
 }
 
