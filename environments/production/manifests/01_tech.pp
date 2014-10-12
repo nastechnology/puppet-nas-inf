@@ -14,6 +14,7 @@ node 'nas-tech-tc.nas.local' {
   }
 
   nacs_management::printers{'nhs_131_copier': }
+  nacs_management::printers{ 'nhs_wkrm_copier': }
 }
 
 # Justin MacBook Professional
