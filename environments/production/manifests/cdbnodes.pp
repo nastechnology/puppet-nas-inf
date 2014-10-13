@@ -231,7 +231,8 @@ node 'cdb-mac-06231.nas.local' {
   $user = '1004116'
 
   class { 'roles::teacher::cdb::ceskg':
-    user => $user,
+    user   => $user,
+    idrive => '0',
   }
 }
 
