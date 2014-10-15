@@ -324,6 +324,12 @@ node 'dhcp.nas.local' {
     dns_servers => ['10.20.15.26', '10.20.15.48', '10.20.15.25'],
   }
 
+  # WeatherBug
+  dhcp::server::host {'weatherbug.nas.local':
+    address   => '10.20.20.19',
+    hwaddress => '00:03:47:BF:EB:1A',
+  }
+
 
   #MS Teachers
   dhcp::server::subnet { '10.20.21.0':
