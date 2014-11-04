@@ -113,6 +113,7 @@ node 'nms-mac-06084.nas.local' inherits 'teachersmacnode' {
   nacs_management::printers { 'nms_upstairs_copier': }
   nacs_management::printers { 'nms_office': }
   nacs_management::printers { 'nms_office_copier': }
+  nacs_management::printers { 'nms_colorlaser': }
 
   nacs_management::map::nmsshared { '1002660':  }
   nacs_management::map::alldistrict { '1002660': }

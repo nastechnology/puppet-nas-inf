@@ -414,50 +414,6 @@ node 'controller.nas.local' {
     ensure => installed,
   }
 
-  package { 'apache2':
-    ensure => installed,
-  }
 
-  package { 'php5':
-    ensure  => installed,
-    require => Package['apache2'],
-  }
-
-  package { 'php5-common':
-    ensure  => installed,
-    require => Package['apache2'],
-  }
-
-  package { 'libapache2-mod-php5':
-    ensure  => installed,
-    require => Package['php5-common'],
-  }
-
-}
-
-
-node 'sensu.nas.local' {
-  package { 'erlang-nox':
-    ensure => installed,
-  }
-
-  package { 'redis-server':
-    ensure => installed,
-  }
-
-  package { 'ruby-json':
-    ensure => installed,
-  }
-
-  class { 'sensu':
-    rabbitmq_password => 'T2Gt1wU',
-    server            => true,
-    dashboard         => false,
-    api               => true,
-    #plugins           => [
-    #  'puppet:///data/sensu/plugins/ntp.rb',
-    #  'puppet:///data/sensu/plugins/postfix.rb'
-    #]
-  }
 
 }
