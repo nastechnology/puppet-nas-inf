@@ -254,6 +254,11 @@ node 'nms-mac-06041.nas.local' {
   class { 'roles::teacher::nms':
     user => $user,
   }
+
+  nacs_management::printers{ 'nhs_copier': }
+  nacs_management::printers{ 'nhs_131_copier': }
+  nacs_management::printers{ 'nhs_wkrm_copier': }
+  nacs_management::printers{ 'nhs_wkrm_copier_2': }
 }
 
 # Jim Murcko Mac
