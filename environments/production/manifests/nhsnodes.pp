@@ -63,6 +63,8 @@ node 'nhs-mac-06183.nas.local' {
   class { 'roles::teacher::nhs':
     user => $user,
   }
+
+  nacs_management::printers { 'nms_library': }
 }
 
 # Jenna Storrer Mac
