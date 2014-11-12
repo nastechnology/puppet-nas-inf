@@ -65,6 +65,7 @@ node 'nhs-mac-06183.nas.local' {
   }
 
   nacs_management::printers { 'nms_library': }
+  nacs_management::printers{ 'ces_upstairs_wkrm': }
 }
 
 # Jenna Storrer Mac
