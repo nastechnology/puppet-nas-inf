@@ -5,9 +5,9 @@ googleChromeVersion: 'GoogleChrome-20140912.dmg'
 googleChromeUrl: 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/09/GoogleChrome-20140912.dmg'
 
 # Flash Player
-flash: 'AdobeFlashPlayer15.0.0.189'
+flash: 'AdobeFlashPlayer15.0.0.223'
 #source => 'http://fpdownload.macromedia.com/get/flashplayer/current/licensing/mac/install_flash_player_15_osx_pkg.dmg',
-flashUrl: 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/10/install_flash_player_15_osx_pkg.dmg'
+flashUrl: 'http://tech.napoleonareaschools.org/wp-content/uploads/2014/11/install_flash_player_15_osx_pkg.dmg'
 
 # Firefox
 firefox: 'Firefox-20140916.dmg'
